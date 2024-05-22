@@ -1,0 +1,44 @@
+properties:
+  number_of_columns:
+    default: 0
+    description: This field describes the number of columns in the dataset.
+    title: Number Of Columns
+    type: integer
+  number_of_records:
+    default: 0
+    description: This field describes the number of records in the dataset.
+    title: Number Of Records
+    type: integer
+  sample_data:
+    default: []
+    description: This field describes a sample set of records present in the dataset.
+      We can view a few records that are part of the dataset in this field.
+    items:
+      additionalProperties:
+        type: string
+      type: object
+    title: Sample Data
+    type: array
+  schema_summary:
+    additionalProperties:
+      type: integer
+    default: {}
+    description: This field provides a count of of the number of columns in the dataset
+      that have a particular data type.
+    title: Schema Summary
+    type: object
+  size:
+    description: This field describes the size of the dataset.
+    title: Size
+    type: string
+  univariates:
+    default: []
+    description: This field provides a univariate summary / statistical analysis for
+      all fields in the dataset that can be valuable for descriptive statistics and
+      exploratory data analysis.
+    items:
+      $ref: ../workflows/DatasetUnivariateSummary.yaml
+    title: Univariates
+    type: array
+title: DatasetSummary
+type: object

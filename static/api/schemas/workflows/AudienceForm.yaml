@@ -1,0 +1,17 @@
+properties:
+  group_operations:
+    description: This field describes the operations inside the group.
+    items:
+      $ref: ../workflows/Rule.yaml
+    title: Group Operations
+    type: array
+  group_operator:
+    description: This field describes the operator with which the rules inside the
+      group have to be combined.
+    title: Group Operator
+    type: string
+required:
+- group_operator
+- group_operations
+title: AudienceForm
+type: object

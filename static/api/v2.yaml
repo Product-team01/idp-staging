@@ -1,0 +1,59 @@
+openapi: 3.0.2
+info:
+  title: Document Manager APIs
+  version: 1.0.0
+  description: |
+    **Introduction**
+
+      This document contains the Document Manager API Reference. The document details out the different Document Manager entities and the actions that can be performed on them.
+      It also explains the various outputs in detail. Our APIs adhere to REST principles and the request and responses support JSON format.
+    
+    **Authentication**
+
+      The Document Manager APIs expects API Keys to be passed in the header for every request. Each API Key is associated to a specific account and will be handed over during onboarding by our sales team.
+    
+    **Correlation and Request Identifiers**
+      
+      * Correlation Identifier
+        For every Document Manager API, we recommend to pass the correlation id in the request header. Our systems add this to our log traces which will help to debug information in case of errors. This is not a mandatory field but is recommended strongly to serve better.
+      
+      * Request Identifier
+        In every Document Manager API, we generate a request identifier and associate it to the request even before we start processing the request. Our systems add this to our log traces which will help to debug information in case of errors. 
+
+      We return the request and correlation identifier in all the responses subject to availability.
+
+    **Error Handling**
+    
+      The Document Manager API error responses follow a standard response format and the status codes are standard HTTP response code.
+
+      For the different response codes we return, please refer the table below:
+
+      | Status Code | Description                                     |
+      |-------------|-------------------------------------------------|
+      | 200         | Successful                                      |
+      | 401         | Unauthorized Access                                      |
+      | 400         | Bad Request - Any issues with the input payload                                      |
+      | 404         | Entity is not available.                                  |
+      | 422         | Unable to process the request: If we are unable to process the request. |
+      | 500         | Internal Server Error                                    |
+      | 502         | Bad Gateway                                      |
+      | 504         | Gateway Timeout                                      |
+servers:
+  - url: https://rbac.madstreetden.xyz
+    description: Sandbox Dev server
+security:
+  - ApiKeyAuth: []
+  - x-correlation-id: []
+  - accounts-id: []
+
+paths:
+  # Document APIs
+  /api/v1/documents/infer/sync:
+    $ref: ../api/idpsandbox/idp-paths/document/infer_sync.yaml
+
+
+
+
+
+
+    

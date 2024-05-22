@@ -1,0 +1,42 @@
+properties:
+  model_artifact_config:
+    allOf:
+    - $ref: ../workflows/ModelArtifactConfig.yaml
+    description: This field describes the metadata configuration of the model artifact,
+      which includes details such as the name of the training trial, identifiers to
+      access the model in inference workflows or during deployment and so on.
+    title: Model Artifact Config
+  model_description:
+    description: This field provides a description about the model which is provided
+      by the user.
+    title: Model Description
+    type: string
+  model_id:
+    description: This field is a the unique identifier for the model artifact.
+    title: Model Id
+    type: string
+  model_name:
+    description: 'This field describes the name of the model which is provided by
+      the user. '
+    title: Model Name
+    type: string
+  model_type:
+    description: This field describes the type or the nature of the model that was
+      trained. For example, the model could be a classification model or a regression
+      model and so on.
+    title: Model Type
+    type: string
+  tags:
+    default: []
+    description: his field describes any set of tags that can be associated to the
+      model artifact.
+    items:
+      type: string
+    title: Tags
+    type: array
+required:
+- model_name
+- model_type
+- model_artifact_config
+title: Model
+type: object

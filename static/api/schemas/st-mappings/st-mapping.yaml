@@ -1,0 +1,26 @@
+title: StMappings
+type: object
+properties:
+  id: 
+    type: string
+    readOnly: true
+    description: Unique id of a st-mapping
+    example: bbb23sdasdad-0812-131-1313131
+  name:
+    title:  Name of the st-mapping
+    type: string
+    description: Name of the st-mapping
+    example: st-mapping-1
+  s3_path:
+    title:  Name of the st-mapping
+    type: string
+    description: Name of the st-mapping
+    example: st-mapping-1
+  upload_type:
+    type: string
+    description: upload type of the st-mapping data
+    example: ''
+  source:
+    type: string
+    description: sheet link or file name based on the upload_type
+    example: ''

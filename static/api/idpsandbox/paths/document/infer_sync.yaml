@@ -1,0 +1,51 @@
+post:
+  tags:
+    - idpSandbox
+  summary: Infer sync API
+  description: get document by id
+  operationId: inferSyncDocument
+  parameters:
+  - name: x-api-key
+    in: header
+    description: api key of the user
+    schema:
+      type: string
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - name: accounts-id
+    in: header  
+    description: account id of the account
+    schema:
+      type: string
+  requestBody:
+    description: document that need to be added
+    content:
+      application/json:
+        schema:
+          $ref: '../../idp-schemas/document/infer_sync_req_body.yaml'
+    required: true
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                description: status of the request
+                type: string
+                enum:
+                - SUCCESS
+                - FAILURE
+              $ref: '../../idp-schemas/document/infer_sync_resp.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../schemas/errors/failure-response.yaml'
+  x-codegen-request-body-name: body

@@ -1,0 +1,35 @@
+properties:
+  feature_group:
+    description: This field describes the feature_group the feature is a part of.
+    title: Feature Group
+    type: string
+  feature_id:
+    description: This field describes the id of the featue.
+    title: Feature Id
+    type: string
+  feature_level:
+    description: This field describes the level of the featue.
+    title: Feature Level
+    type: string
+  feature_name:
+    description: This field describes the name of the feature.
+    title: Feature Name
+    type: string
+  feature_operation:
+    description: This field describes the operation to be performed on the feature.
+    title: Feature Operation
+    type: string
+  feature_value:
+    description: This field describes the feature value on which a operation has to
+      be performed on the feature.
+    title: Feature Value
+    type: string
+required:
+- feature_id
+- feature_level
+- feature_group
+- feature_name
+- feature_operation
+- feature_value
+title: FeatureConfig
+type: object

@@ -1,0 +1,84 @@
+post:
+  tags:
+    - search
+  summary: Create Preset Strategy Client Level
+  description: Create a Preset strategy. The strategy `name` is expected to be unique
+  operationId: set_preset_strategy_client_level
+  parameters:
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/search/preset-strategy.yaml"
+        examples:         
+          Strategy:
+            value:
+              name: string
+              workflow_id: string
+              config:
+              - params:
+                - field: string
+                  value:
+                  - string
+                  type: string
+                conditions:
+                - field: string
+                  value:
+                  - string
+                  operator: string
+              business_rules:
+              - rules:
+                - field: string
+                  value:
+                  - string
+                  operator: eq
+                  source_dependent: false
+                catalog_id: string
+                rules_relation: AND
+                conditions:
+                - field: string
+                  value:
+                  - string
+                  operator: eq
+                conditions_relation: AND
+              description: string
+              metadata:
+                max_content: 0
+                min_content: 0
+                max_bundles: 0
+                min_bundles: 0
+                unbundle: false
+
+    required: true
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: '../../schemas/ResponseTemplateSuccessNoData.yaml'
+            - type: object
+              properties:
+                data:
+                  $ref: '../../schemas/search/preset-strategy.yaml'
+              required:
+                  - data
+
+    "400":
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/error_response.yaml"
+      description: Bad Request
+    "422":
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/validation_error_response.yaml"

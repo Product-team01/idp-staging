@@ -1,0 +1,57 @@
+description: '    '
+properties:
+  base_workflow_id:
+    description: The id of the base workflow
+    title: Base Workflow Id
+    type: string
+  base_workflow_name:
+    description: The name of the feature
+    title: Base Workflow Name
+    type: string
+  current_workflow_id:
+    description: The id of the workflow associated with this feature
+    title: Current Workflow Id
+    type: string
+  dag_id:
+    description: Unique identifier for the dag in airflow
+    title: Dag Id
+    type: string
+  feature_config:
+    allOf:
+    - $ref: ../workflows/Workflow.yaml
+    description: Config for creating this feature
+    title: Feature Config
+  feature_description:
+    description: The description of the feature
+    title: Feature Description
+    type: string
+  feature_id:
+    description: The id of the feature
+    title: Feature Id
+    type: string
+  feature_name:
+    description: The name of the feature
+    title: Feature Name
+    type: string
+  level:
+    description: What level the feature is at i.e. user_id, event, ...
+    title: Level
+    type: string
+  owner:
+    default: starfire
+    description: Owner of the feature
+    title: Owner
+    type: string
+  tags:
+    default: []
+    description: Tags about the feature
+    items:
+      type: string
+    title: Tags
+    type: array
+required:
+- feature_name
+- feature_description
+- feature_config
+title: Feature
+type: object

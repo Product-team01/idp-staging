@@ -418,11 +418,7 @@ const docs = [
               type: 'search',
               position: 'right',
             },
-            {
-              label: 'Login',
-              to: '/login',
-              position: 'right',
-            },
+         
           
           ],
         },

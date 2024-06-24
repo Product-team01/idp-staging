@@ -12,7 +12,7 @@ const VideoPlayerComponent = () => {
     window.onYouTubeIframeAPIReady = () => {
       window.player = new window.YT.Player('video-placeholder', {
         height: '400', // Adjusted height
-        width: '100%',
+        width: '700', // Adjusted width
         videoId: 'dQw4w9WgXcQ',
         events: {
           onStateChange: onPlayerStateChange,
@@ -68,18 +68,16 @@ const VideoPlayerComponent = () => {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ flex: 3, padding: '20px' }}>
-        <h1 style={{ textAlign: 'center' }}>IDP Deep Dive</h1>
-        <div id="video-player-container">
-          <div id="video-placeholder"></div>
-        </div>
-        <div id="video-description" style={{ marginTop: '20px' }}>
-          <h3 id="video-title">Introduction to the course</h3>
-          <p id="video-details">Description of the current video will appear here.</p>
-        </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+      <h1 style={{ textAlign: 'center' }}>IDP Deep Dive</h1>
+      <div id="video-player-container">
+        <div id="video-placeholder"></div>
       </div>
-      <div style={{ flex: 1, padding: '20px', borderLeft: '1px solid #ddd', maxHeight: '600px', overflowY: 'auto' }}>
+      <div id="video-description" style={{ marginTop: '20px', width: '700px' }}>
+        <h3 id="video-title">Introduction to the course</h3>
+        <p id="video-details">Description of the current video will appear here.</p>
+      </div>
+      <div style={{ flex: 1, padding: '20px', borderLeft: '1px solid #ddd', maxHeight: '600px', overflowY: 'auto', width: '700px' }}>
         <h2>Course Content</h2>
         <div className="section">
           <div className="section-header" style={{ cursor: 'pointer', fontWeight: 'bold', margin: '10px 0' }} onClick={(e) => toggleSection(e.target)}>Section 1: Introduction (New) (<span id="section-1-status">0/1</span> | 6min)</div>

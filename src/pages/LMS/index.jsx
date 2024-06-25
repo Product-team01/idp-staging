@@ -115,6 +115,7 @@
 
 import React, { useEffect } from 'react';
 import './VideoPlayerComponent.css';
+import Layout from '@theme/Layout';
 
 const VideoPlayerComponent = () => {
   useEffect(() => {

@@ -57,6 +57,26 @@ const docs = [
       },
     },
   },
+  {
+    id: 'Dataset-concept',
+    path: 'docs/Dataset-concept',
+    routeBasePath: '/Dataset-concept',
+    versions: {
+      current: {
+        label: '1.x.x',
+      },
+    },
+  },
+  {
+    id: 'Workflow-concepts',
+    path: 'docs/Workflow-concepts',
+    routeBasePath: '/Workflow-concepts',
+    versions: {
+      current: {
+        label: '1.x.x',
+      },
+    },
+  },
   // {
   //   id: 'react-ui-kit',
   //   path: 'docs/react-ui-kit/',

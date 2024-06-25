@@ -2,6 +2,10 @@
     display: flex;
   }
   
+  .video-title {
+    text-align: center;
+  }
+  
   .video-section {
     flex: 3;
     padding: 20px;
@@ -13,10 +17,6 @@
   
   .video-description {
     margin-top: 20px;
-  }
-  
-  .video-title {
-    text-align: center;
   }
   
   .course-content {

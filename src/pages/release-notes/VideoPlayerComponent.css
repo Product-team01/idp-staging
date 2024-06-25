@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+  }
+  
+  .video-section {
+    flex: 3;
+    padding: 20px;
+  }
+  
+  .video-player-container {
+    width: 100%;
+  }
+  
+  .video-description {
+    margin-top: 20px;
+  }
+  
+  .video-title {
+    text-align: center;
+  }
+  
+  .course-content {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  
+  .section-header {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .section-content {
+    display: none;
+    padding-left: 20px;
+  }
+  
+  .section-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .section-content li {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-content li:hover {
+    text-decoration: underline;
+  }
+  

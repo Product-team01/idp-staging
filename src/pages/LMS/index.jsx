@@ -517,21 +517,21 @@ const VideoPlayerComponent = () => {
             </div>
             <div className="section-content">
               <ul>
-                <li style={{ fontWeight: 'bold', color: 'white' }}>How-to guides</li>
+                <li style={{ fontWeight: 'bold', color: 'grey' }}>How-to guides</li>
                 <ul>
                   <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank">Listing</a></li>
                   <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank">Creating a document type</a></li>
                   <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank">A guide to annotation</a></li>
                 </ul>
-                <li style={{ fontWeight: 'bold', color: 'white' }}>Samples</li>
+                <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
                 <ul>
                   <li><a href="https://drive.google.com/drive/folders/14tNYn4GQTG-0Y_PDxn7RlZya_svEjPWE?usp=sharing" target="_blank">Sample documents</a></li>
                 </ul>
-                <li style={{ fontWeight: 'bold', color: 'white' }}>Session Recording</li>
+                <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
                 <ul>
                   <li><a href="#">Link to recording</a></li>
                 </ul>
-                <li style={{ fontWeight: 'bold', color: 'white' }}>Feedback</li>
+                <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
                 <ul>
                   <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
                 </ul>

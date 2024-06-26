@@ -337,19 +337,19 @@
 
 // export default VideoPlayerComponent;
 
-
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import TextComponent from './TextComponent';
 import './VideoPlayerComponent.css';
 
 const VideoPlayerComponent = () => {
-  const [currentSection, setCurrentSection] = useState('video'); // 'video' or 'text'
+  const [currentSection, setCurrentSection] = useState('video'); // 'video', 'text', or 'image'
   const [videoData, setVideoData] = useState({
     videoId: 'N0ZboK3w_Qg',  // Updated video ID
     title: 'Introduction to the course',
     description: 'Description of the current video will appear here.',
   });
+  const [imageData, setImageData] = useState('');
   const [completedVideos, setCompletedVideos] = useState([false, false, false, false]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [currentStatusId, setCurrentStatusId] = useState('');
@@ -387,6 +387,15 @@ const VideoPlayerComponent = () => {
   const loadTextComponent = (title, description) => {
     setCurrentSection('text');
     setVideoData({ videoId: '', title, description });
+    if (window.player && window.player.stopVideo) {
+      window.player.stopVideo();
+    }
+  };
+
+  const loadImageComponent = (imageUrl, title) => {
+    setCurrentSection('image');
+    setImageData(imageUrl);
+    setVideoData({ videoId: '', title, description: '' });
     if (window.player && window.player.stopVideo) {
       window.player.stopVideo();
     }
@@ -433,6 +442,12 @@ const VideoPlayerComponent = () => {
               description={videoData.description}
             />
           )}
+          {currentSection === 'image' && (
+            <div className="image-container">
+              <img src={imageData} alt={videoData.title} style={{ maxWidth: '100%' }} />
+              <h3>{videoData.title}</h3>
+            </div>
+          )}
           {currentSection === 'video' && (
             <div className="video-description" id="video-description">
               <h3 id="video-title">{videoData.title}</h3>
@@ -463,18 +478,19 @@ const VideoPlayerComponent = () => {
             <div className="section-content">
               <ul>
                 <li
-                  id="video-1"
-                  onClick={() =>
-                    changeVideo('MH6mxkshgJQ', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 1, 'section-2-status')
-                  }
+                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training1.jpg', 'Structured Documents')}
                 >
-                  2. Mastering the IDP Tool: Document Upload and Value Extraction Demo (2min)
+                  Structured
                 </li>
                 <li
-                  id="video-2"
-                  onClick={() => changeVideo('lPJlgbvEZys', 'Document Type', 'Description for document type here', 2, 'section-2-status')}
+                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training2.jpg', 'Semi-structured Documents')}
                 >
-                  3. Document type (6min)
+                  Semi-structured
+                </li>
+                <li
+                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training3.jpg', 'Unstructured Documents')}
+                >
+                  Unstructured
                 </li>
               </ul>
             </div>

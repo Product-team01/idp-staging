@@ -9,9 +9,9 @@ import './VideoPlayerComponent.css';
 const VideoPlayerComponent = () => {
   const [currentSection, setCurrentSection] = useState('video'); // 'video', 'text', 'image', 'moreAboutDocumentType', 'howToRegisterDocumentType', 'howToAnnotate'
   const [videoData, setVideoData] = useState({
-    videoId: 'N0ZboK3w_Qg',  // Updated video ID
     title: 'Introduction to the course',
-    description: 'Description of the current video will appear here.',
+    description: 'Hello and welcome to the world of Intelligent Document Processing (IDP). Let\'s kick things off with Module 1 which is all about registering Document Types. To begin, here is a short video on what IDP is all about.',
+    videoId: 'N0ZboK3w_Qg',  // Updated video ID
   });
   const [imageData, setImageData] = useState('');
   const [completedVideos, setCompletedVideos] = useState([false, false, false, false]);
@@ -120,7 +120,15 @@ const VideoPlayerComponent = () => {
     <Layout>
       <div className="container">
         <div className="video-section">
-          <h1 className="video-title">IDP: Module 1 - Registering Document Types </h1>
+          <h1 className="video-title">IDP: Module 1 - Registering Document Types</h1>
+          {currentSection === 'video' && (
+            <>
+              <h3 id="video-title">{videoData.title}</h3>
+              <p className="video-description" id="video-description">
+                {videoData.description}
+              </p>
+            </>
+          )}
           <div className="video-player-container" id="video-player-container" style={{ display: currentSection === 'video' ? 'block' : 'none' }}>
             <div id="video-placeholder"></div>
           </div>
@@ -144,12 +152,6 @@ const VideoPlayerComponent = () => {
           )}
           {currentSection === 'howToAnnotate' && (
             <HowToAnnotateComponent />
-          )}
-          {currentSection === 'video' && (
-            <div className="video-description" id="video-description">
-              <h3 id="video-title">{videoData.title}</h3>
-              <p id="video-details">{videoData.description}</p>
-            </div>
           )}
         </div>
         <div className="course-content">
@@ -188,15 +190,13 @@ const VideoPlayerComponent = () => {
           </div>
           <div className="section">
             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
-              More on Docuent Types
+              More on Document Types
             </div>
             <div className="section-content">
               <ul>
-              
                 <li onClick={() => loadMoreAboutDocumentTypeComponent()}>
                   More About Document Type
                 </li>
-              
               </ul>
             </div>
           </div>

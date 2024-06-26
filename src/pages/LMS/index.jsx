@@ -1,8 +1,19 @@
-// import React, { useEffect } from 'react';
+// import React, { useEffect, useState } from 'react';
 // import Layout from '@theme/Layout';
+// import TextComponent from './TextComponent';
 // import './VideoPlayerComponent.css';
 
 // const VideoPlayerComponent = () => {
+//   const [currentSection, setCurrentSection] = useState('video'); // 'video' or 'text'
+//   const [videoData, setVideoData] = useState({
+//     videoId: 'dQw4w9WgXcQ',
+//     title: 'Introduction to the course',
+//     description: 'Description of the current video will appear here.',
+//   });
+//   const [completedVideos, setCompletedVideos] = useState([false, false, false]);
+//   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+//   const [currentStatusId, setCurrentStatusId] = useState('');
+
 //   useEffect(() => {
 //     // Load YouTube IFrame Player API script
 //     const tag = document.createElement('script');
@@ -23,16 +34,22 @@
 //     };
 //   }, []);
 
-//   let completedVideos = [false, false, false];
-//   let currentVideoIndex = 0;
-//   let currentStatusId = '';
-
 //   const changeVideo = (videoId, title, description, index, statusId) => {
-//     currentVideoIndex = index;
-//     currentStatusId = statusId;
-//     window.player.loadVideoById(videoId);
-//     document.getElementById('video-title').innerText = title;
-//     document.getElementById('video-details').innerText = description;
+//     setCurrentSection('video');
+//     setVideoData({ videoId, title, description });
+//     setCurrentVideoIndex(index);
+//     setCurrentStatusId(statusId);
+//     if (window.player && window.player.loadVideoById) {
+//       window.player.loadVideoById(videoId);
+//     }
+//   };
+
+//   const loadTextComponent = (title, description) => {
+//     setCurrentSection('text');
+//     setVideoData({ videoId: '', title, description });
+//     if (window.player && window.player.stopVideo) {
+//       window.player.stopVideo();
+//     }
 //   };
 
 //   const onPlayerStateChange = (event) => {
@@ -42,13 +59,19 @@
 //   };
 
 //   const markAsCompleted = (index, statusId) => {
-//     completedVideos[index] = true;
+//     const updatedCompletedVideos = [...completedVideos];
+//     updatedCompletedVideos[index] = true;
+//     setCompletedVideos(updatedCompletedVideos);
+
 //     const sectionStatus = document.getElementById(statusId);
 //     const totalVideos = parseInt(sectionStatus.innerText.split('/')[1], 10);
-//     const completedCount = completedVideos.filter(Boolean).length;
+//     const completedCount = updatedCompletedVideos.filter(Boolean).length;
 
 //     // Update individual video item to indicate completion
-//     document.getElementById(`video-${index}`).style.color = 'green';
+//     const videoItem = document.getElementById(`video-${index}`);
+//     if (videoItem) {
+//       videoItem.style.color = 'green';
+//     }
 
 //     // Count completed videos in this section
 //     const sectionIndex = statusId.split('-')[1];
@@ -74,35 +97,70 @@
 //       <div className="container">
 //         <div className="video-section">
 //           <h1 className="video-title">IDP Deep Dive</h1>
-//           <div className="video-player-container" id="video-player-container">
+//           <div className="video-player-container" id="video-player-container" style={{ display: currentSection === 'video' ? 'block' : 'none' }}>
 //             <div id="video-placeholder"></div>
 //           </div>
+//           {currentSection === 'text' && (
+//             <TextComponent
+//               title={videoData.title}
+//               description={videoData.description}
+//             />
+//           )}
 //           <div className="video-description" id="video-description">
-//             <h3 id="video-title">Introduction to the course</h3>
-//             <p id="video-details">Description of the current video will appear here.</p>
+//             <h3 id="video-title">{videoData.title}</h3>
+//             <p id="video-details">{videoData.description}</p>
 //           </div>
 //         </div>
 //         <div className="course-content">
 //           <h2>Course Content</h2>
 //           <div className="section">
-//             <div className="section-header" onClick={(e) => toggleSection(e.target)}>Section 1: Introduction (New) (<span id="section-1-status">0/1</span> | 6min)</div>
+//             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
+//               Section 1: Introduction (New) (<span id="section-1-status">0/1</span> | 6min)
+//             </div>
 //             <div className="section-content">
 //               <ul>
-//                 <li id="video-0" onClick={() => changeVideo('dQw4w9WgXcQ', 'Introduction to the course', 'Step-by-Step Guide to Creating a Document Type for Classification Model in IDP Tool', 0, 'section-1-status')}>
+//                 <li
+//                   id="video-0"
+//                   onClick={() =>
+//                     changeVideo('dQw4w9WgXcQ', 'Introduction to the course', 'Step-by-Step Guide to Creating a Document Type for Classification Model in IDP Tool', 0, 'section-1-status')
+//                   }
+//                 >
 //                   1. Introduction
 //                 </li>
 //               </ul>
 //             </div>
 //           </div>
 //           <div className="section">
-//             <div className="section-header" onClick={(e) => toggleSection(e.target)}>Section 2: Introduction to IDP (New) (<span id="section-2-status">0/2</span> | 1hr)</div>
+//             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
+//               Section 2: Introduction to IDP (New) (<span id="section-2-status">0/2</span> | 1hr)
+//             </div>
 //             <div className="section-content">
 //               <ul>
-//                 <li id="video-1" onClick={() => changeVideo('MH6mxkshgJQ', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 1, 'section-2-status')}>
+//                 <li
+//                   id="video-1"
+//                   onClick={() =>
+//                     changeVideo('MH6mxkshgJQ', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 1, 'section-2-status')
+//                   }
+//                 >
 //                   2. Mastering the IDP Tool: Document Upload and Value Extraction Demo (2min)
 //                 </li>
-//                 <li id="video-2" onClick={() => changeVideo('lPJlgbvEZys', 'Document Type', 'Description for document type here', 2, 'section-2-status')}>
+//                 <li
+//                   id="video-2"
+//                   onClick={() => changeVideo('lPJlgbvEZys', 'Document Type', 'Description for document type here', 2, 'section-2-status')}
+//                 >
 //                   3. Document type (6min)
+//                 </li>
+//               </ul>
+//             </div>
+//           </div>
+//           <div className="section">
+//             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
+//               Section 3: Text Only
+//             </div>
+//             <div className="section-content">
+//               <ul>
+//                 <li onClick={() => loadTextComponent('Section 3: Text Component', 'This is a text-only section that loads specific information related to this section.')}>
+//                   4. Text Component
 //                 </li>
 //               </ul>
 //             </div>
@@ -116,7 +174,6 @@
 
 // export default VideoPlayerComponent;
 
-
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import TextComponent from './TextComponent';
@@ -129,6 +186,9 @@ const VideoPlayerComponent = () => {
     title: 'Introduction to the course',
     description: 'Description of the current video will appear here.',
   });
+  const [completedVideos, setCompletedVideos] = useState([false, false, false]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentStatusId, setCurrentStatusId] = useState('');
 
   useEffect(() => {
     // Load YouTube IFrame Player API script
@@ -150,9 +210,11 @@ const VideoPlayerComponent = () => {
     };
   }, []);
 
-  const changeVideo = (videoId, title, description) => {
+  const changeVideo = (videoId, title, description, index, statusId) => {
     setCurrentSection('video');
     setVideoData({ videoId, title, description });
+    setCurrentVideoIndex(index);
+    setCurrentStatusId(statusId);
     if (window.player && window.player.loadVideoById) {
       window.player.loadVideoById(videoId);
     }
@@ -169,6 +231,18 @@ const VideoPlayerComponent = () => {
   const onPlayerStateChange = (event) => {
     if (event.data === window.YT.PlayerState.ENDED) {
       markAsCompleted(currentVideoIndex, currentStatusId);
+    }
+  };
+
+  const markAsCompleted = (index, statusId) => {
+    const updatedCompletedVideos = [...completedVideos];
+    updatedCompletedVideos[index] = true;
+    setCompletedVideos(updatedCompletedVideos);
+
+    // Update individual video item to indicate completion
+    const videoItem = document.getElementById(`video-${index}`);
+    if (videoItem) {
+      videoItem.style.color = 'green';
     }
   };
 
@@ -204,14 +278,14 @@ const VideoPlayerComponent = () => {
           <h2>Course Content</h2>
           <div className="section">
             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
-              Section 1: Introduction (New) (<span id="section-1-status">0/1</span> | 6min)
+              Section 1: Introduction (New) | 6min
             </div>
             <div className="section-content">
               <ul>
                 <li
                   id="video-0"
                   onClick={() =>
-                    changeVideo('dQw4w9WgXcQ', 'Introduction to the course', 'Step-by-Step Guide to Creating a Document Type for Classification Model in IDP Tool')
+                    changeVideo('dQw4w9WgXcQ', 'Introduction to the course', 'Step-by-Step Guide to Creating a Document Type for Classification Model in IDP Tool', 0, 'section-1-status')
                   }
                 >
                   1. Introduction
@@ -221,21 +295,21 @@ const VideoPlayerComponent = () => {
           </div>
           <div className="section">
             <div className="section-header" onClick={(e) => toggleSection(e.target)}>
-              Section 2: Introduction to IDP (New) (<span id="section-2-status">0/2</span> | 1hr)
+              Section 2: Introduction to IDP (New) | 1hr
             </div>
             <div className="section-content">
               <ul>
                 <li
                   id="video-1"
                   onClick={() =>
-                    changeVideo('MH6mxkshgJQ', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo')
+                    changeVideo('MH6mxkshgJQ', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 'Mastering the IDP Tool: Document Upload and Value Extraction Demo', 1, 'section-2-status')
                   }
                 >
                   2. Mastering the IDP Tool: Document Upload and Value Extraction Demo (2min)
                 </li>
                 <li
                   id="video-2"
-                  onClick={() => changeVideo('lPJlgbvEZys', 'Document Type', 'Description for document type here')}
+                  onClick={() => changeVideo('lPJlgbvEZys', 'Document Type', 'Description for document type here', 2, 'section-2-status')}
                 >
                   3. Document type (6min)
                 </li>

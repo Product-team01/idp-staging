@@ -1,0 +1,44 @@
+.question-answer-container {
+    margin: 20px;
+  }
+  
+  .question-answer-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .question-answer-container input[type="text"],
+  .question-answer-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  .question-answer-container input[type="radio"] {
+    margin: 10px 0;
+  }
+  
+  .question-answer-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .question-answer-container button:hover {
+    background-color: #45a049;
+  }
+  
+  #certificate-container {
+    display: none;
+  }
+  
+  #certificate-container div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  

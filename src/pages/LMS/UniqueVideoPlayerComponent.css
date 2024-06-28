@@ -1,3 +1,5 @@
+/* UniqueVideoPlayerComponent.css */
+
 .unique-container {
   display: flex;
   margin: 20px;
@@ -7,6 +9,10 @@
 .unique-video-section {
   flex: 1;
   margin-right: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .unique-video-title {
@@ -31,7 +37,7 @@
   max-width: 100%;
   background: #000;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .unique-video-player-container iframe,
@@ -51,14 +57,23 @@
 
 .unique-image-container img {
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .unique-course-content {
   flex: 0 0 300px;
   max-width: 300px;
-  border-left: 1px solid #ddd;
-  padding-left: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .unique-section {
@@ -66,18 +81,20 @@
 }
 
 .unique-section-header {
-  font-weight: bold;
+  
   cursor: pointer;
   margin-bottom: 10px;
-  background-color: #f7f7f7;
+  background-color: transparent;
   padding: 10px;
-  border: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .unique-section-header:hover {
-  background-color: #eaeaea;
+  background-color: #f7f7f7;
 }
 
 .unique-section-content {
@@ -98,6 +115,8 @@
   padding: 5px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .unique-section-content li:hover {
@@ -108,10 +127,17 @@
   text-decoration: none;
   color: #333;
   font-weight: normal;
+  display: flex;
+  align-items: center;
 }
 
 .unique-section-content li a:hover {
   text-decoration: underline;
+}
+
+.unique-section-content li svg,
+.unique-section-header svg {
+  margin-right: 10px; /* Add space between the icon and text */
 }
 
 .completed {
@@ -122,8 +148,11 @@ h2 {
   color: #333;
   font-size: 24px;
   margin-bottom: 20px;
-  
   padding-bottom: 10px;
+}
+
+.content-section {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -136,5 +165,9 @@ h2 {
     margin-top: 20px;
     border-left: none;
     padding-left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }

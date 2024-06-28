@@ -5,7 +5,10 @@ import MoreAboutDocumentTypeComponent from './MoreAboutDocumentTypeComponent';
 import HowToRegisterDocumentTypeComponent from './HowToRegisterDocumentTypeComponent';
 import HowToAnnotateComponent from './HowToAnnotateComponent';
 import QuestionAnswerComponent from './QuestionAnswerComponent';
+import DocumentTypeConfigurationComponent from './DocumentTypeConfigurationComponent'; // Import new component
 import './UniqueVideoPlayerComponent.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVideo, faBook, faCheckCircle, faBars, faMicrophone, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 const VideoPlayerComponent = () => {
   const [currentSection, setCurrentSection] = useState('video');
@@ -96,6 +99,14 @@ const VideoPlayerComponent = () => {
     }
   };
 
+  const loadDocumentTypeConfigurationComponent = () => {
+    setCurrentSection('documentTypeConfiguration');
+    setVideoData({ videoId: '', title: 'Document Type Configuration', description: '' });
+    if (window.player && window.player.stopVideo) {
+      window.player.stopVideo();
+    }
+  };
+
   const onPlayerStateChange = (event) => {
     if (event.data === window.YT.PlayerState.ENDED) {
       markAsCompleted(currentVideoIndex, currentStatusId);
@@ -143,49 +154,14 @@ const VideoPlayerComponent = () => {
   return (
     <Layout>
       <div className="unique-container">
-        <div className="unique-video-section">
-          <h1 className="unique-video-title">IDP: Module 1 - Registering Document Types</h1>
-          {currentSection === 'video' && (
-            <>
-              <h3 id="unique-video-title">{videoData.title}</h3>
-              <p className="unique-video-description" id="unique-video-description">
-                {videoData.description}
-              </p>
-            </>
-          )}
-          <div className="unique-video-player-container" id="unique-video-player-container" style={{ display: currentSection === 'video' ? 'block' : 'none' }}>
-            <div id="video-placeholder"></div>
-          </div>
-          {currentSection === 'text' && (
-            <TextComponent
-              title={videoData.title}
-              description={videoData.description}
-            />
-          )}
-          {currentSection === 'image' && (
-            <div className="unique-image-container">
-              <img src={imageData} alt={videoData.title} style={{ maxWidth: '100%' }} />
-              <h3>{videoData.title}</h3>
-            </div>
-          )}
-          {currentSection === 'moreAboutDocumentType' && (
-            <MoreAboutDocumentTypeComponent />
-          )}
-          {currentSection === 'howToRegisterDocumentType' && (
-            <HowToRegisterDocumentTypeComponent />
-          )}
-          {currentSection === 'howToAnnotate' && (
-            <HowToAnnotateComponent />
-          )}
-          {currentSection === 'question' && (
-            <QuestionAnswerComponent questions={questions} />
-          )}
-        </div>
         <div className="unique-course-content">
+          <div className="menu-toggle">
+            <FontAwesomeIcon icon={faBars} /> Hide menu
+          </div>
           <h2>Course Content</h2>
           <div className="unique-section">
-            <div className="unique-section-header" onClick={() => loadTextComponent('What is a Document Type', 'A Document Type is any one format of Document that needs data to be extracted from. Typical Document Types include ID cards, invoices, bank statements etc. These documents contain information either as printed text or handwritten text that needs to be extracted in context. Document Types are classified into the following formats: Structured Documents, Semi-structured Documents, Unstructured Documents')}>
-              Introduction to Document Type
+             <div className="unique-section-header" onClick={() => loadTextComponent('What is a Document Type', 'A Document Type is any one format of Document that needs data to be extracted from. Typical Document Types include ID cards, invoices, bank statements etc. These documents contain information either as printed text or handwritten text that needs to be extracted in context. Document Types are classified into the following formats: Structured Documents, Semi-structured Documents, Unstructured Documents')}>
+               Introduction to Document Type
             </div>
             <div className="unique-section-content">
              
@@ -197,32 +173,26 @@ const VideoPlayerComponent = () => {
             </div>
             <div className="unique-section-content">
               <ul>
-                <li
-                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training1.jpg', 'Structured Documents')}
-                >
-                  Structured
+                <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training1.jpg', 'Structured Documents')}>
+                   Structured
                 </li>
-                <li
-                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training2.jpg', 'Semi-structured Documents')}
-                >
-                  Semi-structured
+                <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training2.jpg', 'Semi-structured Documents')}>
+                   Semi-structured
                 </li>
-                <li
-                  onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training3.jpg', 'Unstructured Documents')}
-                >
-                  Unstructured
+                <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training3.jpg', 'Unstructured Documents')}>
+                   Unstructured
                 </li>
               </ul>
             </div>
           </div>
           <div className="unique-section">
             <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
-              More on Document Types
+            More on Document Types
             </div>
             <div className="unique-section-content">
               <ul>
                 <li onClick={() => loadMoreAboutDocumentTypeComponent()}>
-                  More About Document Type
+                <FontAwesomeIcon icon={faBook} /> More About Document Type
                 </li>
               </ul>
             </div>
@@ -233,16 +203,14 @@ const VideoPlayerComponent = () => {
             </div>
             <div className="unique-section-content">
               <ul>
-                <li
-                  id="video-3"
-                  onClick={() =>
-                    loadHowToRegisterDocumentTypeComponent()
-                  }
-                >
-                  How to Register a Document Type
+                <li id="video-3" onClick={() => loadHowToRegisterDocumentTypeComponent()}>
+                <FontAwesomeIcon icon={faBook} /> How to Register a Document Type
+                </li>
+                <li onClick={() => loadDocumentTypeConfigurationComponent()}>
+                <FontAwesomeIcon icon={faVideo} /> Document Type Configuration
                 </li>
                 <li onClick={() => loadHowToAnnotateComponent()}>
-                  How to Annotate
+                <FontAwesomeIcon icon={faBook} /> How to Annotate
                 </li>
               </ul>
             </div>
@@ -255,9 +223,9 @@ const VideoPlayerComponent = () => {
               <ul style={{ marginLeft: '20px' }}>
                 <li style={{ fontWeight: 'bold', color: 'grey' }}>How-to guides</li>
                 <ul style={{ marginLeft: '20px' }}>
-                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank">Listing</a></li>
-                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank">Creating a document type</a></li>
-                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank">A guide to annotation</a></li>
+                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} /> Listing</a></li>
+                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} /> Creating a document type</a></li>
+                  <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} /> A guide to annotation</a></li>
                 </ul>
                 <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
                 <ul style={{ marginLeft: '20px' }}>
@@ -284,6 +252,59 @@ const VideoPlayerComponent = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="unique-video-section">
+          <h1 className="unique-video-title">IDP: Module 1 - Registering Document Types</h1>
+          {currentSection === 'video' && (
+            <>
+              <h3 id="unique-video-title">{videoData.title}</h3>
+              <p className="unique-video-description" id="unique-video-description">
+                {videoData.description}
+              </p>
+            </>
+          )}
+          <div className="unique-video-player-container" id="unique-video-player-container" style={{ display: currentSection === 'video' ? 'block' : 'none' }}>
+            <div id="video-placeholder"></div>
+          </div>
+          {currentSection === 'text' && (
+            <div className="content-section">
+              <TextComponent
+                title={videoData.title}
+                description={videoData.description}
+              />
+            </div>
+          )}
+          {currentSection === 'image' && (
+            <div className="unique-image-container">
+              <img src={imageData} alt={videoData.title} style={{ maxWidth: '100%' }} />
+              <h3>{videoData.title}</h3>
+            </div>
+          )}
+          {currentSection === 'moreAboutDocumentType' && (
+            <div className="content-section">
+              <MoreAboutDocumentTypeComponent />
+            </div>
+          )}
+          {currentSection === 'howToRegisterDocumentType' && (
+            <div className="content-section">
+              <HowToRegisterDocumentTypeComponent />
+            </div>
+          )}
+          {currentSection === 'documentTypeConfiguration' && (
+            <div className="content-section">
+              <DocumentTypeConfigurationComponent />
+            </div>
+          )}
+          {currentSection === 'howToAnnotate' && (
+            <div className="content-section">
+              <HowToAnnotateComponent />
+            </div>
+          )}
+          {currentSection === 'question' && (
+            <div className="content-section">
+              <QuestionAnswerComponent questions={questions} />
+            </div>
+          )}
         </div>
       </div>
     </Layout>

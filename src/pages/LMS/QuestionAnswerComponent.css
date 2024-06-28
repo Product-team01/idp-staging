@@ -1,44 +1,58 @@
 .question-answer-container {
-    margin: 20px;
-  }
-  
-  .question-answer-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .question-answer-container input[type="text"],
-  .question-answer-container input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-  }
-  
-  .question-answer-container input[type="radio"] {
-    margin: 10px 0;
-  }
-  
-  .question-answer-container button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .question-answer-container button:hover {
-    background-color: #45a049;
-  }
-  
-  #certificate-container {
-    display: none;
-  }
-  
-  #certificate-container div {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-  }
-  
+  @apply max-w-xl mx-auto p-8 bg-white rounded-lg shadow-lg mt-10;
+}
+
+.question-answer-container h1 {
+  @apply text-3xl font-bold mb-6 text-center text-gray-800;
+}
+
+.question-answer-container .input-fields input[type="text"],
+.question-answer-container .input-fields input[type="email"] {
+  @apply w-3/4 p-4 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.question-answer-container label {
+  @apply block mb-2 text-lg font-medium text-gray-700;
+}
+
+.question-answer-container .option-label {
+  @apply block mb-2 text-base text-gray-600;
+}
+
+.question-answer-container input[type="radio"] {
+  @apply mr-2 focus:ring-blue-500;
+}
+
+.question-answer-container .submit-button {
+  @apply w-3/4 py-3 bg-green-600 text-white rounded-lg font-semibold border-none cursor-pointer hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 mt-4;
+}
+
+.question-answer-container .next-button {
+  @apply w-32 py-2 bg-blue-600 text-white rounded-lg font-semibold border-none cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-4;
+}
+
+.question-answer-container p {
+  @apply mt-4 text-green-700 font-medium;
+}
+
+#certificate-container {
+  display: none;
+}
+
+#certificate-container div {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.input-progress-container {
+  @apply flex flex-col items-center;
+}
+
+.progress-bar {
+  @apply w-3/4 h-2 bg-gray-200 rounded-lg overflow-hidden mt-4;
+}
+
+.progress-bar div {
+  @apply h-full bg-blue-500;
+}

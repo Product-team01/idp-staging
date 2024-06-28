@@ -1,0 +1,140 @@
+.unique-container {
+  display: flex;
+  margin: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.unique-video-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.unique-video-title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.unique-video-description {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.unique-video-player-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.unique-video-player-container iframe,
+.unique-video-player-container object,
+.unique-video-player-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.unique-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.unique-image-container img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.unique-course-content {
+  flex: 0 0 300px;
+  max-width: 300px;
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+}
+
+.unique-section {
+  margin-bottom: 20px;
+}
+
+.unique-section-header {
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.unique-section-header:hover {
+  background-color: #eaeaea;
+}
+
+.unique-section-content {
+  display: none;
+  margin-left: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.unique-section-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.unique-section-content li {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.unique-section-content li:hover {
+  background-color: #f0f0f0;
+}
+
+.unique-section-content li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+}
+
+.unique-section-content li a:hover {
+  text-decoration: underline;
+}
+
+.completed {
+  color: green;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .unique-container {
+    flex-direction: column;
+  }
+
+  .unique-course-content {
+    max-width: 100%;
+    margin-top: 20px;
+    border-left: none;
+    padding-left: 0;
+  }
+}

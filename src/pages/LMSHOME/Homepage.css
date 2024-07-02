@@ -1,0 +1,78 @@
+.homepage {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+   
+    text-decoration: none;
+
+  }
+  
+  .homepage h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+
+  }
+  
+  .course-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    text-decoration: none;
+
+  }
+  
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    margin: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+
+  }
+  
+  .course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+
+  }
+  
+  .course-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+
+  }
+  
+  .course-info {
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+
+  }
+  
+  .course-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+
+  }
+  
+  .course-info p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #777;
+    text-decoration: none;
+
+  }
+  

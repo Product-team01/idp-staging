@@ -1,0 +1,31 @@
+.course-card-link {
+  text-decoration: none;
+  color: inherit; /* Ensures text color is inherited */
+  display: block; /* Makes the entire card clickable */
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+}
+
+.course-info {
+  padding: 16px;
+}

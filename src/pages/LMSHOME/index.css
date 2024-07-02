@@ -1,0 +1,30 @@
+.course-card-link {
+  text-decoration: none;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+}
+
+.course-info {
+  padding: 16px;
+}

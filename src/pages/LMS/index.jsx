@@ -160,11 +160,10 @@ const VideoPlayerComponent = () => {
           </div>
           <h2>Course Content</h2>
           <div className="unique-section">
-             <div className="unique-section-header" onClick={() => loadTextComponent('What is a Document Type', 'A Document Type is any one format of Document that needs data to be extracted from. Typical Document Types include ID cards, invoices, bank statements etc. These documents contain information either as printed text or handwritten text that needs to be extracted in context. Document Types are classified into the following formats: Structured Documents, Semi-structured Documents, Unstructured Documents')}>
-               Introduction to Document Type
+            <div className="unique-section-header" onClick={() => loadTextComponent('What is a Document Type', 'A Document Type is any one format of Document that needs data to be extracted from. Typical Document Types include ID cards, invoices, bank statements etc. These documents contain information either as printed text or handwritten text that needs to be extracted in context. Document Types are classified into the following formats: Structured Documents, Semi-structured Documents, Unstructured Documents')}>
+              Introduction to Document Type
             </div>
             <div className="unique-section-content">
-             
             </div>
           </div>
           <div className="unique-section">
@@ -174,25 +173,25 @@ const VideoPlayerComponent = () => {
             <div className="unique-section-content">
               <ul>
                 <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training1.jpg', 'Structured Documents')}>
-                   Structured
+                  Structured
                 </li>
                 <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training2.jpg', 'Semi-structured Documents')}>
-                   Semi-structured
+                  Semi-structured
                 </li>
                 <li onClick={() => loadImageComponent('https://d1r1e7xjkfj7nz.cloudfront.net/training3.jpg', 'Unstructured Documents')}>
-                   Unstructured
+                  Unstructured
                 </li>
               </ul>
             </div>
           </div>
           <div className="unique-section">
             <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
-            More on Document Types
+              More on Document Types
             </div>
             <div className="unique-section-content">
               <ul>
                 <li onClick={() => loadMoreAboutDocumentTypeComponent()}>
-                <FontAwesomeIcon icon={faBook} /> More About Document Type
+                  <FontAwesomeIcon icon={faBook} /> More About Document Type
                 </li>
               </ul>
             </div>
@@ -204,14 +203,20 @@ const VideoPlayerComponent = () => {
             <div className="unique-section-content">
               <ul>
                 <li id="video-3" onClick={() => loadHowToRegisterDocumentTypeComponent()}>
-                <FontAwesomeIcon icon={faBook} /> How to Register a Document Type
+                  <FontAwesomeIcon icon={faBook} /> How to Register a Document Type
                 </li>
                 <li onClick={() => loadDocumentTypeConfigurationComponent()}>
-                <FontAwesomeIcon icon={faVideo} /> Document Type Configuration
+                  <FontAwesomeIcon icon={faVideo} /> Document Type Configuration
                 </li>
-                <li onClick={() => loadHowToAnnotateComponent()}>
-                <FontAwesomeIcon icon={faBook} /> How to Annotate
-                </li>
+                <li onClick={() => loadTextComponent('Navigating to Document Types', 'Description for Navigating to Document Types')}>Navigating to Document Types</li>
+                <li onClick={() => loadTextComponent('Zero Shot Learning', 'Description for Zero Shot Learning')}>Zero Shot Learning</li>
+                <li onClick={() => loadTextComponent('Exploring the Taxonomy', 'Description for Exploring the Taxonomy')}>Exploring the Taxonomy</li>
+                <li onClick={() => loadTextComponent('Adding a New Attribute', 'Description for Adding a New Attribute')}>Adding a New Attribute</li>
+                <li style={{ marginLeft: '20px' }} onClick={() => loadTextComponent('Redrawing the Annotation Box', 'Description for Redrawing the Annotation Box')}>Redrawing the Annotation Box</li>
+                <li style={{ marginLeft: '20px' }} onClick={() => loadTextComponent('Editing the Extracted Value', 'Description for Editing the Extracted Value')}>Editing the Extracted Value</li>
+                <li style={{ marginLeft: '20px' }} onClick={() => loadTextComponent('Deleting an Extracted Attribute', 'Description for Deleting an Extracted Attribute')}>Deleting an Extracted Attribute</li>
+                <li onClick={() => loadTextComponent('Primer on Data Types', 'Description for Primer on Data Types')}>Primer on Data Types</li>
+                <li onClick={() => loadTextComponent('All About Tables', 'Description for All About Tables')}>All About Tables</li>
               </ul>
             </div>
           </div>
@@ -244,7 +249,7 @@ const VideoPlayerComponent = () => {
           </div>
           <div className="unique-section">
             <div className="unique-section-header" onClick={() => loadQuestionComponent()}>
-               Question and Answer
+              Question and Answer
             </div>
             <div className="unique-section-content">
               <ul>

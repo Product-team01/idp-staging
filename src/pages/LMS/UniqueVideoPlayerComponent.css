@@ -8,11 +8,18 @@
 
 .unique-video-section {
   flex: 1;
-  margin-right: 20px;
+  margin-left: 10px;
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.unique-video-section.full-width {
+  margin-left: 0;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .unique-video-title {
@@ -20,6 +27,7 @@
   margin-bottom: 20px;
   color: #333;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .unique-video-description {
@@ -70,7 +78,7 @@
 }
 
 .menu-toggle {
-  display: none;
+  display: block;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -85,15 +93,26 @@
   margin-bottom: 10px;
   background-color: transparent;
   padding: 10px;
-
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .unique-section-header:hover {
   background-color: #f7f7f7;
+  border-left: 5px solid #0056b3;
+}
+
+.unique-section-header:hover .icon {
+  color: #0056b3;
+}
+
+.icon {
+  margin-right: 10px;
+  transition: color 0.3s ease;
+  padding-right: 10px; /* Added padding for spacing */
 }
 
 .unique-section-content {
@@ -128,15 +147,11 @@
   font-weight: normal;
   display: flex;
   align-items: center;
+  padding-left: 5px; /* Added padding for spacing */
 }
 
 .unique-section-content li a:hover {
   text-decoration: underline;
-}
-
-.unique-section-content li svg,
-.unique-section-header svg {
-  margin-right: 10px; /* Add space between the icon and text */
 }
 
 .completed {
@@ -152,6 +167,30 @@ h2 {
 
 .content-section {
   margin-bottom: 20px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.navigation-buttons button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+  color: #0056b3;
 }
 
 @media (max-width: 768px) {

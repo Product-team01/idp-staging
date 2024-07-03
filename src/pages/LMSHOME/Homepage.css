@@ -1,5 +1,5 @@
 .homepage {
-    text-align: center;
+    
     font-family: Arial, sans-serif;
     padding: 20px;
    
@@ -8,11 +8,12 @@
   }
   
   .homepage h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    color: #2e2e2e;
     text-decoration: none;
-
+    margin-left: 16px;
   }
   
   .course-grid {

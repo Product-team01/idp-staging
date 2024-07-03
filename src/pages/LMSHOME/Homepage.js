@@ -27,7 +27,7 @@ const Homepage = () => {
   return (
     <Layout>
       <div className="homepage">
-        <h1>See what you can learn with VueLearn</h1>
+        <h1>Welcome to VueLearn</h1>
         <div className="course-grid">
           {courses.map((course, index) => (
             <CourseCard

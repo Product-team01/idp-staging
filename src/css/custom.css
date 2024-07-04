@@ -3,12 +3,16 @@
   --newsfeed-bg: #ffffff; /* default background color for light mode */
   --newsfeed-text: #212529; /* default text color for light mode */
   --newsfeed-border: #dddddd; /* default border color for light mode */
+  text-decoration:none !important;
+
 }
 
 [data-theme='dark'] {
   --newsfeed-bg: #303846; /* background color for dark mode */
   --newsfeed-text: #ffffff; /* text color for dark mode */
   --newsfeed-border: #555555; /* border color for dark mode */
+  text-decoration:none !important;
+
 }
 
 #newsfeed-launcher {

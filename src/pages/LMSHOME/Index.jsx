@@ -6,22 +6,39 @@ import './Homepage.css';
 const Homepage = () => {
   const courses = [
     {
-      image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png', // Replace with the actual image URL
+      image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
       title: 'Document Type',
       organization: 'MSD',
       level: 'Beginner',
       type: 'Course',
       href: '/LMS'
     },
-    // Uncomment and update additional courses as needed
-    // {
-    //   image: 'https://example.com/image2.jpg', // Replace with the actual image URL
-    //   title: 'Python for Everybody',
-    //   organization: 'University of Michigan',
-    //   level: 'Beginner',
-    //   type: 'Specialization',
-    //   href: '/another-path'
-    // },
+    {
+      image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
+      title: 'Annotation',
+      organization: 'Document',
+      level: 'Beginner',
+      type: 'Specialization',
+      href: '/another-path'
+    },
+    {
+      image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
+      title: 'Machine Learning',
+      organization: 'Stanford University',
+      level: 'Intermediate',
+      type: 'Course',
+      href: '/another-path'
+    },
+    {
+      image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png ',
+      title: 'Introduction to Algorithms',
+      organization: 'MIT',
+      level: 'Advanced',
+      type: 'Course',
+      href: '/another-path'
+    },
+   
+    // Add more courses as needed
   ];
 
   return (

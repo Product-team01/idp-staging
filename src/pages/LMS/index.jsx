@@ -31,6 +31,7 @@ const VideoPlayerComponent = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [currentStatusId, setCurrentStatusId] = useState('');
   const [currentComponent, setCurrentComponent] = useState(null);
+  const [activeTab, setActiveTab] = useState(null);
 
   const questions = [
     {
@@ -75,39 +76,9 @@ const VideoPlayerComponent = () => {
 
   const courseContents = [
     {
-      type: 'text',
-      title: 'What is a Document Type',
-      description: 'A Document Type is any one format of Document that needs data to be extracted from. Typical Document Types include ID cards, invoices, bank statements etc. These documents contain information either as printed text or handwritten text that needs to be extracted in context. Document Types are classified into the following formats: Structured Documents, Semi-structured Documents, Unstructured Documents'
-    },
-    {
-      type: 'image',
-      title: 'Structured Documents',
-      imageUrl: 'https://d1r1e7xjkfj7nz.cloudfront.net/training1.jpg'
-    },
-    {
-      type: 'image',
-      title: 'Semi-structured Documents',
-      imageUrl: 'https://d1r1e7xjkfj7nz.cloudfront.net/training2.jpg'
-    },
-    {
-      type: 'image',
-      title: 'Unstructured Documents',
-      imageUrl: 'https://d1r1e7xjkfj7nz.cloudfront.net/training3.jpg'
-    },
-    {
       type: 'component',
-      title: 'How to Register a Document Type',
-      component: <HowToRegisterDocumentTypeComponent />
-    },
-    {
-      type: 'component',
-      title: 'Document Type Configuration',
-      component: <DocumentTypeConfigurationComponent />
-    },
-    {
-      type: 'component',
-      title: 'How to Annotate',
-      component: <HowToAnnotateComponent />
+      title: 'Introduction to Document Type',
+      component: <IntroductionToDocumentTypeComponent />
     },
     {
       type: 'component',
@@ -151,8 +122,18 @@ const VideoPlayerComponent = () => {
     },
     {
       type: 'component',
+      title: 'How to Register a Document Type',
+      component: <HowToRegisterDocumentTypeComponent />
+    },
+    {
+      type: 'component',
+      title: 'Document Type Configuration',
+      component: <DocumentTypeConfigurationComponent />
+    },
+    {
+      type: 'component',
       title: 'Question and Answer',
-      component: <QuestionAnswerComponent questions={finalQuestions} /> // Use finalQuestions here
+      component: <QuestionAnswerComponent questions={finalQuestions} /> 
     },
   ];
 
@@ -180,6 +161,7 @@ const VideoPlayerComponent = () => {
     setCurrentVideoIndex(index);
     setCurrentStatusId(statusId);
     setCurrentComponent(null);
+    setActiveTab(index);
     if (window.player && window.player.loadVideoById) {
       window.player.loadVideoById(videoId);
     }
@@ -190,6 +172,7 @@ const VideoPlayerComponent = () => {
     setVideoData({ videoId: '', title, description });
     setCurrentVideoIndex(index);
     setCurrentComponent(null);
+    setActiveTab(index);
     if (window.player && window.player.stopVideo) {
       window.player.stopVideo();
     }
@@ -201,6 +184,7 @@ const VideoPlayerComponent = () => {
     setVideoData({ videoId: '', title, description: '' });
     setCurrentVideoIndex(index);
     setCurrentComponent(null);
+    setActiveTab(index);
     if (window.player && window.player.stopVideo) {
       window.player.stopVideo();
     }
@@ -212,6 +196,7 @@ const VideoPlayerComponent = () => {
     setCurrentStatusId('');
     setCurrentComponent(component);
     setCurrentVideoIndex(index);
+    setActiveTab(index);
     if (window.player && window.player.stopVideo) {
       window.player.stopVideo();
     }
@@ -253,6 +238,7 @@ const VideoPlayerComponent = () => {
       setCurrentVideoIndex(nextIndex);
       const nextContent = courseContents[nextIndex];
       loadContentByType(nextContent, nextIndex);
+      setActiveTab(nextIndex);
     }
   };
 
@@ -262,6 +248,7 @@ const VideoPlayerComponent = () => {
       setCurrentVideoIndex(prevIndex);
       const prevContent = courseContents[prevIndex];
       loadContentByType(prevContent, prevIndex);
+      setActiveTab(prevIndex);
     }
   };
 
@@ -287,75 +274,14 @@ const VideoPlayerComponent = () => {
         {isCourseContentVisible && (
           <div className="unique-course-content">
             <h2>Course Content</h2>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Introduction to Document Type', <IntroductionToDocumentTypeComponent />, 0)}>
-                Introduction to Document Type
+            {courseContents.map((content, index) => (
+              <div key={index} className="unique-section">
+                <div className={`unique-section-header ${activeTab === index ? 'active-tab' : ''}`} onClick={() => loadContentByType(content, index)}>
+                  {content.title}
+                </div>
+                <div className="unique-section-content"></div>
               </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Base Formats of Document Type', <BaseFormatsOfDocumentTypeComponent />, 1)}>
-                Base Formats of Document Types
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('New Question and Answer', <QuestionAnswer1Component />, 2)}>
-                Question and Answer - I
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Zero-shot Learning', <ZeroShotLearningComponent />, 3)}>
-                Zero-shot Learning
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Exploring the Taxonomy', <ExploringTheTaxonomyComponent />, 4)}>
-                Exploring the Taxonomy
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Adding a New Attribute', <AddingNewAttributeComponent />, 5)}>
-                Adding a New Attribute
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Primer on Data Types', <PrimerOnDataTypesComponent />, 6)}>
-                Primer on Data Types
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Question and Answer - II', <QuestionAnswer2Component />, 7)}>
-                Question and Answer - II
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('All About Tables', <AllAboutTablesComponent />, 8)}>
-                All About Tables
-              </div>
-              <div className="unique-section-content"></div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
-                How to Register a Document Type
-              </div>
-              <div className="unique-section-content">
-                <ul>
-                  <li id="video-3" onClick={() => loadComponent('How to Register a Document Type', <HowToRegisterDocumentTypeComponent />, 9)}>
-                    <FontAwesomeIcon icon={faBook} className="icon" /> How to Register a Document Type
-                  </li>
-                  <li onClick={() => loadComponent('Document Type Configuration', <DocumentTypeConfigurationComponent />, 10)}>
-                    <FontAwesomeIcon icon={faVideo} className="icon" /> Document Type Configuration
-                  </li>
-                </ul>
-              </div>
-            </div>
+            ))}
             <div className="unique-section">
               <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
                 Resources
@@ -380,16 +306,6 @@ const VideoPlayerComponent = () => {
                   <ul style={{ marginLeft: '20px' }}>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
                   </ul>
-                </ul>
-              </div>
-            </div>
-            <div className="unique-section">
-              <div className="unique-section-header" onClick={() => loadComponent('Question and Answer', <QuestionAnswerComponent questions={finalQuestions} />, 20)}>
-                Question and Answer
-              </div>
-              <div className="unique-section-content">
-                <ul>
-                  <li onClick={() => loadComponent('Question and Answer', <QuestionAnswerComponent questions={finalQuestions} />, 20)}>Question and Answer</li>
                 </ul>
               </div>
             </div>

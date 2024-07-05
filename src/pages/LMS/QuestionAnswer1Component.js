@@ -23,6 +23,7 @@ const QuestionAnswer1Component = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
+  const [isCorrect, setIsCorrect] = useState(true);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -31,8 +32,10 @@ const QuestionAnswer1Component = () => {
   const handleNextQuestion = () => {
     if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
       setFeedback('Correct!');
+      setIsCorrect(true);
     } else {
       setFeedback('Incorrect, please try again.');
+      setIsCorrect(false);
       return;
     }
 
@@ -42,6 +45,7 @@ const QuestionAnswer1Component = () => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     } else {
       setFeedback('Congratulations! You have completed all the questions.');
+      setIsCorrect(true);
     }
   };
 
@@ -75,7 +79,9 @@ const QuestionAnswer1Component = () => {
           >
             {isLastQuestion ? 'Finish' : 'Next'}
           </button>
-          {feedback && <p>{feedback}</p>}
+          {feedback && (
+            <p className={isCorrect ? 'feedback-correct' : 'feedback-incorrect'}>{feedback}</p>
+          )}
         </>
       ) : (
         <p>No questions available.</p>

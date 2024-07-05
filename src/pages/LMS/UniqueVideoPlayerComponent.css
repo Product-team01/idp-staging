@@ -1,7 +1,7 @@
 .unique-container {
   display: flex;
   font-family: 'Arial', sans-serif;
-  position: relative; /* Add this for relative positioning */
+  position: relative;
 }
 
 .unique-video-section {
@@ -11,12 +11,12 @@
   padding: 30px;
   border-radius: 8px;
   position: relative;
-  transition: margin-left 0.3s ease, margin-right 0.3s ease; /* Smooth transition */
+  transition: margin-left 0.3s ease, margin-right 0.3s ease;
 }
 
 .unique-video-section.full-width {
-  margin-left: 100px; /* Adjusted for smooth transition */
-  margin-right: 100px; /* Adjusted for smooth transition */
+  margin-left: 100px;
+  margin-right: 100px;
   max-width: 100%;
 }
 
@@ -37,7 +37,7 @@
 
 .unique-video-player-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -72,21 +72,21 @@
   padding: 30px;
   background: #fff;
   height: 800px !important;
-  border-right: 0.5px solid #898787; /* This adds a right border */
+  border-right: 0.5px solid #898787;
   position: sticky;
   top: 0;
   overflow-y: auto;
-  transition: transform 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease;
 }
 
 .unique-course-content.hidden {
-  transform: translateX(-100%); /* Hide course content */
+  transform: translateX(-100%);
 }
 
 .menu-toggle-btn {
   position: absolute;
   top: 20%;
-  left: 200px; /* Adjust this value based on the width of the course content */
+  left: 200px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -98,7 +98,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, left 0.3s ease;
 }
 
 .menu-toggle-btn:hover {
@@ -134,7 +134,7 @@
 .icon {
   margin-right: 10px;
   transition: color 0.3s ease;
-  padding-right: 10px; /* Added padding for spacing */
+  padding-right: 10px;
 }
 
 .unique-section-content {
@@ -169,7 +169,7 @@
   font-weight: normal;
   display: flex;
   align-items: center;
-  padding-left: 5px; /* Added padding for spacing */
+  padding-left: 5px;
 }
 
 .unique-section-content li a:hover {
@@ -177,6 +177,11 @@
 
 .completed {
   color: green;
+}
+
+.active-tab {
+  color: rgb(94, 94, 94);
+  font-weight: bold;
 }
 
 h2 {
@@ -224,13 +229,12 @@ h2 {
     margin-top: 15px;
     border-left: none;
     padding-left: 0;
-    
   }
 
   .menu-toggle-btn {
-    position: fixed; /* Change from absolute to fixed */
-    top: 20%; /* Adjust this value as needed */
-    left: 255px; /* Adjust this value based on the width of the course content */
+    position: fixed;
+    top: 20%;
+    left: 255px;
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
@@ -242,6 +246,6 @@ h2 {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
+    transition: transform 0.3s ease, left 0.3s ease;
   }
 }

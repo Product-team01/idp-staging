@@ -23,6 +23,7 @@ const QuestionAnswer2Component = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
+  const [isCorrect, setIsCorrect] = useState(true);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -31,8 +32,10 @@ const QuestionAnswer2Component = () => {
   const handleNextQuestion = () => {
     if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
       setFeedback('Correct!');
+      setIsCorrect(true);
     } else {
       setFeedback('Incorrect, please try again.');
+      setIsCorrect(false);
       return;
     }
 
@@ -59,7 +62,7 @@ const QuestionAnswer2Component = () => {
           <label key={index} className="option-label">
             <input
               type="radio"
-              name="option"
+              name={`option-${currentQuestionIndex}`}
               value={option}
               checked={selectedOption === option}
               onChange={handleOptionChange}
@@ -75,7 +78,11 @@ const QuestionAnswer2Component = () => {
       >
         {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
       </button>
-      {feedback && <p>{feedback}</p>}
+      {feedback && (
+        <p className={isCorrect ? 'feedback-correct' : 'feedback-incorrect'}>
+          {feedback}
+        </p>
+      )}
     </div>
   );
 };

@@ -4,13 +4,10 @@
 }
 
 .course-card {
-  border-radius: 8px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  display: flex;
-  width: 300px; /* Adjust the width to make it smaller */
-  text-decoration: none !important;
+  width: 287px;
+height: 287px;
+flex-shrink: 0;
+background: #F5F5F5;
 }
 
 .course-card:hover {
@@ -39,6 +36,7 @@
   padding: 4px 8px;
   font-size: 0.75rem;
   border-radius: 4px;
+  
 }
 
 .course-info {

@@ -1,24 +1,22 @@
-/* UniqueVideoPlayerComponent.css */
-
 .unique-container {
   display: flex;
-  margin: 20px;
   font-family: 'Arial', sans-serif;
+  position: relative; /* Add this for relative positioning */
 }
 
 .unique-video-section {
   flex: 1;
-  margin-left: 10px;
-  background: #fff;
+  margin-left: 70px;
+  margin-right: 70px;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: margin-left 0.3s ease, margin-right 0.3s ease; /* Smooth transition */
 }
 
 .unique-video-section.full-width {
-  margin-left: 0;
-  flex: 0 0 100%;
+  margin-left: 100px; /* Adjusted for smooth transition */
+  margin-right: 100px; /* Adjusted for smooth transition */
   max-width: 100%;
 }
 
@@ -70,18 +68,41 @@
 
 .unique-course-content {
   flex: 0 0 300px;
-  max-width: 300px;
-  padding: 20px;
+  max-width: 270px;
+  padding: 30px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 800px !important;
+  border-right: 0.5px solid #898787; /* This adds a right border */
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease; /* Smooth transition */
 }
 
-.menu-toggle {
-  display: block;
-  font-size: 16px;
+.unique-course-content.hidden {
+  transform: translateX(-100%); /* Hide course content */
+}
+
+.menu-toggle-btn {
+  position: absolute;
+  top: 20%;
+  left: 200px; /* Adjust this value based on the width of the course content */
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin-bottom: 20px;
+  z-index: 10;
+  transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
+}
+
+.menu-toggle-btn:hover {
+  background-color: #eaeaea;
 }
 
 .unique-section {
@@ -90,14 +111,15 @@
 
 .unique-section-header {
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   background-color: transparent;
-  padding: 10px;
+  padding: 5px;
   border-radius: 4px;
   transition: background-color 0.3s ease, border-left 0.3s ease;
   display: flex;
   align-items: center;
   position: relative;
+  font-size: small;
 }
 
 .unique-section-header:hover {
@@ -198,13 +220,28 @@ h2 {
   }
 
   .unique-course-content {
-    max-width: 100%;
-    margin-top: 20px;
+    max-width: 70%;
+    margin-top: 15px;
     border-left: none;
     padding-left: 0;
+    
   }
 
-  .menu-toggle {
-    display: block;
+  .menu-toggle-btn {
+    position: fixed; /* Change from absolute to fixed */
+    top: 20%; /* Adjust this value as needed */
+    left: 255px; /* Adjust this value based on the width of the course content */
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
   }
 }

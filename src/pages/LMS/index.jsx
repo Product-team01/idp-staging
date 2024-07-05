@@ -698,14 +698,14 @@ const VideoPlayerComponent = () => {
                   <ul style={{ marginLeft: '20px' }}>
                     <li><a href="https://drive.google.com/drive/folders/14tNYn4GQTG-0Y_PDxn7RlZya_svEjPWE?usp=sharing" target="_blank">Sample documents</a></li>
                   </ul>
-                  <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
+                  {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
                   <ul style={{ marginLeft: '20px' }}>
                     <li><a href="#">Link to recording</a></li>
-                  </ul>
-                  <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
+                  </ul> */}
+                  {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
                   <ul style={{ marginLeft: '20px' }}>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
-                  </ul>
+                  </ul> */}
                 </ul>
               </div>
             </div>

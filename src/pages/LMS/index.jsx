@@ -87,7 +87,7 @@ const VideoPlayerComponent = () => {
     },
     {
       type: 'component',
-      title: 'New Question and Answer',
+      title: 'Q & A - I ',
       component: <QuestionAnswer1Component />
     },
     {
@@ -112,7 +112,7 @@ const VideoPlayerComponent = () => {
     },
     {
       type: 'component',
-      title: 'Question and Answer - II',
+      title: 'Q & A - II',
       component: <QuestionAnswer2Component />
     },
     {
@@ -132,7 +132,7 @@ const VideoPlayerComponent = () => {
     },
     {
       type: 'component',
-      title: 'Question and Answer',
+      title: 'Q & A - III',
       component: <QuestionAnswerComponent questions={finalQuestions} /> 
     },
   ];

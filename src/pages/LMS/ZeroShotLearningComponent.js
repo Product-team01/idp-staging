@@ -12,7 +12,10 @@ const ZeroShotLearningComponent = () => {
       <p>
         In the platform, Zero Shot Learning is triggered when a new Document Type is being registered. When a user uploads a new document, the ML engines first identify and extract all possible data from the input document. Then, this data is grouped into sets of attributes and values. This is now ready for the user to annotate.
       </p>
+
+      <img src="https://d1r1e7xjkfj7nz.cloudfront.net/zerolearn.gif" alt="Tax Details" />
     </div>
+    
   );
 };
 

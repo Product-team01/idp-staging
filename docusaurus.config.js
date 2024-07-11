@@ -381,11 +381,11 @@ const docs = [
             width: '101px',
           },
           items: [
-            {
-              label: 'Guides',
-              to: 'guides',
-              className: 'guides-top-header',
-            },
+            // {
+            //   label: 'Guides',
+            //   to: 'guides',
+            //   className: 'guides-top-header',
+            // },
             {
               label: 'Automation Hub',
               type: 'dropdown',

@@ -320,6 +320,8 @@ const docs = [
   const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
   const intHTML = fs.readFileSync('./src/snippets/int.html', 'utf-8');
   const account = fs.readFileSync('./src/snippets/Account.html', 'utf-8');
+  const customerHTML = fs.readFileSync('./src/snippets/customer.html', 'utf-8');
+
   /** @type {import('@docusaurus/types').Config} */
   const config = {
     ...meta,
@@ -391,6 +393,16 @@ const docs = [
               items: [{
                 type: 'html',
                 value: AutomationHTML,
+                className: 'dyte-dropdown',
+              }, ],
+            },
+            {
+              label: 'Customer Hub',
+              type: 'dropdown',
+              className: 'dyte-dropdown',
+              items: [{
+                type: 'html',
+                value: customerHTML,
                 className: 'dyte-dropdown',
               }, ],
             },

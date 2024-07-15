@@ -97,6 +97,16 @@ const docs = [
       },
     },
   },
+  {
+    id: 'DXM-Concepts',
+    path: 'docs/DXM-Concepts',
+    routeBasePath: '/DXM-Concepts',
+    versions: {
+      current: {
+        label: '1.x.x',
+      },
+    },
+  },
 
   {
     id: 'Administration',

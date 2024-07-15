@@ -5,56 +5,91 @@ sidebar_position: 1
 slug: /
 ---
 
-<head>
-  <title>Trending Stratrgy</title>
-  <meta
-    
-  />
-</head>
 
-### Overview
 
-- **Name of the Strategy:** Trending
-- **Short Description:** The Trending Products model identifies and recommends products that are currently popular or gaining significant attention among users. It leverages real-time data and trend analysis to highlight items that are trending in the market, ensuring customers are aware of the latest popular products.
-- **How it works:** The Trending Products model leverages advanced algorithms to analyze multiple data sources and identify emerging trends. The methodology includes:
-  - **Trend Detection:** Uses time-series analysis, clustering, and sentiment analysis to identify patterns and trends.
-  - **Scoring and Ranking:** Scores products based on recent sales spikes, increased user engagement, and positive sentiment on social media. The products are then ranked according to their scores.
-  - **Recommendation Engine:** The top-ranked products are recommended to users through various touch points on the retail website.
-- **Input Requirements:**
-  - **Types of Data:**
-    - **Sales Data:** Historical and real-time sales figures.
-    - **User Interactions:** Clicks, views, add to carts, purchase history.
-- **Output:** A ranked list of trending products.
+# Trending Strategy
 
-### Business Impact
+<details>
+<summary><strong>Overview</strong></summary>
+<p><strong>Name of the Strategy:</strong> Trending</p>
+<p><strong>Short Description:</strong> The Trending Products model identifies and recommends products that are currently popular or gaining significant attention among users. It leverages real-time data and trend analysis to highlight items that are trending in the market, ensuring customers are aware of the latest popular products.</p>
+<p><strong>How it works:</strong> The Trending Products model leverages advanced algorithms to analyze multiple data sources and identify emerging trends. The methodology includes:</p>
+<ul>
+  <li><strong>Trend Detection:</strong> Uses time-series analysis, clustering, and sentiment analysis to identify patterns and trends.</li>
+  <li><strong>Scoring and Ranking:</strong> Scores products based on recent sales spikes, increased user engagement, and positive sentiment on social media. The products are then ranked according to their scores.</li>
+  <li><strong>Recommendation Engine:</strong> The top-ranked products are recommended to users through various touch points on the retail website.</li>
+</ul>
+<p><strong>Input Requirements:</strong></p>
+<ul>
+  <li><strong>Sales Data:</strong> Historical and real-time sales figures.</li>
+  <li><strong>User Interactions:</strong> Clicks, views, add to carts, purchase history.</li>
+</ul>
+<p><strong>Output:</strong> A ranked list of trending products.</p>
+</details>
 
-- **Goal:** To boost sales and customer engagement by recommending trending products, enhancing the shopping experience.
-- **Business Metrics Impacted:**
-  - **Engagement Metrics:** Enhanced user engagement, such as click-through rates and time spent on site.
-  - **Customer Bounce Rate:** Reduce the number of users bouncing off from the website.
-  - **Conversion Rate:** Higher likelihood of purchases.
-  - **Sales Volume:** Increase in sales of trending products.
-  - **Average Order Value (AOV):** Increased AOV through cross-selling.
-- **Success Stories:**
-  - **Etsy:** Etsy utilizes a Trending Products model to highlight popular and seasonal items on its platform. By analyzing user searches, sales data, and social media trends, Etsy can promote trending products to its users. This has resulted in a noticeable boost in sales during key shopping periods, such as holidays and special events. For example, during the holiday season, Etsy saw a significant increase in sales.
-  - **Zalando**: Zalando, a leading European fashion retailer, uses the Trending Products model to stay ahead of fashion trends. By analyzing social media trends, customer preferences, and sales data, Zalando highlights trending fashion items on their website. This strategy has helped Zalando achieve a 15% increase in sales of featured trending products and improved overall customer engagement
+<details>
+<summary><strong>Business Impact</strong></summary>
+<p><strong>Goal:</strong> To boost sales and customer engagement by recommending trending products, enhancing the shopping experience.</p>
+<p><strong>Business Metrics Impacted:</strong></p>
+<ul>
+  <li><strong>Engagement Metrics:</strong> Enhanced user engagement, such as click-through rates and time spent on site.</li>
+  <li><strong>Customer Bounce Rate:</strong> Reduce the number of users bouncing off from the website.</li>
+  <li><strong>Conversion Rate:</strong> Higher likelihood of purchases.</li>
+  <li><strong>Sales Volume:</strong> Increase in sales of trending products.</li>
+  <li><strong>Average Order Value (AOV):</strong> Increased AOV through cross-selling.</li>
+</ul>
+<p><strong>Success Stories:</strong></p>
+<ul>
+  <li><strong>Etsy:</strong> Etsy utilizes a Trending Products model to highlight popular and seasonal items on its platform. This strategy has led to significant sales boosts during key shopping periods, like holidays.</li>
+  <li><strong>Zalando:</strong> Zalando uses the model to stay ahead of fashion trends, resulting in a 15% sales increase of featured products.</li>
+</ul>
+</details>
 
-### A Practitioner's Guide
+<details>
+<summary><strong>A Practitioner's Guide</strong></summary>
+<p><strong>Best practices:</strong> Specific experiences/pages/audience for which this strategy might work well.</p>
+<table>
+  <tr>
+    <th>Experience/Page/Audience</th>
+    <th>Name</th>
+    <th>Reason</th>
+  </tr>
+  <tr>
+    <td>Homepage</td>
+    <td>New Visitors</td>
+    <td>Featuring trending products on the homepage can capture immediate attention and drive engagement.</td>
+  </tr>
+  <tr>
+    <td>Category Pages</td>
+    <td>Pages</td>
+    <td>Highlight trending items within specific categories to attract users interested in particular product types.</td>
+  </tr>
+  <tr>
+    <td>Search Results</td>
+    <td>Search Results</td>
+    <td>Include trending products in search results to offer popular choices alongside the user's search query.</td>
+  </tr>
+</table>
+</details>
 
-**Best practices:** Specific experiences/pages/audience for which this strategy might work well.
-
-| Experience/Page/Audience | Name            | Reason                                                                                          |
-|--------------------------|-----------------|-------------------------------------------------------------------------------------------------|
-| Homepage                 | New Visitors    | Featuring trending products on the homepage can capture immediate attention and drive engagement.|
-| Category Pages           | Pages           | Highlight trending items within specific categories to attract users interested in particular product types. |
-| Search Results           | Search Results  | Include trending products in search results to offer popular choices alongside the user's search query. |
-| Audience                 | Seasonal Shoppers| Show trending products to new visitors to quickly engage them with popular items.                 |
-|                          | Returning Customers | Highlight trending products that align with current seasons, holidays, or events.                |
-|                          |                 | Tailor trending recommendations based on past purchase history and browsing behavior to enhance relevance. |
-
- ** Variants **
-
-| Variant Name             | Parameters                  | Business Rules                                       |
-|--------------------------|-----------------------------|------------------------------------------------------|
-| Personalized Trending    | User's browsing history, Trending Products | Suggest items which align with the User's interests. |
-| Category Specific Trending | Category, Trending Threshold | Show Trending products within a specific category    |
+<details>
+<summary><strong>Variants</strong></summary>
+<p>Details on different variants of the Trending Strategy and their specific parameters and business rules.</p>
+<table>
+  <tr>
+    <th>Variant Name</th>
+    <th>Parameters</th>
+    <th>Business Rules</th>
+  </tr>
+  <tr>
+    <td>Personalized Trending</td>
+    <td>User's browsing history, Trending Products</td>
+    <td>Suggest items which align with the User's interests.</td>
+  </tr>
+  <tr>
+    <td>Category Specific Trending</td>
+    <td>Category, Trending Threshold</td>
+    <td>Show Trending products within a specific category</td>
+  </tr>
+</table>
+</details>

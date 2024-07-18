@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './explore.css';
 const ExploringTheTaxonomyComponent = () => {
   return (
     <div className="exploring-taxonomy-container">
@@ -10,7 +10,7 @@ const ExploringTheTaxonomyComponent = () => {
         <li>Data type of the attribute</li>
         <li>Formatting configuration</li>
       </ul>
-      <img src="https://d1r1e7xjkfj7nz.cloudfront.net/taxonomy.png" alt="Taxonomy" style={{ width: '100%', margin: '20px 0' }} />
+      <img src="https://d1r1e7xjkfj7nz.cloudfront.net/taxonomy.png" alt="Taxonomy" style={{ width: '60%', margin: '20px 0' }} />
       <p>The taxonomy, currently, only supports a single level of hierarchy except for tables. When there are multi-page tables, there is a hierarchy where, at the base level, there is the merged table with the constituent tables being shown one level indented.</p>
 
       <h2>Actions on the taxonomy</h2>

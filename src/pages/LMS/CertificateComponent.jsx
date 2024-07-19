@@ -20,11 +20,11 @@ const CertificateComponent = ({ username, email }) => {
       <div ref={certificateRef} className="certificate">
         <img src={certificateTemplate} alt="Certificate Template" className="certificate-template" />
         <div className="certificate-details">
-          <h2>Certificate of Achievement</h2>
+          {/* <h2>Certificate of Achievement</h2>
           <p>This is to certify that</p>
           <h3>{username}</h3>
           <p>has successfully completed the IDP course.</p>
-          <p>Email: {email}</p>
+          <p>Email: {email}</p> */}
         </div>
       </div>
       <button onClick={handleDownload}>Download Certificate</button>

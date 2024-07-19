@@ -36,8 +36,8 @@ const AnnotatingTablesComponent = ({ onComplete }) => {
   const imageBaseUrl = 'https://d1r1e7xjkfj7nz.cloudfront.net/'; // Base URL for the images
 
   const imageStyle = {
-    width: '300px', // Set the desired width
-    height: '200px', // Set the desired height
+    width: '600px', // Set the desired width
+    height: '300px', // Set the desired height
     objectFit: 'cover', // Ensure images fit within the specified dimensions
     marginBottom: '20px' // Add some space below each image
   };

@@ -1,8 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import TextComponent from './TextComponent';
 import HowToRegisterDocumentTypeComponent from './HowToRegisterDocumentTypeComponent';
+import Subsection1Component from './Subsection1Component';
+import Subsection2Component from './Subsection2Component';
 import HowToAnnotateComponent from './HowToAnnotateComponent';
 import QuestionAnswerComponent from './QuestionAnswerComponent';
 import DocumentTypeConfigurationComponent from './DocumentTypeConfigurationComponent';
@@ -19,7 +20,7 @@ import MultiPageTablesComponent from './MultiPageTablesComponent';
 import GuideToMultiPageTableOperationsComponent from './GuideToMultiPageTableOperationsComponent';
 import './UniqueVideoPlayerComponent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faGlobe, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 // Import local icons
 import bookIcon from './icons/book.png';
@@ -41,6 +42,7 @@ const VideoPlayerComponent = () => {
   const [currentStatusId, setCurrentStatusId] = useState('');
   const [currentComponent, setCurrentComponent] = useState(null);
   const [activeTab, setActiveTab] = useState(null);
+  const [expandedSections, setExpandedSections] = useState([]);
 
   const questions = [
     {
@@ -99,7 +101,7 @@ const VideoPlayerComponent = () => {
     {
       type: 'component',
       title: 'Q & A - I',
-      icon:  questionIcon,
+      icon: questionIcon,
       component: <QuestionAnswer1Component />
     },
     {
@@ -142,14 +144,28 @@ const VideoPlayerComponent = () => {
       type: 'component',
       title: 'How to Register a Document Type',
       icon: bookIcon,
-      component: <HowToRegisterDocumentTypeComponent />
+      component: <HowToRegisterDocumentTypeComponent />,
+      subsections: [
+        {
+          type: 'component',
+          title: 'Step-by-Step Guide',
+          icon: bookIcon,
+          component: <HowToRegisterDocumentTypeComponent />
+        },
+        {
+          type: 'component',
+          title: 'Document Type Configuration',
+          icon: videoIcon,
+          component:<DocumentTypeConfigurationComponent />
+        },
+      ]
     },
-    {
-      type: 'component',
-      title: 'Document Type Configuration',
-      icon: videoIcon,
-      component: <DocumentTypeConfigurationComponent />
-    },
+    // {
+    //   type: 'component',
+    //   title: 'Document Type Configuration',
+    //   icon: videoIcon,
+    //   component: <DocumentTypeConfigurationComponent />
+    // },
     {
       type: 'component',
       title: 'Q & A - III',
@@ -240,13 +256,12 @@ const VideoPlayerComponent = () => {
     }
   };
 
-  const toggleSection = (header) => {
-    const content = header.nextElementSibling;
-    if (content.style.display === 'none' || content.style.display === '') {
-      content.style.display = 'block';
-    } else {
-      content.style.display = 'none';
-    }
+  const toggleSection = (index) => {
+    setExpandedSections(prevExpandedSections =>
+      prevExpandedSections.includes(index)
+        ? prevExpandedSections.filter(i => i !== index)
+        : [...prevExpandedSections, index]
+    );
   };
 
   const toggleCourseContent = () => {
@@ -274,18 +289,22 @@ const VideoPlayerComponent = () => {
   };
 
   const loadContentByType = (content, index) => {
-    switch (content.type) {
-      case 'text':
-        loadTextComponent(content.title, content.description, index);
-        break;
-      case 'image':
-        loadImageComponent(content.imageUrl, content.title, index);
-        break;
-      case 'component':
-        loadComponent(content.title, content.component, index);
-        break;
-      default:
-        break;
+    if (content.subsections) {
+      toggleSection(index); // Toggle the visibility of the subsections
+    } else {
+      switch (content.type) {
+        case 'text':
+          loadTextComponent(content.title, content.description, index);
+          break;
+        case 'image':
+          loadImageComponent(content.imageUrl, content.title, index);
+          break;
+        case 'component':
+          loadComponent(content.title, content.component, index);
+          break;
+        default:
+          break;
+      }
     }
   };
 
@@ -299,36 +318,52 @@ const VideoPlayerComponent = () => {
               <div key={index} className="unique-section">
                 <div className={`unique-section-header ${activeTab === index ? 'active-tab' : ''}`} onClick={() => loadContentByType(content, index)}>
                   <img src={content.icon} alt="" className="content-icon" /> {content.title}
+                  {content.subsections && (
+                    <FontAwesomeIcon icon={expandedSections.includes(index) ? faCaretDown : faCaretRight} className="expand-icon" />
+                  )}
                 </div>
-                <div className="unique-section-content"></div>
+                {content.subsections && expandedSections.includes(index) && (
+                  <div className="unique-section-content">
+                    {content.subsections.map((subcontent, subindex) => (
+                      <div key={`${index}-${subindex}`} className="unique-subsection">
+                        <div className={`unique-section-header ${activeTab === `${index}-${subindex}` ? 'active-tab' : ''}`} onClick={() => loadComponent(subcontent.title, subcontent.component, `${index}-${subindex}`)}>
+                          <img src={subcontent.icon} alt="" className="content-icon" /> {subcontent.title}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             <div className="unique-section">
-              <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
+              <div className="unique-section-header" onClick={() => toggleSection('resources')}>
                 <img src={resourcesIcon} alt="" className="content-icon" /> Resources
+                <FontAwesomeIcon icon={expandedSections.includes('resources') ? faCaretDown : faCaretRight} className="expand-icon" />
               </div>
-              <div className="unique-section-content">
-                <ul style={{ marginLeft: '20px' }}>
-                  <li style={{ fontWeight: 'bold', color: 'grey' }}>How-to guides</li>
+              {expandedSections.includes('resources') && (
+                <div className="unique-section-content">
                   <ul style={{ marginLeft: '20px' }}>
-                    <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
-                    <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Creating a document type</a></li>
-                    <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li>
+                    <li style={{ fontWeight: 'bold', color: 'grey' }}>Reference</li>
+                    <ul style={{ marginLeft: '20px' }}>
+                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
+                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Creating a document type</a></li>
+                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li>
+                    </ul>
+                    <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
+                    <ul style={{ marginLeft: '20px' }}>
+                      <li><a href="https://drive.google.com/uc?export=download&id=1kgQ7QfVUCFCdIoY0mxpj6iP7h8Q8JXqi" target="_blank">Sample documents</a></li>
+                    </ul>
+                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
+                    <ul style={{ marginLeft: '20px' }}>
+                      <li><a href="#">Link to recording</a></li>
+                    </ul> */}
+                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
+                    <ul style={{ marginLeft: '20px' }}>
+                      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
+                    </ul> */}
                   </ul>
-                  <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
-                  <ul style={{ marginLeft: '20px' }}>
-                    <li><a href="https://drive.google.com/drive/folders/14tNYn4GQTG-0Y_PDxn7RlZya_svEjPWE?usp=sharing" target="_blank">Sample documents</a></li>
-                  </ul>
-                  {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
-                  <ul style={{ marginLeft: '20px' }}>
-                    <li><a href="#">Link to recording</a></li>
-                  </ul> */}
-                  {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
-                  <ul style={{ marginLeft: '20px' }}>
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
-                  </ul> */}
-                </ul>
-              </div>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -386,439 +421,3 @@ const VideoPlayerComponent = () => {
 };
 
 export default VideoPlayerComponent;
-
-
-// import React, { useEffect, useState } from 'react';
-// import Layout from '@theme/Layout';
-// import TextComponent from './TextComponent';
-// import HowToRegisterDocumentTypeComponent from './HowToRegisterDocumentTypeComponent';
-// import HowToAnnotateComponent from './HowToAnnotateComponent';
-// import QuestionAnswerComponent from './QuestionAnswerComponent';
-// import DocumentTypeConfigurationComponent from './DocumentTypeConfigurationComponent';
-// import IntroductionToDocumentTypeComponent from './IntroductionToDocumentTypeComponent';
-// import BaseFormatsOfDocumentTypeComponent from './BaseFormatsOfDocumentTypeComponent';
-// import QuestionAnswer1Component from './QuestionAnswer1Component';
-// import ZeroShotLearningComponent from './ZeroShotLearningComponent';
-// import ExploringTheTaxonomyComponent from './ExploringTheTaxonomyComponent';
-// import AddingNewAttributeComponent from './AddingNewAttributeComponent';
-// import PrimerOnDataTypesComponent from './PrimerOnDataTypesComponent';
-// import QuestionAnswer2Component from './QuestionAnswer2Component';
-// import AnnotatingTablesComponent from './AnnotatingTablesComponent';
-// import MultiPageTablesComponent from './MultiPageTablesComponent';
-// import GuideToMultiPageTableOperationsComponent from './GuideToMultiPageTableOperationsComponent';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faChevronLeft, faChevronRight, faGlobe, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-
-// // Import local icons
-// import bookIcon from './icons/book.png';
-// import questionIcon from './icons/message-question.png';
-// import videoIcon from './icons/video-square.png';
-// import resourcesIcon from './icons/resources.png'; // Add your resources icon here
-
-// const VideoPlayerComponent = () => {
-//   const [currentSection, setCurrentSection] = useState('video');
-//   const [isCourseContentVisible, setIsCourseContentVisible] = useState(true);
-//   const [videoData, setVideoData] = useState({
-//     title: 'Introduction to the course',
-//     description: 'Hello and welcome to the world of Intelligent Document Processing (IDP). Let\'s kick things off with Module 1 which is all about registering Document Types. To begin, here is a short video on what IDP is all about.',
-//     videoId: 'N0ZboK3w_Qg',
-//   });
-//   const [imageData, setImageData] = useState('');
-//   const [completedVideos, setCompletedVideos] = useState([false, false, false, false]);
-//   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-//   const [currentStatusId, setCurrentStatusId] = useState('');
-//   const [currentComponent, setCurrentComponent] = useState(null);
-//   const [activeTab, setActiveTab] = useState(null);
-//   const [courseContents, setCourseContents] = useState([]);
-
-//   const questions = [
-//     {
-//       question: 'Which one of these is not a recognized document structure:',
-//       options: ['Structured', 'Semi-structured', 'Unstructured', 'Non-deterministic'],
-//       correctAnswer: 'Non-deterministic',
-//     },
-//     {
-//       question: 'To register a passport as a new document type, which would you choose?',
-//       options: ['Structured', 'Semi-structured', 'Unstructured', 'ID Card'],
-//       correctAnswer: 'Semi-structured',
-//     },
-//     {
-//       question: 'Which of the following is not a data type supported currently?',
-//       options: ['Date', 'Name', 'Freeform text', 'Image'],
-//       correctAnswer: 'Image',
-//     },
-//   ];
-
-//   const finalQuestions = [
-//     {
-//       question: 'What is the data type that you would choose for extracting a name without needing to do any transformation?',
-//       options: ['Free-form text', 'Alphanumeric', 'Name', 'Any of the above'],
-//       correctAnswer: 'Any of the above',
-//     },
-//     {
-//       question: 'When annotating a new attribute, would you draw the box around:',
-//       options: ['The attribute name', 'The attribute value', 'Both'],
-//       correctAnswer: 'The attribute value',
-//     },
-//     {
-//       question: 'Which base document type would you choose to register a Sale Deed of a property?',
-//       options: ['Unstructured', 'Structured', 'Semi-structured', 'Any of the above'],
-//       correctAnswer: 'Semi-structured',
-//     },
-//     {
-//       question: 'Zero shot learning results in:',
-//       options: ['Only sections where both the name and the value of the attribute can be identified', 'Only sections where the name alone can be identified', 'All sections where attributes can be identified'],
-//       correctAnswer: 'All sections where attributes can be identified',
-//     },
-//   ];
-
-//   useEffect(() => {
-//     const initialCourseContents = [
-//       {
-//         type: 'component',
-//         title: 'Introduction to Document Type',
-//         icon: bookIcon,
-//         component: <IntroductionToDocumentTypeComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Base Formats of Document Type',
-//         icon: bookIcon,  // Use local icon
-//         component: <BaseFormatsOfDocumentTypeComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Q & A - I',
-//         icon:  questionIcon,
-//         component: <QuestionAnswer1Component />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Zero-shot Learning',
-//         icon: bookIcon,
-//         component: <ZeroShotLearningComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Exploring the Taxonomy',
-//         icon: bookIcon,
-//         component: <ExploringTheTaxonomyComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Adding a New Attribute',
-//         icon: bookIcon,
-//         component: <AddingNewAttributeComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Primer on Data Types',
-//         icon: bookIcon,
-//         component: <PrimerOnDataTypesComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Q & A - II',
-//         icon: questionIcon,
-//         component: <QuestionAnswer2Component />
-//       },
-//       {
-//         type: 'component',
-//         title: 'All About Tables',
-//         icon: bookIcon,
-//         component: <AnnotatingTablesComponent />
-//       },
-//       {
-//         type: 'section',
-//         title: 'How to Register a Document Type',
-//         icon: videoIcon,
-//         subsections: [
-//           {
-//             type: 'component',
-//             title: 'How to Register Document Type',
-//             component: <HowToRegisterDocumentTypeComponent />
-//           },
-//           {
-//             type: 'component',
-//             title: 'How to Annotate',
-//             component: <HowToAnnotateComponent />
-//           }
-//         ],
-//         isVisible: false
-//       },
-//       {
-//         type: 'component',
-//         title: 'Document Type Configuration',
-//         icon: bookIcon,
-//         component: <DocumentTypeConfigurationComponent />
-//       },
-//       {
-//         type: 'component',
-//         title: 'Q & A - III',
-//         icon: questionIcon,
-//         component: <QuestionAnswerComponent questions={finalQuestions} /> 
-//       },
-//     ];
-//     setCourseContents(initialCourseContents);
-//   }, []);
-
-//   useEffect(() => {
-//     const tag = document.createElement('script');
-//     tag.src = 'https://www.youtube.com/iframe_api';
-//     const firstScriptTag = document.getElementsByTagName('script')[0];
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-//     window.onYouTubeIframeAPIReady = () => {
-//       window.player = new window.YT.Player('video-placeholder', {
-//         height: '500',
-//         width: '100%',
-//         videoId: 'N0ZboK3w_Qg',
-//         events: {
-//           onStateChange: onPlayerStateChange,
-//         },
-//       });
-//     };
-//   }, []);
-
-//   const changeVideo = (videoId, title, description, index, statusId) => {
-//     setCurrentSection('video');
-//     setVideoData({ videoId, title, description });
-//     setCurrentVideoIndex(index);
-//     setCurrentStatusId(statusId);
-//     setCurrentComponent(null);
-//     setActiveTab(index);
-//     if (window.player && window.player.loadVideoById) {
-//       window.player.loadVideoById(videoId);
-//     }
-//   };
-
-//   const loadTextComponent = (title, description, index) => {
-//     setCurrentSection('text');
-//     setVideoData({ videoId: '', title, description });
-//     setCurrentVideoIndex(index);
-//     setCurrentComponent(null);
-//     setActiveTab(index);
-//     if (window.player && window.player.stopVideo) {
-//       window.player.stopVideo();
-//     }
-//   };
-
-//   const loadImageComponent = (imageUrl, title, index) => {
-//     setCurrentSection('image');
-//     setImageData(imageUrl);
-//     setVideoData({ videoId: '', title, description: '' });
-//     setCurrentVideoIndex(index);
-//     setCurrentComponent(null);
-//     setActiveTab(index);
-//     if (window.player && window.player.stopVideo) {
-//       window.player.stopVideo();
-//     }
-//   };
-
-//   const loadComponent = (title, component, index) => {
-//     setCurrentSection('component');
-//     setVideoData({ videoId: '', title, description: '' });
-//     setCurrentStatusId('');
-//     setCurrentComponent(component);
-//     setCurrentVideoIndex(index);
-//     setActiveTab(index);
-//     if (window.player && window.player.stopVideo) {
-//       window.player.stopVideo();
-//     }
-//   };
-
-//   const onPlayerStateChange = (event) => {
-//     if (event.data === window.YT.PlayerState.ENDED) {
-//       markAsCompleted(currentVideoIndex, currentStatusId);
-//     }
-//   };
-
-//   const markAsCompleted = (index, statusId) => {
-//     const updatedCompletedVideos = [...completedVideos];
-//     updatedCompletedVideos[index] = true;
-//     setCompletedVideos(updatedCompletedVideos);
-
-//     const videoItem = document.getElementById(`video-${index}`);
-//     if (videoItem) {
-//       videoItem.style.color = 'green';
-//     }
-//   };
-
-//   const toggleSection = (index) => {
-//     const updatedContents = courseContents.map((content, idx) => {
-//       if (index === idx) {
-//         return { ...content, isVisible: !content.isVisible };
-//       }
-//       return content;
-//     });
-//     setCourseContents(updatedContents);
-//   };
-
-//   const toggleCourseContent = () => {
-//     setIsCourseContentVisible(!isCourseContentVisible);
-//   };
-
-//   const nextItem = () => {
-//     if (currentVideoIndex < courseContents.length - 1) {
-//       const nextIndex = currentVideoIndex + 1;
-//       setCurrentVideoIndex(nextIndex);
-//       const nextContent = courseContents[nextIndex];
-//       loadContentByType(nextContent, nextIndex);
-//       setActiveTab(nextIndex);
-//     }
-//   };
-
-//   const previousItem = () => {
-//     if (currentVideoIndex > 0) {
-//       const prevIndex = currentVideoIndex - 1;
-//       setCurrentVideoIndex(prevIndex);
-//       const prevContent = courseContents[prevIndex];
-//       loadContentByType(prevContent, prevIndex);
-//       setActiveTab(prevIndex);
-//     }
-//   };
-
-//   const loadContentByType = (content, index) => {
-//     switch (content.type) {
-//       case 'text':
-//         loadTextComponent(content.title, content.description, index);
-//         break;
-//       case 'image':
-//         loadImageComponent(content.imageUrl, content.title, index);
-//         break;
-//       case 'component':
-//         loadComponent(content.title, content.component, index);
-//         break;
-//       case 'section':
-//         toggleSection(index);
-//         break;
-//       default:
-//         break;
-//     }
-//   };
-
-//   return (
-//     <Layout>
-//       <style>
-//         {`
-//           .unique-subsection {
-//             padding-left: 20px;
-//             display: none;
-//           }
-
-//           .unique-subsection.visible {
-//             display: block;
-//           }
-
-//           .unique-section-header {
-//             cursor: pointer;
-//             display: flex;
-//             align-items: center;
-//           }
-
-//           .content-icon {
-//             margin-right: 10px;
-//           }
-//         `}
-//       </style>
-//       <div className={`unique-container ${isCourseContentVisible ? '' : 'collapsed'}`}>
-//         {isCourseContentVisible && (
-//           <div className="unique-course-content">
-//             <h2>Course Content</h2>
-//             {courseContents.map((content, index) => (
-//               <div key={index} className="unique-section">
-//                 <div className={`unique-section-header ${activeTab === index ? 'active-tab' : ''}`} onClick={() => loadContentByType(content, index)}>
-//                   <img src={content.icon} alt="" className="content-icon" /> {content.title}
-//                   {content.type === 'section' && (
-//                     <FontAwesomeIcon
-//                       icon={content.isVisible ? faChevronUp : faChevronDown}
-//                       style={{ marginLeft: 'auto' }}
-//                     />
-//                   )}
-//                 </div>
-//                 {content.isVisible && content.subsections && (
-//                   <div className="unique-section-content">
-//                     {content.subsections.map((sub, subIndex) => (
-//                       <div key={subIndex} className={`unique-subsection ${content.isVisible ? 'visible' : ''}`} onClick={() => loadComponent(sub.title, sub.component, `${index}-${subIndex}`)}>
-//                         {sub.title}
-//                       </div>
-//                     ))}
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-//             <div className="unique-section">
-//               <div className="unique-section-header" onClick={(e) => toggleSection(e.target)}>
-//                 <img src={resourcesIcon} alt="" className="content-icon" /> Resources
-//               </div>
-//               <div className="unique-section-content">
-//                 <ul style={{ marginLeft: '20px' }}>
-//                   <li style={{ fontWeight: 'bold', color: 'grey' }}>How-to guides</li>
-//                   <ul style={{ marginLeft: '20px' }}>
-//                     <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
-//                     <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Creating a document type</a></li>
-//                     <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li>
-//                   </ul>
-//                   <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
-//                   <ul style={{ marginLeft: '20px' }}>
-//                     <li><a href="https://drive.google.com/drive/folders/14tNYn4GQTG-0Y_PDxn7RlZya_svEjPWE?usp=sharing" target="_blank">Sample documents</a></li>
-//                   </ul>
-//                 </ul>
-//               </div>
-//             </div>
-//           </div>
-//         )}
-//         <div className={`unique-video-section ${isCourseContentVisible ? '' : 'full-width'}`}>
-//           <h1 className="unique-video-title"></h1>
-//           {currentSection === 'video' && (
-//             <>
-//               <h3 id="unique-video-title">{videoData.title}</h3>
-//               <p className="unique-video-description" id="unique-video-description">
-//                 {videoData.description}
-//               </p>
-//             </>
-//           )}
-//           <div className="unique-video-player-container" id="unique-video-player-container" style={{ display: currentSection === 'video' ? 'block' : 'none' }}>
-//             <div id="video-placeholder"></div>
-//           </div>
-//           {currentSection === 'text' && (
-//             <div className="content-section">
-//               <TextComponent
-//                 title={videoData.title}
-//                 description={videoData.description}
-//               />
-//             </div>
-//           )}
-//           {currentSection === 'image' && (
-//             <div className="unique-image-container">
-//               <img src={imageData} alt={videoData.title} style={{ maxWidth: '100%' }} />
-//               <h3>{videoData.title}</h3>
-//             </div>
-//           )}
-//           {currentSection === 'component' && (
-//             <div className="content-section">
-//               {currentComponent}
-//             </div>
-//           )}
-//           <div className="navigation-buttons">
-//             <button onClick={previousItem} disabled={currentVideoIndex === 0}>
-//               Previous
-//             </button>
-//             <button onClick={nextItem} disabled={currentVideoIndex === courseContents.length - 1}>
-//               Next
-//             </button>
-//           </div>
-//         </div>
-//         <div
-//           className="menu-toggle-btn"
-//           onClick={toggleCourseContent}
-//           style={{ left: isCourseContentVisible ? '255px' : '10px' }} // Adjust left value based on course content visibility
-//         >
-//           <FontAwesomeIcon icon={isCourseContentVisible ? faChevronLeft : faChevronRight} />
-//         </div>
-//       </div>
-//     </Layout>
-//   );
-// };
-
-// export default VideoPlayerComponent;

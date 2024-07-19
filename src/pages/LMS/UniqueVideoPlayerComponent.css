@@ -144,8 +144,11 @@
   height: auto;
 }
 
+.expand-icon {
+  margin-left: auto;
+}
+
 .unique-section-content {
-  display: none;
   margin-left: 21px;
   color: #666;
   font-size: 14px;
@@ -301,4 +304,7 @@ h2 {
     padding: 20px;
   }
   
+}
+.unique-subsection {
+  margin-left: 20px;
 }

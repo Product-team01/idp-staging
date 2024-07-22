@@ -4,7 +4,6 @@ const MultiPageTablesComponent = () => {
   const tableStyle = {
     width: '100%',
     borderCollapse: 'collapse',
-    borderRadius: '8px',
     overflow: 'hidden',
   };
 

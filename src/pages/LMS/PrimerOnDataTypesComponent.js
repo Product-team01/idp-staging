@@ -7,7 +7,7 @@ const PrimerOnDataTypesComponent = () => {
       <p>
         Typically, data that is extracted from documents is either stored in data stores for further use or is used in immediate post-extraction processes. In either case, specifying the data type of the extracted data is key. In view of this, Vue’s IDP allows you to define data types for the extracted data so that they can be used in the way that you would want them to subsequently. Below is a list of the data types supported by Vue, a description of each, and what customization options are natively available.
       </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', borderRadius: '8px', overflow: 'hidden' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', overflow: 'hidden' }}>
         <thead>
           <tr>
             <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4', fontWeight: 'bold', verticalAlign: 'top' }}>Data Type</th>

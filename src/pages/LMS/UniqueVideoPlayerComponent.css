@@ -1,3 +1,6 @@
+/* Importing Comic Sans MS from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;700&display=swap');
+
 /* Define CSS variables for light and dark modes */
 :root {
   --background: #ffffff;
@@ -21,7 +24,7 @@
 
 .unique-container {
   display: flex;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
   position: relative;
 }
 

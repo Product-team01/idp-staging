@@ -225,8 +225,12 @@
 h2 {
   color: var(--text-color);
   font-size: 24px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 10px; /* Reduce the bottom margin */
+  margin-top: 10px; /* Add a top margin to h2 */
+}
+
+p {
+  margin-bottom: 10px; /* Reduce the bottom margin of paragraphs */
 }
 
 .content-section {

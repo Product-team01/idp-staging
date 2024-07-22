@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+
 .unique-text-container {
     margin: 20px;
-    font-family: 'Arial', sans-serif;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;

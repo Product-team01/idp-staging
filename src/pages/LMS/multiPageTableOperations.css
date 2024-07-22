@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 
-.adding-new-attribute-container {
-    font-family: 'Comic Sans MS', Arial, sans-serif;
-    margin: 20px;
-    color: var(--text-color);
-  }
+
   
   h1, h2 {
     color: var(--text-color);

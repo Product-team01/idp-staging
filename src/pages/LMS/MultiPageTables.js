@@ -13,12 +13,15 @@ const MultiPageTablesComponent = () => {
     padding: '8px',
     textAlign: 'left',
     backgroundColor: '#f4f4f4',
+    fontWeight: 'bold',
+    verticalAlign: 'top',
   };
 
   const tdStyle = {
     border: '1px solid black',
     padding: '8px',
     textAlign: 'left',
+    verticalAlign: 'top',
   };
 
   return (

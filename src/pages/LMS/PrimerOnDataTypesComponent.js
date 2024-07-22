@@ -10,30 +10,30 @@ const PrimerOnDataTypesComponent = () => {
       <table style={{ width: '100%', borderCollapse: 'collapse', borderRadius: '8px', overflow: 'hidden' }}>
         <thead>
           <tr>
-            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4' }}>Data Type</th>
-            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4' }}>Description</th>
-            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4' }}>Usage</th>
-            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4' }}>Customization Options</th>
+            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4', fontWeight: 'bold', verticalAlign: 'top' }}>Data Type</th>
+            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4', fontWeight: 'bold', verticalAlign: 'top' }}>Description</th>
+            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4', fontWeight: 'bold', verticalAlign: 'top' }}>Usage</th>
+            <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', backgroundColor: '#f4f4f4', fontWeight: 'bold', verticalAlign: 'top' }}>Customization Options</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Free form text</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>The most prevalent of all data types, this is typically the default data type when dealing with extraction that is predominantly text of various forms.</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Use this when you know that there is text but are not certain of what type it is</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>-</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Free form text</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>The most prevalent of all data types, this is typically the default data type when dealing with extraction that is predominantly text of various forms.</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Use this when you know that there is text but are not certain of what type it is</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>-</td>
           </tr>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Alphanumeric</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Similar to free-form text with the difference being a focus on the text being only alphabets and numerals</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Use this when you want to specify a certain number of characters and when you know that they text does not contain any special characters</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Limit on number of characters</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Alphanumeric</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Similar to free-form text with the difference being a focus on the text being only alphabets and numerals</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Use this when you want to specify a certain number of characters and when you know that they text does not contain any special characters</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Limit on number of characters</td>
           </tr>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Numeric</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Numeric input that can be formatted</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Used when the extraction consists of only numbers</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Numeric</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Numeric input that can be formatted</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when the extraction consists of only numbers</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>
               <ul style={{ margin: 0, paddingLeft: '20px' }}>
                 <li>Integer</li>
                 <li>Decimal Rounded to Two Digits</li>
@@ -46,10 +46,10 @@ const PrimerOnDataTypesComponent = () => {
             </td>
           </tr>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Name</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Free-form text (mostly containing only alphabets) that are identified as names</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Used when the underlying data is known to be a name that has different parts like a first name, last name, middle name, initials etc.</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Name</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Free-form text (mostly containing only alphabets) that are identified as names</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when the underlying data is known to be a name that has different parts like a first name, last name, middle name, initials etc.</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>
               <ul style={{ margin: 0, paddingLeft: '20px' }}>
                 <li>Full Name</li>
                 <li>First Name Only</li>
@@ -60,16 +60,16 @@ const PrimerOnDataTypesComponent = () => {
             </td>
           </tr>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Barcode</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>The underlying data is a barcode (or QR code).</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Used when there is a barcode or QR from which the number (for barcode) or URL (for QR code) needs to be extracted</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>-</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Barcode</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>The underlying data is a barcode (or QR code).</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when there is a barcode or QR from which the number (for barcode) or URL (for QR code) needs to be extracted</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>-</td>
           </tr>
           <tr>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Date</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Typical data types for identifying dates from documents</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>Used when the data is a date that needs to be extracted, and transformed if necessary)</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left' }}>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Date</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Typical data types for identifying dates from documents</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when the data is a date that needs to be extracted, and transformed if necessary)</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>
               <ul style={{ margin: 0, paddingLeft: '20px' }}>
                 <li>dd-mm-yyyy</li>
                 <li>dd/mm/yyyy</li>

@@ -75,7 +75,6 @@ const QuestionAnswer1Component = () => {
           <button
             className="next-button"
             onClick={handleNextQuestion}
-            disabled={!selectedOption}
           >
             {isLastQuestion ? 'Finish' : 'Next'}
           </button>
@@ -91,3 +90,4 @@ const QuestionAnswer1Component = () => {
 };
 
 export default QuestionAnswer1Component;
+ 

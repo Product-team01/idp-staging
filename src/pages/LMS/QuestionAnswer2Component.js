@@ -74,7 +74,6 @@ const QuestionAnswer2Component = () => {
       <button
         className="next-button"
         onClick={handleNextQuestion}
-        disabled={!selectedOption}
       >
         {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
       </button>

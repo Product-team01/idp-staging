@@ -4,25 +4,25 @@ import './QuestionAnswer1Component.css';
 const QuestionAnswer3Component = () => {
   const questions = [
     {
-        question: 'What is the data type that you would choose for extracting a name without needing to do any transformation?',
-        options: ['Free-form text', 'Alphanumeric', 'Name', 'Any of the above'],
-        correctAnswer: 'Any of the above',
-      },
-      {
-        question: 'When annotating a new attribute, would you draw the box around:',
-        options: ['The attribute name', 'The attribute value', 'Both'],
-        correctAnswer: 'The attribute value',
-      },
-      {
-        question: 'Which base document type would you choose to register a Sale Deed of a property?',
-        options: ['Unstructured', 'Structured', 'Semi-structured', 'Any of the above'],
-        correctAnswer: 'Semi-structured',
-      },
-      {
-        question: 'Zero shot learning results in:',
-        options: ['Only sections where both the name and the value of the attribute can be identified', 'Only sections where the name alone can be identified', 'All sections where attributes can be identified'],
-        correctAnswer: 'All sections where attributes can be identified',
-      },
+      question: 'What is the data type that you would choose for extracting a name without needing to do any transformation?',
+      options: ['Free-form text', 'Alphanumeric', 'Name', 'Any of the above'],
+      correctAnswer: 'Any of the above',
+    },
+    {
+      question: 'When annotating a new attribute, would you draw the box around:',
+      options: ['The attribute name', 'The attribute value', 'Both'],
+      correctAnswer: 'The attribute value',
+    },
+    {
+      question: 'Which base document type would you choose to register a Sale Deed of a property?',
+      options: ['Unstructured', 'Structured', 'Semi-structured', 'Any of the above'],
+      correctAnswer: 'Semi-structured',
+    },
+    {
+      question: 'Zero shot learning results in:',
+      options: ['Only sections where both the name and the value of the attribute can be identified', 'Only sections where the name alone can be identified', 'All sections where attributes can be identified'],
+      correctAnswer: 'All sections where attributes can be identified',
+    },
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -79,7 +79,6 @@ const QuestionAnswer3Component = () => {
       <button
         className="next-button"
         onClick={handleNextQuestion}
-        disabled={!selectedOption}
       >
         {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
       </button>

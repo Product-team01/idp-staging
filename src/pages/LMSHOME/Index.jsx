@@ -15,7 +15,7 @@ const Homepage = () => {
     },
     {
       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-      title: 'Annotation',
+      title: 'Datasets',
       organization: 'Document',
       level: 'Beginner',
       type: 'Specialization',

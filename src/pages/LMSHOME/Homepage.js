@@ -19,7 +19,7 @@ const Homepage = () => {
       organization: 'University of Michigan',
       level: 'Beginner',
       type: 'Specialization',
-      href: '/another-path'
+      href: '/LMS-2'
     },
     {
       image: 'https://example.com/image3.jpg',

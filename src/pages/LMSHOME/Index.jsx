@@ -19,7 +19,7 @@ const Homepage = () => {
       organization: 'Document',
       level: 'Beginner',
       type: 'Specialization',
-      href: '/another-path'
+      href: '/LMS-2'
     },
     {
       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',

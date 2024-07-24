@@ -15,7 +15,7 @@ get:
     - name: preset
       in: query
       description:
-        A optional flag, when set to true, will return only client level preset strategies.
+        A optional flag, when set to true, will return only preset strategies.
         Default is false
       required: false
       schema:
@@ -28,6 +28,27 @@ get:
       required: false
       schema:
         type: boolean
+    - name: type
+      in: query
+      description:
+        A optional flag, used for model filtering
+      required: false
+      schema:
+        type: string
+    - name: tabs
+      in: query
+      description:
+        A optional flag, used for model filtering
+      required: false
+      schema:
+        type: string
+    - name: best_used_in
+      in: query
+      description:
+        A optional flag, used for model filtering
+      required: false
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Response

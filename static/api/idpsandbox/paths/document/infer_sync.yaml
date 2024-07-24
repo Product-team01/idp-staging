@@ -1,51 +1,265 @@
 post:
   tags:
-    - idpSandbox
-  summary: Infer sync API
-  description: get document by id
-  operationId: inferSyncDocument
-  parameters:
-  - name: x-api-key
-    in: header
-    description: api key of the user
-    schema:
-      type: string
-  - name: x-correlation-id
-    in: header
-    description: correlation id to track requests
-    schema:
-      type: string
-  - name: accounts-id
-    in: header  
-    description: account id of the account
-    schema:
-      type: string
+    - default
+  summary: Process Document Sync
   requestBody:
-    description: document that need to be added
     content:
       application/json:
         schema:
-          $ref: '../../idp-schemas/document/infer_sync_req_body.yaml'
-    required: true
+          type: object
+          example:
+            input:
+              name: pan_1
+              input_type: url/base64
+              file_extension: jpg
+              files: []
+            doc_type_id: a87cbf2e-71e0-4c41-8499-9f7d9b492061
+            metadata:
+              name: John
+  parameters:
+    - name: x-api-key
+      in: header
+      schema:
+        type: string
+      example: "{{api-key}}"
+    - name: accounts-id
+      in: header
+      schema:
+        type: string
+      example: "{{account_id}}"
+    - name: x-correlation-id
+      in: header
+      schema:
+        type: string
+      example: d3f3a0d8-9b67-4d22-ae27-ec634ae5e172
   responses:
-    '200':
-      description: successful operation
+    undefined:
+      headers:
+        Content-Type:
+          schema:
+            type: string
+            example: application/json
       content:
         application/json:
           schema:
             type: object
-            properties:
-              status:
-                description: status of the request
-                type: string
-                enum:
-                - SUCCESS
-                - FAILURE
-              $ref: '../../idp-schemas/document/infer_sync_resp.yaml'
-    '500':
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            $ref: '../../../schemas/errors/failure-response.yaml'
-  x-codegen-request-body-name: body
+          example:
+            status: success
+            message: The document has been processed successfully
+            request_id: 92281d22-c7f8-4ffc-910b-293c91904e33
+            correlation_id: d3f3a0d8-9b67-4d22-ae27-ec634ae5e172
+            metadata:
+              name: John
+            data:
+              document_name: document_123
+              document_id: bc98a79e-97ac-4f8f-9423-5835c36e936b
+              doc_type_id: b841c296-c22a-459e-ac77-01e21e3ff6c7
+              extraction_results:
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Registration Number
+                  value:
+                    raw: "23023001000001"
+                    normalized: "23023001000001"
+                  confidence: 0.9498270416259765
+                  coordinates:
+                    - x1: 1447
+                      x2: 1759
+                      y1: 723
+                      y2: 760
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Place / RIA
+                  value:
+                    raw: Chandigarh
+                    normalized: Chandigarh
+                  confidence: 0.9542401123046875
+                  coordinates:
+                    - x1: 754
+                      x2: 979
+                      y1: 1863
+                      y2: 1910
+                - page_number: "1"
+                  type: Free Form Text
+                  label: "Issued On "
+                  value:
+                    raw: 06-01-2023
+                    normalized: 06-01-2023
+                  confidence: null
+                  coordinates:
+                    - x1: 752
+                      x2: 1330
+                      y1: 1934
+                      y2: 1981
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Valid Upto
+                  value:
+                    raw: "05-01-2028 "
+                    normalized: "05-01-2028 "
+                  confidence: null
+                  coordinates:
+                    - x1: 751
+                      x2: 1509
+                      y1: 2007
+                      y2: 2052
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Barcode_page1
+                  value:
+                    raw: >-
+                      https://foscos.fssai.gov.in/display-details/111890480/REG
+                    normalized: >-
+                      https://foscos.fssai.gov.in/display-details/111890480/REG
+                  confidence: 100
+                  coordinates:
+                    - x1: 1828
+                      x2: 2030
+                      y1: 837
+                      y2: 634
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Name and address
+                  value:
+                    raw: >-
+                      IDLI HOUSE@Suman c/ o: deepak kumar, h no. 3460,
+                      sector 27d, Sector 27, Chandigarh, Chandigarh- 160019
+                    normalized: >-
+                      IDLI HOUSE@Suman c/ o: deepak kumar, h no. 3460,
+                      sector 27d, Sector 27, Chandigarh, Chandigarh- 160019
+                  confidence: 0.9631762903846154
+                  coordinates:
+                    - x1: 1296.2146662945888
+                      x2: 2081.2479437840825
+                      y1: 850.0155677770495
+                      y2: 1118.235270919293
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Address of food business
+                  value:
+                    raw: >-
+                      Shop no. 71 P, Janta Market Sector 27 D, Sector 27,
+                      Chandigarh, Chandigarh- 160019
+                    normalized: >-
+                      Shop no. 71 P, Janta Market Sector 27 D, Sector 27,
+                      Chandigarh, Chandigarh- 160019
+                  confidence: 0.9667743060000001
+                  coordinates:
+                    - x1: 1286.40175032597
+                      x2: 2094.331831742241
+                      y1: 1150.9449908146887
+                      y2: 1340.6613662079828
+                - page_number: "1"
+                  type: Free Form Text
+                  label: Kind of Business
+                  value:
+                    raw: Restaurants
+                    normalized: Restaurants
+                  confidence: 0.98981565
+                  coordinates:
+                    - x1: 1269.1454075317365
+                      x2: 1601.8742348142484
+                      y1: 1349.3268121810854
+                      y2: 1441.5961508392609
+                - page_number: "2"
+                  type: table
+                  label: Table - 1
+                  value:
+                    raw:
+                      - Validity From: 06-01-2023
+                        Validity Upto: 05-01-2028
+                        Issued On: 06-01-2023
+                        Fee Paid: 500 INR
+                        Type: New
+                    normalized:
+                      - Validity From: 06-01-2023
+                        Validity Upto: 05-01-2028
+                        Issued On: 06-01-2023
+                        Fee Paid: 500 INR
+                        Type: New
+                  confidence: 0.99658203125
+                  coordinates:
+                    - x1: 319
+                      x2: 2507
+                      y1: 787
+                      y2: 959
+                - page_number: "2"
+                  type: table
+                  label: Suspension History
+                  value:
+                    raw:
+                      - S.No: ""
+                        History: N/A
+                        Date: ""
+                    normalized:
+                      - S.No: ""
+                        History: N/A
+                        Date: ""
+                  confidence: 0.96484375
+                  coordinates:
+                    - x1: 325
+                      x2: 2502
+                      y1: 1083
+                      y2: 1249
+                - page_number: "2"
+                  type: Free Form Text
+                  label: / Registration Number
+                  value:
+                    raw: "23023001000001"
+                    normalized: "23023001000001"
+                  confidence: 0.8
+                  coordinates:
+                    - x1: 1627
+                      x2: 1950
+                      y1: 727
+                      y2: 767
+                - page_number: "2"
+                  type: Free Form Text
+                  label: Current Status of Registration
+                  value:
+                    raw: Registration Certificate issued
+                    normalized: Registration Certificate issued
+                  confidence: 0.9569683074951172
+                  coordinates:
+                    - x1: 1116
+                      x2: 1816
+                      y1: 1302
+                      y2: 1360
+                - page_number: "3"
+                  type: Free Form Text
+                  label: Name of the food category
+                  value:
+                    raw: 16 - Prepared Foods
+                    normalized: 16 - Prepared Foods
+                  confidence: 0.9550094604492188
+                  coordinates:
+                    - x1: 467
+                      x2: 877
+                      y1: 1314
+                      y2: 1368
+              validation_results:
+                - type: document_quality
+                  meta_info:
+                    pages_quality_info:
+                      - page: "1"
+                        quality_check_result: true
+                  status: success
+                - type: classification
+                  meta_info: {}
+                  status: success
+                - type: signature_detection
+                  meta_info: {}
+                  status: success
+                - type: seal_detection
+                  meta_info: {}
+                  status: success
+              pages_info:
+                "1":
+                  height: 2523
+                  width: 1786
+                  image_url: >-
+                    https://d1lf1l8ltkvgto.cloudfront.net/file_uploads/workflow=baad3fbc-1126-11ef-9e11-ea725e5aeb04/job=fc45c506-3fbd-4725-ac33-a244ab620748/fc45c506-3fbd-4725-ac33-a244ab620748__1.jpeg
+                  raw_image_url: >-
+                    https://d1lf1l8ltkvgto.cloudfront.net/file_uploads/workflow=baad3fbc-1126-11ef-9e11-ea725e5aeb04/job=fc45c506-3fbd-4725-ac33-a244ab620748/fc45c506-3fbd-4725-ac33-a244ab620748__1.jpeg
+                  low_res_image_url: >-
+                    https://d1lf1l8ltkvgto.cloudfront.net/file_uploads/workflow=baad3fbc-1126-11ef-9e11-ea725e5aeb04/job=fc45c506-3fbd-4725-ac33-a244ab620748/fc45c506-3fbd-4725-ac33-a244ab620748__1_low_res.jpeg

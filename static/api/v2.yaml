@@ -48,8 +48,15 @@ security:
 
 paths:
   # Document APIs
-  /api/v1/documents/infer/sync:
+  /api/v2/documents/infer/sync:
     $ref: ../api/idpsandbox/idp-paths/document/infer_sync.yaml
+  /api/v2/documents/async:
+    $ref: ../api-docs/idpsandbox/idp-paths/document/infer_async.yaml
+  /api/v2/documents/{document_id}:
+    $ref: ../api-docs/idpsandbox/idp-paths/document/get_document.yaml
+
+
+
 
 
 

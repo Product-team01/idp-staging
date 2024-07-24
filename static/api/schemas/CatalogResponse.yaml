@@ -38,5 +38,11 @@ properties:
   status:
     type: string
     example: READY
+  catalog_group:
+    type: string
+  upload_type:
+    type: string
+  instructions:
+    type: string
 required:
 - name

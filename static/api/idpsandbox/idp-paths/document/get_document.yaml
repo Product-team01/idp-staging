@@ -1,35 +1,13 @@
-post:
+get:
   tags:
-    - 2dotx
-  summary: infer sync API
-  description: >- 
-    This API endpoint allows you to perform document inference
-    synchronously.
-
-
-    ### Request Structure
-
-
-    #### Request Body
-
-
-    | Field             | Type   | Description                                                                 |
-    |-------------------|--------|-----------------------------------------------------------------------------|
-    | `input`           | dict   | Contains details about the input document for processing.                   |
-    | `name`            | string | Name of the input document.                                                 |
-    | `input_type`      | string | Type of input, such as URL or base64.                                        |
-    | `file_extension`  | string | The file extension of the input document.                                    |
-    | `files`           | array  | List of files to be processed (URLs or base64 strings).                      |
-    | `doc_type_id`     | string | Type identifier for the document.                                            |
-    | `metadata`        | dict   | Additional information.                                                      |
-
-
+    - default
+  summary: Get Document Details
+  description: >-
+    This API endpoint allows you to retrieve the results of the extracted document.
 
     ### Response Structure
 
-
     #### Successful Response (200 OK)
-
 
     | Field               | Type   | Description                                                                 |
     |---------------------|--------|-----------------------------------------------------------------------------|
@@ -61,38 +39,31 @@ post:
     | `raw_image_url`     | string | URL of the raw page image.                                                  |
     | `low_res_image_url` | string | URL of the low-resolution page image.                                       |
 
-  requestBody:
-    content:
-      application/json:
-        schema:
-          type: object
-          example:
-            input:
-              name: pan_1
-              input_type: url/base64
-              file_extension: jpg
-              files: []
-            doc_type_id: a87cbf2e-71e0-4c41-8499-9f7d9b492061
-            metadata:
-              name: John
   parameters:
     - name: x-api-key
       in: header
       schema:
         type: string
-      example: '{{api-key}}'
+      example: "{{api-key}}"
     - name: accounts-id
       in: header
       schema:
         type: string
-      example: '{{account_id}}'
+      example: "{{account_id}}"
     - name: x-correlation-id
       in: header
       schema:
         type: string
-      example: d3f3a0d8-9b67-4d22-ae27-ec634ae5e172
+      example: a1d0eb45-65df-4a7e-ae0e-88e2ad1707f7
+    - name: document_id
+      in: path
+      schema:
+        type: string
+      required: true
+      example: njgnwb45-65df-4a7e-ae0e-88e2ad1707f7
   responses:
-    200:
+    "200":
+      description: OK
       headers:
         Content-Type:
           schema:
@@ -106,28 +77,28 @@ post:
             status: success
             message: The document has been processed successfully
             request_id: 92281d22-c7f8-4ffc-910b-293c91904e33
-            correlation_id: d3f3a0d8-9b67-4d22-ae27-ec634ae5e172
+            correlation_id: a1d0eb45-65df-4a7e-ae0e-88e2ad1707f7
             metadata:
               name: John
             data:
               document_name: document_123
-              document_id: bc98a79e-97ac-4f8f-9423-5835c36e936b
+              document_id: njgnwb45-65df-4a7e-ae0e-88e2ad1707f7
               doc_type_id: b841c296-c22a-459e-ac77-01e21e3ff6c7
               state: pending
               extraction_results:
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Registration Number
                   value:
-                    raw: '23023001000001'
-                    normalized: '23023001000001'
+                    raw: "23023001000001"
+                    normalized: "23023001000001"
                   confidence: 0.9498270416259765
                   coordinates:
                     - x1: 1447
                       x2: 1759
                       y1: 723
                       y2: 760
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Place / RIA
                   value:
@@ -139,9 +110,9 @@ post:
                       x2: 979
                       y1: 1863
                       y2: 1910
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
-                  label: 'Issued On '
+                  label: "Issued On "
                   value:
                     raw: 06-01-2023
                     normalized: 06-01-2023
@@ -151,19 +122,19 @@ post:
                       x2: 1330
                       y1: 1934
                       y2: 1981
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Valid Upto
                   value:
-                    raw: '05-01-2028 '
-                    normalized: '05-01-2028 '
+                    raw: "05-01-2028 "
+                    normalized: "05-01-2028 "
                   confidence: null
                   coordinates:
                     - x1: 751
                       x2: 1509
                       y1: 2007
                       y2: 2052
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Barcode_page1
                   value:
@@ -177,7 +148,7 @@ post:
                       x2: 2030
                       y1: 837
                       y2: 634
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Name and address
                   value:
@@ -193,7 +164,7 @@ post:
                       x2: 2081.2479437840825
                       y1: 850.0155677770495
                       y2: 1118.235270919293
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Address of food business
                   value:
@@ -209,7 +180,7 @@ post:
                       x2: 2094.331831742241
                       y1: 1150.9449908146887
                       y2: 1340.6613662079828
-                - page_number: '1'
+                - page_number: "1"
                   type: Free Form Text
                   label: Kind of Business
                   value:
@@ -221,7 +192,7 @@ post:
                       x2: 1601.8742348142484
                       y1: 1349.3268121810854
                       y2: 1441.5961508392609
-                - page_number: '2'
+                - page_number: "2"
                   type: table
                   label: Table - 1
                   value:
@@ -243,37 +214,37 @@ post:
                       x2: 2507
                       y1: 787
                       y2: 959
-                - page_number: '2'
+                - page_number: "2"
                   type: table
                   label: Suspension History
                   value:
                     raw:
-                      - S.No: ''
+                      - S.No: ""
                         History: N/A
-                        Date: ''
+                        Date: ""
                     normalized:
-                      - S.No: ''
+                      - S.No: ""
                         History: N/A
-                        Date: ''
+                        Date: ""
                   confidence: 0.96484375
                   coordinates:
                     - x1: 325
                       x2: 2502
                       y1: 1083
                       y2: 1249
-                - page_number: '2'
+                - page_number: "2"
                   type: Free Form Text
                   label: / Registration Number
                   value:
-                    raw: '23023001000001'
-                    normalized: '23023001000001'
+                    raw: "23023001000001"
+                    normalized: "23023001000001"
                   confidence: 0.8
                   coordinates:
                     - x1: 1627
                       x2: 1950
                       y1: 727
                       y2: 767
-                - page_number: '2'
+                - page_number: "2"
                   type: Free Form Text
                   label: Current Status of Registration
                   value:
@@ -285,7 +256,7 @@ post:
                       x2: 1816
                       y1: 1302
                       y2: 1360
-                - page_number: '3'
+                - page_number: "3"
                   type: Free Form Text
                   label: Name of the food category
                   value:
@@ -301,7 +272,7 @@ post:
                 - type: document_quality
                   meta_info:
                     pages_quality_info:
-                      - page: '1'
+                      - page: "1"
                         quality_check_result: true
                   status: success
                 - type: classification
@@ -314,7 +285,7 @@ post:
                   meta_info: {}
                   status: success
               pages_info:
-                '1':
+                "1":
                   height: 2523
                   width: 1786
                   image_url: >-

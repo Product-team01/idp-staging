@@ -10,6 +10,14 @@ get:
     description: correlation id to track requests
     schema:
       type: string
+  - name: catalog_group
+    in: query
+    description:
+      A optional flag, used for catalog group filtering
+    required: false
+    schema:
+      type: string
+  
   responses:
     '200':
       description: Successful Response

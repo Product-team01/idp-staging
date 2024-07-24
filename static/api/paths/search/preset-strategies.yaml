@@ -20,6 +20,9 @@ post:
             value:
               name: string
               workflow_id: string
+              type: string
+              tabs: array
+              best_used_in: array
               config:
               - params:
                 - field: string

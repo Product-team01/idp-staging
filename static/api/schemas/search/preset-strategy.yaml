@@ -155,6 +155,16 @@ properties:
         type: integer
       unbundle:
         type: boolean
+  type:
+    type: string
+  tabs:
+    type: array
+    items:
+      type: string
+  best_used_in::
+    type: array
+    items:
+      type: string
   created_ts:
     type: string
     example: 2023-03-13T16:40:42.072016

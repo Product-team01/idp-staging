@@ -3,7 +3,7 @@ parameters:
     schema:
       title: Strategy Id
       type: string
-    name: strategy_id
+    name: preset_strategy_id
     in: path
 delete:
   tags:

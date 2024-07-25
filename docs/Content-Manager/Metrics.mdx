@@ -3,92 +3,132 @@ title: 'Metrics'
 sidebar_label: Metrics
 sidebar_position: 7
 ---
+import './howToRegisterDocumentType.css';
 
+<p>Metrics enable you to view all the metrics related to the performance accuracy and Confusion Matrix of catalogs.</p>
 
+<h2>Getting to Metrics</h2>
 
-## Metrics
+<h3>Navigation</h3>
+<ol>
+  <li>Choose <strong>Metrics</strong> from the top navigation bar.</li>
+  <li>Alternatively, click on the app drawer -> ‘Content Hub’ -> ‘Metrics’</li>
+</ol>
 
-Metrics enable you to view all the metrics related to the performance accuracy and Confusion Matrix of catalogs.
+<h2>Performance Accuracy</h2>
 
-### Getting to Metrics
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/ctmetrics1.png" alt="Performance Accuracy" title="Performance Accuracy" />
+</div>
 
-**Navigation**
+<ul>
+  <li><strong>Drilldown & drillup table:</strong> When you click on any attribute or value, it will drill-down & display corresponding associated child attribute/value metrics.</li>
+  <li><strong>Date range selector:</strong> It contains the created date of catalog/item and allows you to switch to any date range.</li>
+  <li><strong>Taxonomy switcher:</strong> It enables you to navigate to any level & select any attribute or value. Based on the level & attribute or value selected, the corresponding metrics will be displayed in the table.</li>
+  <li><strong>Search bar:</strong> It enables you to search using any attribute or value name.</li>
+  <li><strong>Attribute filter:</strong> It enables you to filter values within any column.</li>
+  <li><strong>Sort:</strong> It enables you to sort any column in ascending/descending order.</li>
+  <li><strong>Fullscreen view:</strong> This allows the table to be displayed in full screen view.</li>
+  <li><strong>Manage column:</strong> This allows to select the columns that are displayed in the table.</li>
+</ul>
 
-1. Choose **Metrics** from the top navigation bar.
-2. Alternatively, click on the app drawer -> ‘Content Hub’ -> ‘Metrics’
+<h2>Confusion Matrix</h2>
 
-### Performance Accuracy
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/ctmetrics2.png" alt="Confusion Matrix" title="Confusion Matrix" />
+</div>
 
-Performance accuracy provides a detailed view of catalog’s performance accuracy metrics.
+<ul>
+  <li><strong>Pin Rows & Columns:</strong> When you pin, the particular row or column will be moved to the top of matrix.</li>
+  <li><strong>Note:</strong></li>
+  <ul>
+    <li>You can pin only one row & one column at a time.</li>
+    <li>Unpinning will revert row/column back to original position.</li>
+  </ul>
+  <li><strong>Tab Switch ‘number/percentage’ View:</strong> It displays the data in the matrix in either absolute number or percentages.</li>
+  <li><strong>Sort Incorrect Predictions:</strong> It enables you to sort any value based on incorrect predictions.</li>
+  <li><strong>Note:</strong></li>
+  <ul>
+    <li>Both rows and columns will be sorted.</li>
+    <li>Correct predictions will always be available first followed by incorrect predictions in descending order.</li>
+  </ul>
+  <li><strong>Matrix Cell:</strong> When you click on this, it will open the context menu with these two options.</li>
+  <ul>
+    <li><strong>Highlight Prediction + Reviews:</strong> This highlights the entire row + column that this matrix cell is intersecting.</li>
+    <li><strong>View Data Points:</strong> This navigates you to the bulk view in explore with the data points filter based on the cell’s predicted & reviewed values.</li>
+  </ul>
+  <li><strong>Reset Matrix:</strong> This resets any action done by you & displays the default matrix for that particular taxonomy level.</li>
+</ul>
 
-  ![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/ctmetrics1.png 'a title')
+<h2>Glossary</h2>
 
-
-**Drilldown & drillup table:** When you click on any attribute or value, it will drill-down & display corresponding associated child attribute/value metrics.
-
-**Date range selector:** It contains the created date of catalog/item and allow you to switch to any date range
-
-**Taxonomy switcher:** It enables you to navigate to any level & select any attribute or value. Based on the level & attribute or value selected, the corresponding metrics will be displayed in the table
-
-**Search bar:** It enables you to search using any attribute or value name
-
-**Attribute filter:** It enables you to filter values within any column
-
-**Sort:** It enables you to sort any column in ascending/descending order
-
-**Fullscreen view:** This allows the table to be displayed in full screen view
-
-**Manage column:** This allows to select the columns that are displayed in the table.
-
-  
-
-
-### Confusion Matrix
-
-Confusion Matrix provides a detailed view of catalog’s Confusion Matrix metrics.
-
-  ![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/ctmetrics2.png 'a title')
-
-
-**Pin Rows & Columns:** When you pin, the particular row or column will be moved to the top of matrix.
-
-**Note:**
-
-* You can pin only one row & one column at a time
-* Unpinning will revert row/column back to original position
-
-**Tab Switch ‘number/percentage’ View:** It displays the data in the matrix in either absolute number or percentages
-
-**Sort Incorrect Predictions:** It enables you to sort any value based on incorrect predictions
-
-**Note:**
-
-* Both rows and columns will be sorted.
-* Correct predictions will always be available first followed by incorrect predictions in descending order
-
-**Matrix Cell:** When you click on this, it will open the context menu with these two options.
-
-* **Highlight Prediction + Reviews:** This highlights the entire row + column that this matrix cell is intersecting
-* **View Data Points:** This navigates you to the bulk view in explore with the data points filter based on the cell’s predicted & reviewed values
-
-**Reset Matrix:** This resets any action done by you & displays the default matrix for that particular taxonomy level.
-
-### Glossary
-
-| Metric Name | Description | 
-|---|---|
-| Total | # of items in the catalog |
-| Total Predictions | # of items in the catalog with one attribute-value prediction |
-| Predicted Values | # of values predicted |
-| Total Reviewed | # of items in the catalog with all attribute-value reviewed (predictions that were reviewed) |
-| Total Partially Reviewed | # of items in the catalog with at least one attribute-value reviewed (some the predictions that were reviewed) |
-|Tag Name| Name of attribute/value |
-| Total Not Reviewed | # of items in the catalog with no reviews (items with no reviews) |
-| Total Rejected | # of items in the catalog whose prediction got rejected. |
-| Reviewed Values | # of predicted values which got reviewed |
-| User Accepted | Number of predictions that were accepted by the user. System predicted 10 red colors. After review, 6 were actually red, and the user accepted all of them. |  
-| User Edited | Number of predictions or non-predictions that were edited by the user. System predicted 10 red colors. After review, the user edited 4 of them to be blue.  |
-| User Rejected | Number of predictions that were rejected by the user. | System predicted 10 red colors. After review, the user rejected 4 of them because they were not actually red. |
-| Precision | Percentage of correct predictions made by the system. System predicted 10 red colors. After review, only 6 were actually red, 4 were another color. So precision is 6/6+4 = 60%. |
-| Recall | Percentage of correct predictions made by the system against the actual value.System predicted 10 red, 5 blue colors. After review, out of 10 reds 6 are actually red, out of 5 blues 2 are red. So recall is 8/12 = 66.6%. |
-| Accuracy | Percentage of correct predictions made by the system against all predictions.System predicted 10 red, 5 blue colors. After review, out of 10 reds 6 are actually red, out of 5 blues 3 are blue. So accuracy is 9/15 = 60%. |
+<table>
+  <thead>
+    <tr>
+      <th>Metric Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total</td>
+      <td># of items in the catalog</td>
+    </tr>
+    <tr>
+      <td>Total Predictions</td>
+      <td># of items in the catalog with one attribute-value prediction</td>
+    </tr>
+    <tr>
+      <td>Predicted Values</td>
+      <td># of values predicted</td>
+    </tr>
+    <tr>
+      <td>Total Reviewed</td>
+      <td># of items in the catalog with all attribute-value reviewed (predictions that were reviewed)</td>
+    </tr>
+    <tr>
+      <td>Total Partially Reviewed</td>
+      <td># of items in the catalog with at least one attribute-value reviewed (some of the predictions that were reviewed)</td>
+    </tr>
+    <tr>
+      <td>Tag Name</td>
+      <td>Name of attribute/value</td>
+    </tr>
+    <tr>
+      <td>Total Not Reviewed</td>
+      <td># of items in the catalog with no reviews (items with no reviews)</td>
+    </tr>
+    <tr>
+      <td>Total Rejected</td>
+      <td># of items in the catalog whose prediction got rejected.</td>
+    </tr>
+    <tr>
+      <td>Reviewed Values</td>
+      <td># of predicted values which got reviewed</td>
+    </tr>
+    <tr>
+      <td>User Accepted</td>
+      <td>Number of predictions that were accepted by the user. System predicted 10 red colors. After review, 6 were actually red, and the user accepted all of them.</td>
+    </tr>
+    <tr>
+      <td>User Edited</td>
+      <td>Number of predictions or non-predictions that were edited by the user. System predicted 10 red colors. After review, the user edited 4 of them to be blue.</td>
+    </tr>
+    <tr>
+      <td>User Rejected</td>
+      <td>Number of predictions that were rejected by the user. System predicted 10 red colors. After review, the user rejected 4 of them because they were not actually red.</td>
+    </tr>
+    <tr>
+      <td>Precision</td>
+      <td>Percentage of correct predictions made by the system. System predicted 10 red colors. After review, only 6 were actually red, 4 were another color. So precision is 6/6+4 = 60%.</td>
+    </tr>
+    <tr>
+      <td>Recall</td>
+      <td>Percentage of correct predictions made by the system against the actual value. System predicted 10 red, 5 blue colors. After review, out of 10 reds 6 are actually red, out of 5 blues 2 are red. So recall is 8/12 = 66.6%.</td>
+    </tr>
+    <tr>
+      <td>Accuracy</td>
+      <td>Percentage of correct predictions made by the system against all predictions. System predicted 10 red, 5 blue colors. After review, out of 10 reds 6 were actually red, out of 5 blues 3 were blue. So accuracy is 9/15 = 60%.</td>
+    </tr>
+  </tbody>
+</table>

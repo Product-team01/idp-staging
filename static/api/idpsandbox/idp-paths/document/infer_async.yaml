@@ -1,8 +1,9 @@
 post:
+  operationId: asyncInference
   tags:
-    - default
+    - 2dotx
   summary: Process Document Async
-  description: >-
+  description: |
     This API endpoint allows you to perform document inference
     asynchronously.
 
@@ -76,7 +77,8 @@ post:
         type: string
       example: a1d0eb45-65df-4a7e-ae0e-88e2ad1707f7
   responses:
-    undefined:
+    200:
+      description: Document processing request accepted
       headers:
         Content-Type:
           schema:

@@ -3,90 +3,135 @@ title: Create a project
 sidebar_label: Create a project
 sidebar_position: 2
 ---
+import './howToRegisterDocumentType.css';
 
 A project encapsulates everything needed for a content organization workflow.
 
-1. In the Project Listing Screen (Enrich), click on ‘Create New’ Project
-1. Choose a Catalog
+<ol>
+  <li>In the Project Listing Screen (Enrich), click on ‘Create New’ Project</li>
+  <li>Choose a Catalog</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrich2bb.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrich2bb.png" alt="Choose a Catalog" title="Choose a Catalog" />
+</div>
 
-3. Choose a segment
+<ol start="3">
+  <li>Choose a segment</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrich3bb.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrich3bb.png" alt="Choose a segment" title="Choose a segment" />
+</div>
 
-4. Choose a feed
+<ol start="4">
+  <li>Choose a feed</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrich4bb.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrich4bb.png" alt="Choose a feed" title="Choose a feed" />
+</div>
 
-5. Review & manage the default Taxonomy
+<ol start="5">
+  <li>Review & manage the default Taxonomy</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrich5bb.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrich5bb.png" alt="Review & manage the default Taxonomy" title="Review & manage the default Taxonomy" />
+</div>
 
-- Delete the Taxonomy
-- Upload a custom Taxonomy
-- Download the Taxonomy
+<ul>
+  <li>Delete the Taxonomy</li>
+  <li>Upload a custom Taxonomy</li>
+  <li>Download the Taxonomy</li>
+</ul>
 
-6. View the default set of models available for the selected segment & taxonomy
+<ol start="6">
+  <li>View the default set of models available for the selected segment & taxonomy</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrich6bb.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrich6bb.png" alt="Default set of models" title="Default set of models" />
+</div>
 
-7. Click on Submit to create the Project
+<ol start="7">
+  <li>Click on Submit to create the Project</li>
+</ol>
 
 ## Feed
 
-A feed is a file which contains a set of content. For example a catalog feed contains information about each product like image url, tile, identifier, price etc…
+<p>A feed is a file which contains a set of content. For example, a catalog feed contains information about each product like image URL, title, identifier, price, etc.</p>
 
-In the Project explore screen,
+<p>In the Project explore screen:</p>
 
-- all the feeds which have already been imported into the project are displayed for you to access and either organize the content or data point.
-- you can also import new feed into project here.
+<ul>
+  <li>All the feeds which have already been imported into the project are displayed for you to access and either organize the content or data point.</li>
+  <li>You can also import new feed into the project here.</li>
+</ul>
 
-### Import a Feed:
+### Import a Feed
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/importafeed.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/importafeed.png" alt="Import a Feed" title="Import a Feed" />
+</div>
 
-1. Click on the ‘Import Feed’
-1. From the Feeds listing, select a feed and click on ‘Done’
+<ol>
+  <li>Click on the ‘Import Feed’</li>
+  <li>From the Feeds listing, select a feed and click on ‘Done’</li>
+</ol>
 
 **Note:**
 
-- It is possible to import only the feeds that are within the Catalog linked to the Project. Already imported feeds are not available for import again.
-- Whenever a feed is imported into a project only a sample of 3000 content or data points (from the feed) is used for organization & model training. If the number of data points is less than 3000, the entire file is taken.
+<ul>
+  <li>It is possible to import only the feeds that are within the Catalog linked to the Project. Already imported feeds are not available for import again.</li>
+  <li>Whenever a feed is imported into a project, only a sample of 3000 content or data points (from the feed) is used for organization & model training. If the number of data points is less than 3000, the entire file is taken.</li>
+</ul>
 
 ## Taxonomy
 
-A Taxonomy is a hierarchical structure of attributes to tag the data point against. The taxonomy provides a structure and flow to organize your data from root to leaf nodes. For example, ‘color’ is an attribute, while the actual colors ‘red’, ‘blue’, etc are possible values for the color attribute. Depending on your choice of segment, a preset taxonomy is recommended by default.
+<p>A Taxonomy is a hierarchical structure of attributes to tag the data point against. The taxonomy provides a structure and flow to organize your data from root to leaf nodes. For example, ‘color’ is an attribute, while the actual colors ‘red’, ‘blue’, etc., are possible values for the color attribute. Depending on your choice of segment, a preset taxonomy is recommended by default.</p>
 
-### Manage Taxonomy:
+### Manage Taxonomy
 
-- Click on the '+' action to add new attributes, values & levels to the Taxonomy
-- Click on the kebab menu to
-  - Rename - the attribute or value from Taxonomy
-  - Delete - the attribute or value from Taxonomy
-    - Note: Deleting an attribute or value after the content or data point has already been organized will reset the content and will be made available as unorganized within that Taxonomy level.
-  - Map fields - map any available pre-labeled data any attribute
+<ul>
+  <li>Click on the '+' action to add new attributes, values & levels to the Taxonomy</li>
+  <li>Click on the kebab menu to</li>
+  <ul>
+    <li>Rename - the attribute or value from Taxonomy</li>
+    <li>Delete - the attribute or value from Taxonomy</li>
+    <ul>
+      <li>Note: Deleting an attribute or value after the content or data point has already been organized will reset the content and will be made available as unorganized within that Taxonomy level.</li>
+    </ul>
+    <li>Map fields - map any available pre-labeled data any attribute</li>
+  </ul>
+</ul>
 
-### Import a custom Taxonomy:
+### Import a custom Taxonomy
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/importtaxx.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/importtaxx.png" alt="Import a custom Taxonomy" title="Import a custom Taxonomy" />
+</div>
 
-- Click on the upload icon
-- Choose import from CSV option
-- Upload the CSV with your Taxonomy details in the supported format and click on ‘Done’
+<ul>
+  <li>Click on the upload icon</li>
+  <li>Choose import from CSV option</li>
+  <li>Upload the CSV with your Taxonomy details in the supported format and click on ‘Done’</li>
+</ul>
 
 **Note:** Click on ‘Sample File’ to download a sample file with the supported Taxonomy format.
 
-### Import Taxonomy from another Project:
+### Import Taxonomy from another Project
 
-- Click on the upload icon
-- Choose Import from another project option
-- Select the project from the list and click on ‘Done’
+<ul>
+  <li>Click on the upload icon</li>
+  <li>Choose Import from another project option</li>
+  <li>Select the project from the list and click on ‘Done’</li>
+</ul>
 
-### Delete Taxonomy:
+### Delete Taxonomy
 
-Click on the ‘Delete’ icon will prompt the user to request a confirmation. Click on ‘Yes’, to permanently delete the Taxonomy
+<p>Clicking on the ‘Delete’ icon will prompt the user to request a confirmation. Click on ‘Yes’, to permanently delete the Taxonomy</p>
 
-### Switch Taxonomy Level:
+### Switch Taxonomy Level
 
-In order to switch to a different taxonomy level, click the taxonomy level indicator to open up the taxonomy screen, and select the taxonomy level. Note: When switching to a deeper level in the taxonomy, only the data points that have been labeled as the parent value will show up for the organization.
+<p>In order to switch to a different taxonomy level, click the taxonomy level indicator to open up the taxonomy screen, and select the taxonomy level. Note: When switching to a deeper level in the taxonomy, only the data points that have been labeled as the parent value will show up for the organization.</p>

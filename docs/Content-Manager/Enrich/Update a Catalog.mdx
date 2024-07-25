@@ -3,111 +3,118 @@ title: Image Annotation
 sidebar_label: Image Annotation 
 sidebar_position: 6
 ---
+import './howToRegisterDocumentType.css';
 
+<p>Image annotation is a crucial process in the field of computer vision and machine learning, involving the classification of specific features within an image. These annotations are used to train models to autonomously recognize or focus on certain elements within an image while disregarding irrelevant details. In the context of Vue, a platform for managing and enriching content, annotation is the process of labeling or tagging data with specific attributes or classes by selecting regions of interest. This document provides an overview of the image annotation process in Vue, including the difference between annotation and image classification, the annotation flow, and various tools and features.</p>
 
+<h2>Difference between Annotation and Image Classification</h2>
 
+<ul>
+  <li><strong>Annotation:</strong> Annotation is primarily used for object detection, which involves identifying and localizing multiple objects within an image by drawing bounding boxes around them. Annotations provide detailed information about the objects, making it possible to train models for tasks like object detection.</li>
+  <li><strong>Image Classification:</strong> Image classification focuses on assigning a single label or category to an entire image. It is used to categorize images into predefined classes or categories. Image classification models are trained to recognize patterns and features in images that correspond to specific labels.</li>
+</ul>
 
-Image annotation is a crucial process in the field of computer vision and machine learning, involving the classification of specific features within an image. These annotations are used to train models to autonomously recognize or focus on certain elements within an image while disregarding irrelevant details. In the context of Vue, a platform for managing and enriching content, annotation is the process of labeling or tagging data with specific attributes or classes by selecting regions of interest. This document provides an overview of the image annotation process in Vue, including the difference between annotation and image classification, the annotation flow, and various tools and features.
+<p>In Vue, annotation is mainly used for object detection.</p>
 
-## Difference between Annotation and Image Classification
+<h2>Getting to the Annotation Section</h2>
 
-- **Annotation:** Annotation is primarily used for object detection, which involves identifying and localizing multiple objects within an image by drawing bounding boxes around them. Annotations provide detailed information about the objects, making it possible to train models for tasks like object detection.
+<p>To start the annotation process in Vue, follow these steps:</p>
 
-- **Image Classification:** Image classification focuses on assigning a single label or category to an entire image. It is used to categorize images into predefined classes or categories. Image classification models are trained to recognize patterns and features in images that correspond to specific labels.
+<h3>Navigation:</h3>
+<ul>
+  <li>From the Vue Home Page, click on 'Content Hub' to access the Content Home Screen.</li>
+  <li>Click on 'Enrich' in the navigation bar to access the project listing table.</li>
+  <li>Alternatively, hover over 'Content Hub' in the navigation bar and click on 'Enrich'.</li>
+  <li>Click on the 'Project Name' for which annotation is to be done.</li>
+</ul>
 
-In Vue, annotation is mainly used for object detection.
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/projectlisting1b.png" alt="Project Listing" title="Project Listing" />
+</div>
 
-## Getting to the Annotation Section
+<h3>Feed Details:</h3>
+<ul>
+  <li>Select the 'Feed Name' in the 'Feed Details' section for which annotation is to be done (the 'Status' column should be 'Processing Complete').</li>
+  <li>Click on the 'Annotate' CTA to enter the annotation section.</li>
+</ul>
 
-To start the annotation process in Vue, follow these steps:
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/data2bb.png" alt="Feed Details" title="Feed Details" />
+</div>
 
-1. **Navigation:**
-   - From the Vue Home Page, click on 'Content Hub' to access the Content Home Screen.
-   - Click on 'Enrich' in the navigation bar to access the project listing table.
-   - Alternatively, hover over 'Content Hub' in the navigation bar and click on 'Enrich'.
-   - Click on the 'Project Name' for which annotation is to be done.
+<h3>Alternate Navigation:</h3>
+<ul>
+  <li>Another way to access the annotation section is by navigating from the Cluster View by clicking on 'Annotate' CTA.</li>
+</ul>
 
-   ![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/projectlisting1b.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/data1bb.png" alt="Cluster View" title="Cluster View" />
+</div>
 
-2. **Feed Details:**
-   - Select the 'Feed Name' in the 'Feed Details' section for which annotation is to be done (the 'Status' column should be 'Processing Complete').
-   - Click on the 'Annotate' CTA to enter the annotation section.
+<h2>Annotate Section - 'Single Content View'</h2>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/data2bb.png 'a title')
-3. **Alternate Navigation:**
-   - Another way to access the annotation section is by navigating from the Cluster View by clicking on 'Annotate' CTA.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/data1bb.png 'a title')
-## Annotate Section - 'Single Content View'
+<h3>Annotation Flow</h3>
 
-### Annotation Flow
+<ol>
+  <li>Click on the 'Box Annotation' tool from the left toolbar and draw a bounding box (BBox) around the content.</li>
+  <li>After drawing the BBox, the entire Taxonomy (attributes) is displayed for the user to select. Only one attribute selection is allowed per BBox at a Taxonomy level.</li>
+  <li>For the attribute selected, one or more values can be chosen.</li>
+  <li>Click on the 'Apply' CTA to apply the annotation.</li>
+  <li>Content navigation is possible by clicking on the arrows to view different content in the canvas.</li>
+  <li>Configurations made to BBox and attributes can be saved when the user clicks on 'Save & Next'.</li>
+</ol>
 
-In the single content view, the annotation process follows these steps:
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/annotationflow.png" alt="Annotation Flow" title="Annotation Flow" />
+</div>
 
-1. Click on the 'Box Annotation' tool from the left toolbar and draw a bounding box (BBox) around the content.
+<p>Once the annotation is saved, it is stored in the Annotation Panel on the right side. The Annotation Panel displays the attributes made by annotation and metadata of the content.</p>
 
-2. After drawing the BBox, the entire Taxonomy (attributes) is displayed for the user to select. Only one attribute selection is allowed per BBox at a Taxonomy level.
+<ul>
+  <li><strong>Mark as Primary:</strong> Annotations marked as primary are used for short-term learning (STL) for the product. One annotation can be marked as primary for a product. If there's only one annotation, it is marked as primary by default.</li>
+  <li><strong>Star Crop:</strong> A starred crop is available in the cluster view for organization. The first crop of every annotation is available by default.</li>
+  <li>STL and LTL (Long-term Learning) tools are used for learning and prediction, with the option to review and edit predictions made by the system.</li>
+  <li>Labels include 'Manually Done,' 'User Accepted,' 'System Generated,' and 'No Annotation' based on the annotation process.</li>
+  <li>Additional data points can be manually annotated to enhance the dataset.</li>
+</ul>
 
-3. For the attribute selected, one or more values can be chosen.
+<h2>Annotate Section - 'Grid View'</h2>
 
-4. Click on the 'Apply' CTA to apply the annotation.
+<p>In the grid view, multiple contents can be viewed and edited simultaneously. This view provides efficient operations for handling annotations.</p>
 
-5. Content navigation is possible by clicking on the arrows to view different content in the canvas.
+<ul>
+  <li><strong>Select All</strong> CTA selects all content.</li>
+  <li><strong>Edit</strong> CTA allows the user to edit the selected content.</li>
+  <li><strong>Search:</strong> enables content searching by name or ID.</li>
+  <li><strong>Taxonomy Level Switcher:</strong> permits switching between attributes in different taxonomy levels.</li>
+  <li><strong>Switching between bulk & single annotate views:</strong> CTA switches between bulk annotation and single annotation views.</li>
+  <li><strong>Initiate Long-term Learning:</strong> CTA is used to initiate LTL.</li>
+  <li><strong>Approve All</strong> and <strong>Ignore All</strong> CTAs enable bulk approval and discarding of content.</li>
+  <li><strong>Checkbox</strong> for manual selection is used to manually select content for approval or ignoring.</li>
+  <li><strong>Filter by Label</strong>, <strong>Sort by Confidence Score</strong>, and <strong>Filter by Annotation</strong> CTAs provide options for filtering and sorting content.</li>
+</ul>
 
-6. Configurations made to BBox and attributes can be saved when the user clicks on 'Save & Next'.
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/gridview.png" alt="Grid View" title="Grid View" />
+</div>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/annotationflow.png 'a title')
+<p>The Annotation Panel in grid view displays all annotations, confidence percentages, and completion percentages.</p>
 
-Once the annotation is saved, it is stored in the Annotation Panel on the right side. The Annotation Panel displays the attributes made by annotation and metadata of the content.
+<p>Pagination allows the user to choose the number of contents displayed per page and navigate to different pages.</p>
 
-- 'Mark as Primary': Annotations marked as primary are used for short-term learning (STL) for the product. One annotation can be marked as primary for a product. If there's only one annotation, it is marked as primary by default.
+<h2>Displaying Annotated Content for Organization Flow</h2>
 
-- 'Star Crop': A starred crop is available in the cluster view for organization. The first crop of every annotation is available by default.
+<p>All annotated content is available within the organization flow, which includes the cluster view and bulk edit options.</p>
 
-- STL and LTL (Long-term Learning) tools are used for learning and prediction, with the option to review and edit predictions made by the system.
+<h2>Glossary</h2>
 
-- Labels include 'Manually Done,' 'User Accepted,' 'System Generated,' and 'No Annotation' based on the annotation process.
+<ul>
+  <li><strong>Hand Tool:</strong> Allows users to move the canvas (including its content) around.</li>
+  <li><strong>Box Annotation:</strong> Tool for drawing bounding boxes on content.</li>
+  <li><strong>Zoom-in Tool:</strong> Enables zooming in on the content.</li>
+  <li><strong>Zoom Out Tool:</strong> Allows users to zoom out from the content.</li>
+  <li><strong>Trigger STL:</strong> Initiates Short Term Learning (STL) based on annotated data points (a minimum of 10 data points is required).</li>
+  <li><strong>Reset Learning:</strong> Resets all STLs made by the system.</li>
+</ul>
 
-- Additional data points can be manually annotated to enhance the dataset.
-
-### Annotate Section - 'Grid View'
-
-In the grid view, multiple contents can be viewed and edited simultaneously. This view provides efficient operations for handling annotations.
-
-- 'Select All' CTA selects all content.
-
-- 'Edit' CTA allows the user to edit the selected content.
-
-- 'Search' enables content searching by name or ID.
-
-- 'Taxonomy Level Switcher' permits switching between attributes in different taxonomy levels.
-
-- 'Switching between bulk & single annotate views' CTA switches between bulk annotation and single annotation views.
-
-- 'Initiate Long-term Learning' CTA is used to initiate LTL.
-
-- 'Approve All' and 'Ignore All' CTAs enable bulk approval and discarding of content.
-
-- 'Checkbox' for manual selection is used to manually select content for approval or ignoring.
-
-- 'Filter by Label,' 'Sort by Confidence Score,' and 'Filter by Annotation' CTAs provide options for filtering and sorting content.
-
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/gridview.png 'a title')
-
-- The Annotation Panel in grid view displays all annotations, confidence percentages, and completion percentages.
-
-- Pagination allows the user to choose the number of contents displayed per page and navigate to different pages.
-
-## Displaying Annotated Content for Organization Flow
-
-All annotated content is available within the organization flow, which includes the cluster view and bulk edit options.
-
-## Glossary
-
-- **Hand Tool:** Allows users to move the canvas (including its content) around.
-- **Box Annotation:** Tool for drawing bounding boxes on content.
-- **Zoom-in Tool:** Enables zooming in on the content.
-- **Zoom Out Tool:** Allows users to zoom out from the content.
-- **Trigger STL:** Initiates Short Term Learning (STL) based on annotated data points (a minimum of 10 data points is required).
-- **Reset Learning:** Resets all STLs made by the system.
-
-This document provides an in-depth overview of image annotation in Vue, outlining the process, tools, and features involved in the annotation process.
+<p>This document provides an in-depth overview of image annotation in Vue, outlining the process, tools, and features involved in the annotation process.</p>

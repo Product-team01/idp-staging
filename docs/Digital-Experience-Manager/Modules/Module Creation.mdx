@@ -1,119 +1,209 @@
+---
+title: Module
+sidebar_label: Module Listing
+sidebar_position: 1
+---
 
+<head>
+  <title>Module</title>
+  <meta
+    name="description"
+    content="When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
+  />
+</head>
 
+<p>Module enables you to (i) combine a strategy/combination of strategies/contents with a template, (ii) configure the number of results to be shown, (iii) link strategy(s)/content(s) to specific times on the template.</p>
 
-## Create a Module
+<h2>Getting to Modules</h2>
 
-To create a Module, follow these steps:
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/Modulelisting1b.png" alt="Module Listing" title="Module Listing" />
+</div>
 
-1. Click on the 'Create Module' Button on the Module Listing Screen. You will be brought to the Module Configuration Screen where you can select the integration mode, template, and link recommendations.
+<p><strong>Navigation</strong></p>
+<ol>
+  <li>To access modules navigate to the Vue menu bar, click on this icon</li>
+  <li>Select Digital Experience Manager</li>
+  <li>Select Module</li>
+</ol>
 
-### Module Details
+<h2>Module Listing Screen</h2>
 
-2. Click the 'Create Module' CTA on the Module Listing Screen.
+<p>The Module Listing screen provides you with the list of modules created in your account. From the listing screen, you can request creation of a new module, view details about each module configuration, Preview and Delete a module.</p>
 
-3. Give your Module a unique name.
+<h2>Viewing a Module config</h2>
+<ol>
+  <li>From the Module listing table, next to each Module name, click on the 'Info' icon under actions.</li>
+  <li>Module configuration details will open in an overlay modal.</li>
+  <li>From here, you can also access all the entities linked (Strategy, Template, Experience) to this Module and navigate to them.</li>
+</ol>
 
-   - Note: You can save your Module config anytime by clicking on 'Continue Later' CTA & clicking on 'Save & Exit'. The Module is displayed on the listing screen in a draft state.
-#### Integration Modes
+<h3>Search Modules</h3>
+<ol>
+  <li>You can search for the created Modules using the Module name via the search bar or use one of the suggested/recently searched keywords.</li>
+  <li>You can find the search results populated in the table.</li>
+</ol>
 
-You can select how you would like to integrate this module using the following options:
+<h3>Sort Columns</h3>
+<ol>
+  <li>Hover over the column header to find the sort icon next to each column.</li>
+  <li>Click the Sort icon to sort the column alphabetically either in ascending or descending order.</li>
+  <li>If the sort is applied to multiple columns, the column for which the sort was applied last will take precedence.</li>
+</ol>
 
-- **Embed Code**: Enables you to select a template, strategy(s), and define its configurations to render directly on your platform via Embed Code.
+<h3>Filter Columns</h3>
+<ol>
+  <li>Hover over the column header to find the filter icon next to each column.</li>
+  <li>Click the filter icon to open up a dropdown from which you can multi-select the values to be filtered.</li>
+  <li>You can also search for a filter value within the dropdown.</li>
+  <li>The table will be populated with the filtered results.</li>
+</ol>
 
-- **API**: Enables you to select strategy(s) and define its configurations to return results via API.
+<h3>Delete Module</h3>
+<ol>
+  <li>From the Module listing table, next to each module name, click on the 'Delete' icon under actions.</li>
+  <li>Clicking Delete will prompt the user with an overlay modal which lists all the entities (Experiences) this Module is linked with.</li>
+  <li>From here, you can access any entity config screen, make necessary changes before deleting the module.</li>
+  <li>Deleting the module will unlink it from all the linked features and permanently delete it & the content from our system.</li>
+</ol>
 
-- **Email**: Enables you to configure an Email module by selecting an Email template, strategy(s), and define its configurations to return results via an HTML snippet.
+<h2>Request creation of a New Module</h2>
+<ol>
+  <li>Navigate to Digital Experience Manager (DXM) via Vue Menu Bar and click on 'Assets' > Module</li>
+  <li>Click on 'Request New'</li>
+  <li>In the form provided please fill out the necessary details. And we will get back to you with your Module within 7 to 14 business days.</li>
+  <li>Details to be provided:</li>
+</ol>
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/module2.png 'a title')
+<ul>
+  <li>Module Type:
+    <ul>
+      <li>Embed Code</li>
+      <li>API</li>
+      <li>Email</li>
+    </ul>
+  </li>
+  <li>Template</li>
+  <li>Strategy(s)</li>
+  <li>Min & Max number of items</li>
+</ul>
 
-   - Note: Changing the integration mode will reset the module configuration. This field cannot be changed while the Module is Live.
+<h2>Create a Module</h2>
 
-#### Select a Template
+<p>To create a Module, follow these steps:</p>
 
-When the integration mode selected is Embed Code or Email, you can select a Template here to display your content within.
+<ol>
+  <li>Click on the 'Create Module' Button on the Module Listing Screen. You will be brought to the Module Configuration Screen where you can select the integration mode, template, and link recommendations.</li>
+</ol>
 
-- Click the 'Select' button on the Select Template Field to view the Listing of created Templates.
+<h3>Module Details</h3>
+<ol>
+  <li>Click the 'Create Module' CTA on the Module Listing Screen.</li>
+  <li>Give your Module a unique name.
+    <ul>
+      <li><strong>Note:</strong> You can save your Module config anytime by clicking on 'Continue Later' CTA & clicking on 'Save & Exit'. The Module is displayed on the listing screen in a draft state.</li>
+    </ul>
+  </li>
+</ol>
 
-- You will be able to view and scroll through the list of Created Templates to select from.
+<h4>Integration Modes</h4>
 
-- The Desktop, Mobile, and Email (if applicable) Preview Each Template will be displayed on the right panel.
+<p>You can select how you would like to integrate this module using the following options:</p>
 
-- You can use the Search or Filter by Template Type options to help narrow down your selection.
+<ul>
+  <li><strong>Embed Code:</strong> Enables you to select a template, strategy(s), and define its configurations to render directly on your platform via Embed Code.</li>
+  <li><strong>API:</strong> Enables you to select strategy(s) and define its configurations to return results via API.</li>
+  <li><strong>Email:</strong> Enables you to configure an Email module by selecting an Email template, strategy(s), and define its configurations to return results via an HTML snippet.</li>
+</ul>
 
-- Once you have selected your Template, click the 'Confirm' CTA to return to the Module Config screen where the selected template name will be displayed and its preview will appear on the right panel.
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/module2.png" alt="Integration Modes" title="Integration Modes" />
+</div>
 
-- You can edit your selection by clicking the 'Change' CTA.
+<p><strong>Note:</strong> Changing the integration mode will reset the module configuration. This field cannot be changed while the Module is Live.</p>
 
-   - Note: Changing the Template will reset the rest of module configuration. This field cannot be changed while the Module is Live.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/module3.png 'a title')
-## Module Configurations
+<h4>Select a Template</h4>
 
-You can define the properties of the module in this section. Module Configuration Options will vary based on the Integration Mode Selected.
+<p>When the integration mode selected is Embed Code or Email, you can select a Template here to display your content within.</p>
 
-#### Embed Code Module Configurations
+<ol>
+  <li>Click the 'Select' button on the Select Template Field to view the Listing of created Templates.</li>
+  <li>You will be able to view and scroll through the list of Created Templates to select from.</li>
+  <li>The Desktop, Mobile, and Email (if applicable) Preview Each Template will be displayed on the right panel.</li>
+  <li>You can use the Search or Filter by Template Type options to help narrow down your selection.</li>
+  <li>Once you have selected your Template, click the 'Confirm' CTA to return to the Module Config screen where the selected template name will be displayed and its preview will appear on the right panel.</li>
+  <li>You can edit your selection by clicking the 'Change' CTA.</li>
+</ol>
 
-- Module Title: Provide a Module Title in this section. Any text you input can be previewed on the Right panel Preview Section in the styling format of your selected Template.
+<p><strong>Note:</strong> Changing the Template will reset the rest of module configuration. This field cannot be changed while the Module is Live.</p>
 
-- Min Tiles: Provide the minimum number of recommendation results you want returned to render the module on your platform.
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/module3.png" alt="Select a Template" title="Select a Template" />
+</div>
 
-- Max Tiles: Provide the maximum number of recommended results you want returned and displayed within this module. This field determines the number of Tiles in the module.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/module4.png 'a title')
-#### API Module Configurations
+<h2>Module Configurations</h2>
 
-- Min Tiles: Provide the minimum number of recommendation results you want returned to render the module on your platform.
+<p>You can define the properties of the module in this section. Module Configuration Options will vary based on the Integration Mode Selected.</p>
 
-- Max Tiles: Provide the maximum number of recommended results you want returned and displayed within this module. This field determines the number of Tiles in the module.
+<h4>Embed Code Module Configurations</h4>
+<ul>
+  <li><strong>Module Title:</strong> Provide a Module Title in this section. Any text you input can be previewed on the Right panel Preview Section in the styling format of your selected Template.</li>
+  <li><strong>Min Tiles:</strong> Provide the minimum number of recommendation results you want returned to render the module on your platform.</li>
+  <li><strong>Max Tiles:</strong> Provide the maximum number of recommended results you want returned and displayed within this module. This field determines the number of Tiles in the module.</li>
+</ul>
 
-#### Email Module Configurations
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/module4.png" alt="Embed Code Module Configurations" title="Embed Code Module Configurations" />
+</div>
 
-- Module Title: Provide a Module Title in this section. Any text you input can be previewed on the Right panel Preview Section in the styling format of your selected Email Template.
+<h4>API Module Configurations</h4>
+<ul>
+  <li><strong>Min Tiles:</strong> Provide the minimum number of recommendation results you want returned to render the module on your platform.</li>
+  <li><strong>Max Tiles:</strong> Provide the maximum number of recommended results you want returned and displayed within this module. This field determines the number of Tiles in the module.</li>
+</ul>
 
-- Email Platform: Select the Email Platform you wish to integrate this module into. This will help unify the HTML snippet format with the provided platform. If you would like to 'Add a New Platform', click the CTA and enter a Platform Name, User ID Format, Product ID Format, and Timestamp Format.
+<h4>Email Module Configurations</h4>
+<ul>
+  <li><strong>Module Title:</strong> Provide a Module Title in this section. Any text you input can be previewed on the Right panel Preview Section in the styling format of your selected Email Template.</li>
+  <li><strong>Email Platform:</strong> Select the Email Platform you wish to integrate this module into. This will help unify the HTML snippet format with the provided platform. If you would like to 'Add a New Platform', click the CTA and enter a Platform Name, User ID Format, Product ID Format, and Timestamp Format.</li>
+  <li><strong>Card Height and Width:</strong> Provide the desired Height and Width (in px) of each content Card. By adjusting the Height, the Width will automatically adjust to the desired ratio.</li>
+  <li><strong>Number of Rows and Columns:</strong> Provide the number of rows and columns you want to display within each email. These fields determine the number of Tiles in the module.</li>
+</ul>
 
-- Card Height and Width: Provide the desired Height and Width (in px) of each content Card. By adjusting the Height, the Width will automatically adjust to the desired ratio.
+<h3>Link Recommendations</h3>
 
-- Number of Rows and Columns: Provide the number of rows and columns you want to display within each email. These fields determine the number of Tiles in the module.
+<p>Within the 'Link Recommendations' accordion, you will be able to select strategy(s) and/or static content to add to your module. You will also be able to assign the selected recommendations to specific tiles to meet your business needs.</p>
 
-### Link Recommendations
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/module5b.png" alt="Link Recommendations" title="Link Recommendations" />
+</div>
 
-Within the 'Link Recommendations' accordion, you will be able to select strategy(s) and/or static content to add to your module. You will also be able to assign the selected recommendations to specific tiles to meet your business needs.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/module5b.png 'a title')
-### Select Recommendations
+<h3>Select Recommendations</h3>
+<ol>
+  <li>Click on the 'Add Recommendations' CTA to open the Select Recommendations Modal.</li>
+  <li>Select Strategy(s) from the first Tab, 'Strategy'. This Tab lists all your created Strategies. Use the Search, Filter, or Sort options to further narrow your selection. You can multi-select up to 3 strategies to add to your module.</li>
+  <li>Select Content from the second Tab, 'Content'. Here you will find a listing of all your Content. You can navigate to different Catalogs or Feeds using the provided dropdowns. You can also use the Search, Filter, or Zoom options to further narrow your selection. Multi-Select as many Content(s) you wish to add to your Module.</li>
+  <li>Once you have selected the desired strategies/content, click the 'Confirm' CTA, and you will see the selected strategies and/or content display within the Link Recommendations Accordion.</li>
+  <li>To view the info, replace, or delete any of the linked recommendations, use the respective icons within the 'Actions' column.</li>
+  <li>To add or edit your selection, click on the 'Manage Recommendations' CTA within the Link Recommendations Accordion to return the Select Recommendations Modal.</li>
+</ol>
 
-- Click on the 'Add Recommendations' CTA to open the Select Recommendations Modal.
+<h3>Assign Tiles</h3>
+<p>Once you have linked recommendations to your module, you can assign them to specific tiles.</p>
+<ol>
+  <li>To assign a linked Content, click on the dropdown associated with it under the column 'Tiles Assigned' and select the Tile where you would like that content to be placed. You can move it to any other available tile as needed. Once you are happy with the selection, click the 'Apply' CTA to save and close the dropdown.</li>
+  <li>To assign a linked Strategy, click on the dropdown associated with it under the column 'Tiles Assigned' and select a tile or a range of tiles. To select a range, double click on the tile you want to start from and click on the end of your range to select all available tiles in between. You can also click the 'Select Unassigned' CTA to select all available tiles. Once you are happy with the selection, click the 'Apply' CTA to save and close the dropdown.</li>
+  <li>To clear any selected tiles, you can use the 'Clear All' CTA on the column header to clear all selected tiles or you can clear the selection on any linked strategy or content within its Tiles Assigned dropdown.</li>
+  <li>To see the number of tiles assigned in relation to the total, view the 'Assigned Tiles' progress bar. You can also view the count of each linked strategy/content on its assigned tiles dropdown.</li>
+</ol>
 
-- Select Strategy(s) from the first Tab, 'Strategy'. This Tab lists all your created Strategies. Use the Search, Filter, or Sort options to further narrow your selection. You can multi-select up to 3 strategies to add to your module.
+<h4>Linking Recommendations - 'Actions' Column:</h4>
+<ul>
+  <li><strong>Assign Fallback Strategy:</strong> In case a strategy returns fewer results than configured items, the fallback strategy will backfill recommended items. You can select one fallback strategy.</li>
+  <li><strong>Strategy/Content Details:</strong> If strategy linked, this option shows the information of the strategy linked, modules, experiences associated with the strategy. If content linked, it shows the content details - Metadata and Tags associated with the content.</li>
+  <li><strong>Replace:</strong> Allows to replace the content/strategy that has been linked.</li>
+  <li><strong>Remove:</strong> Allows to remove the content/strategy that has been linked.</li>
+</ul>
 
-- Select Content from the second Tab, 'Content'. Here you will find a listing of all your Content. You can navigate to different Catalogs or Feeds using the provided dropdowns. You can also use the Search, Filter, or Zoom options to further narrow your selection. Multi-Select as many Content(s) you wish to add to your Module.
-
-- Once you have selected the desired strategies/content, click the 'Confirm' CTA, and you will see the selected strategies and/or content display within the Link Recommendations Accordion.
-
-- To view the info, replace, or delete any of the linked recommendations, use the respective icons within the 'Actions' column.
-
-- To add or edit your selection, click on the 'Manage Recommendations' CTA within the Link Recommendations Accordion to return the Select Recommendations Modal.
-
-### Assign Tiles
-
-Once you have linked recommendations to your module, you can assign them to specific tiles.
-
-- To assign a linked Content, click on the dropdown associated with it under the column 'Tiles Assigned' and select the Tile where you would like that content to be placed. You can move it to any other available tile as needed. Once you are happy with the selection, click the 'Apply' CTA to save and close the dropdown.
-
-- To assign a linked Strategy, click on the dropdown associated with it under the column 'Tiles Assigned' and select a tile or a range of tiles. To select a range, double click on the tile you want to start from and click on the end of your range to select all available tiles in between. You can also click the 'Select Unassigned' CTA to select all available tiles. Once you are happy with the selection, click the 'Apply' CTA to save and close the dropdown.
-
-- To clear any selected tiles, you can use the 'Clear All' CTA on the column header to clear all selected tiles or you can clear the selection on any linked strategy or content within its Tiles Assigned dropdown.
-
-- To see the number of tiles assigned in relation to the total, view the 'Assigned Tiles' progress bar. You can also view the count of each linked strategy/content on its assigned tiles dropdown.
-
-#### Linking Recommendations - 'Actions' Column:
-
-- Assign Fallback Strategy: In case a strategy returns fewer results than configured items, the fallback strategy will backfill recommended items. You can select one fallback strategy.
-
-- Strategy/Content Details: If strategy linked, this option shows the information of the strategy linked, modules, experiences associated with the strategy. If content linked, it shows the content details - Metadata and Tags associated with the content.
-
-- Replace: Allows to replace the content/strategy that has been linked.
-
-- Remove: Allows to remove the content/strategy that has been linked.
-
-### Preview
-
-You will be able to view a preview of your module on the right panel of
+<h3>Preview</h3>
+<p>You will be able to view a preview of your module on the right panel of</p>

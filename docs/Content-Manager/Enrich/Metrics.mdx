@@ -3,35 +3,50 @@ title: 'Metrics'
 sidebar_position: 5
 sidebar_label: Metrics
 ---
+import './howToRegisterDocumentType.css';
 
 ## Project Insights
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enrichmetricspro.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enrichmetricspro.png" alt="Project Insights" title="Project Insights" />
+</div>
 
-- This gives insights of the total number of data points that have been organized at each hierarchy level across feeds in a project. This is visualized in a bar graph where
-- The X-axis of the bar graph will have the attribute values that is selected from the taxonomy level
-- The Y-axis of the bar graph will have a numerical range of the data
+<ul>
+  <li>This gives insights into the total number of data points that have been organized at each hierarchy level across feeds in a project. This is visualized in a bar graph where:</li>
+  <ul>
+    <li>The X-axis of the bar graph will have the attribute values that are selected from the taxonomy level</li>
+    <li>The Y-axis of the bar graph will have a numerical range of the data</li>
+  </ul>
+</ul>
 
 ## Performance Metrics
 
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/enmet2.png 'a title')
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/enmet2.png" alt="Performance Metrics" title="Performance Metrics" />
+</div>
 
-- This gives an insight into AI model performance by calculating the accuracy based on the user feedback at the attribute and attribute’s value level.
+<ul>
+  <li>This gives an insight into AI model performance by calculating the accuracy based on the user feedback at the attribute and attribute’s value level.</li>
+</ul>
 
 ## Glossary
 
-- **Models** - Based on the choice of the segment, a preset list of Machine Learnings models are selected to aid in data organization.
-- **Processing time**
-  - The time is taken for the uploaded feed to be digested by our systems.
-  - Once the uploaded feed is processed, you can select one or more feeds for the organization
-- **System Predicted** - The number of data points that the system could predict with a confidence higher than 80%
-- **User Labeled** - The number of data points labeled by the user either in single or bulk edit mode. Predicted data points once labeled by the user will move from predicted count to labeled count. To provide more granular info on the user-labeled data points, we break this down into accepted vs correct data points. These ratios provide a sense of the AI’s understanding and correctness in organizing data
-- **User Accepted** - These were labeled and predicted correctly by the AI, that the user accepted
-- **User Corrected** - These were mispredicted data points or data points without any predictions which the user labeled
-- **Cluster** - A cluster is a group of similar products that are predicted by the system. A cluster boundary represents a prediction confidence of 80%.
-- **Taxonomy Attribute** - Taxonomy attribute or a class represents the different properties of an item. Example: Color, Pattern, etc…
-- **Taxonomy Value** - The options inside each Taxonomy attribute is called a value. Example: Color - Red, Black, etc…
-- **Feed Sampling** - Whenever a Catalog feed is imported into a Project, a sample of 3000 content or data points is extracted from the file and is used for organizing, generating attributes & model building. If the number of data points is less than 3000, the entire file is taken.
-- **Confirm prediction** - Drag a datapoint from within the cluster and drop it within the same cluster - This will confirm the prediction of the system, and mark the datapoint as ‘labeled’
-- **Correct mispredictions** - Dragging a datapoint from one cluster and dropping it inside another cluster - This will correct a misprediction, and mark the datapoint ‘labeled’ as the new cluster class.
-- **Label unpredicted data** - Dragging a datapoint from outside and dropping inside a cluster - This action is the same as dropping a datapoint into the class below - it will mark the datapoint ‘labeled’ as that cluster class.
+<ul>
+  <li><strong>Models:</strong> Based on the choice of the segment, a preset list of Machine Learnings models are selected to aid in data organization.</li>
+  <li><strong>Processing time:</strong></li>
+  <ul>
+    <li>The time is taken for the uploaded feed to be digested by our systems.</li>
+    <li>Once the uploaded feed is processed, you can select one or more feeds for the organization.</li>
+  </ul>
+  <li><strong>System Predicted:</strong> The number of data points that the system could predict with a confidence higher than 80%.</li>
+  <li><strong>User Labeled:</strong> The number of data points labeled by the user either in single or bulk edit mode. Predicted data points once labeled by the user will move from predicted count to labeled count. To provide more granular info on the user-labeled data points, we break this down into accepted vs correct data points. These ratios provide a sense of the AI’s understanding and correctness in organizing data.</li>
+  <li><strong>User Accepted:</strong> These were labeled and predicted correctly by the AI, that the user accepted.</li>
+  <li><strong>User Corrected:</strong> These were mispredicted data points or data points without any predictions which the user labeled.</li>
+  <li><strong>Cluster:</strong> A cluster is a group of similar products that are predicted by the system. A cluster boundary represents a prediction confidence of 80%.</li>
+  <li><strong>Taxonomy Attribute:</strong> Taxonomy attribute or a class represents the different properties of an item. Example: Color, Pattern, etc…</li>
+  <li><strong>Taxonomy Value:</strong> The options inside each Taxonomy attribute is called a value. Example: Color - Red, Black, etc…</li>
+  <li><strong>Feed Sampling:</strong> Whenever a Catalog feed is imported into a Project, a sample of 3000 content or data points is extracted from the file and is used for organizing, generating attributes & model building. If the number of data points is less than 3000, the entire file is taken.</li>
+  <li><strong>Confirm prediction:</strong> Drag a datapoint from within the cluster and drop it within the same cluster - This will confirm the prediction of the system, and mark the datapoint as ‘labeled’</li>
+  <li><strong>Correct mispredictions:</strong> Dragging a datapoint from one cluster and dropping it inside another cluster - This will correct a misprediction, and mark the datapoint ‘labeled’ as the new cluster class.</li>
+  <li><strong>Label unpredicted data:</strong> Dragging a datapoint from outside and dropping inside a cluster - This action is the same as dropping a datapoint into the class below - it will mark the datapoint ‘labeled’ as that cluster class.</li>
+</ul>

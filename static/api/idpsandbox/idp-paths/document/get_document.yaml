@@ -1,8 +1,9 @@
 get:
+  operationId: getDocument
   tags:
-    - default
+    - 2dotx
   summary: Get Document Details
-  description: >-
+  description: |
     This API endpoint allows you to retrieve the results of the extracted document.
 
     ### Response Structure

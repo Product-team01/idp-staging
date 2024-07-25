@@ -1,8 +1,9 @@
 post:
+  operationId: syncInference
   tags:
     - 2dotx
   summary: infer sync API
-  description: >- 
+  description: | 
     This API endpoint allows you to perform document inference
     synchronously.
 
@@ -93,6 +94,7 @@ post:
       example: d3f3a0d8-9b67-4d22-ae27-ec634ae5e172
   responses:
     200:
+      description: inference done successfully
       headers:
         Content-Type:
           schema:

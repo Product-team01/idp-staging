@@ -1,7 +1,15 @@
-# Create a Strategy
+---
+title: Create a Strategy
+sidebar_label: Create a Strategy
+sidebar_position: 2
+---
+
+<head>
+  <title>Strategy</title>
+  <meta name="description" content="A strategy is the foundation for crafting a personalized user experience. It involves tailoring model parameters to meet your needs. This is the first step in creating an experience." />
+</head>
 
 A **strategy** is the foundation for crafting a personalized user experience. It involves tailoring model parameters to meet your needs. This is the first step in creating an experience.
-
 
 From the strategy listing screen, you can view, manage existing strategies, or create new strategies.
 
@@ -13,15 +21,23 @@ From the strategy listing screen, you can view, manage existing strategies, or c
 4. Select a Model.
 
 **Note:** Based on the selected model, relevant parameters will be available to configure.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/strategylisting1b.png 'a title')
-### Model Parameters:
+
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/strategylisting1b.png" alt="Strategy Listing" title="Strategy Listing" />
+</div>
+
+## Model Parameters:
 
 - You can configure content attributes by selecting an attribute and giving a priority score to indicate how important the content attribute is to the model.
 - Model parameters, in the context of content like dresses, may include content attributes such as brand, color, and pattern.
 
 **Note:** The content attributes that are available are the **Indexed Fields** during catalog onboarding in Content Hub.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/strategy2b.png 'a title')
-### Events:
+
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/strategy2b.png" alt="Model Parameters" title="Model Parameters" />
+</div>
+
+## Events:
 
 - You can configure events by selecting the **Look Back Period**, **User Events**, and set a priority score for user events.
   - On choosing **Add to Cart**, the model displays products added to the customer's cart in the last X days.
@@ -30,7 +46,7 @@ From the strategy listing screen, you can view, manage existing strategies, or c
   - On choosing **Buy**, the model displays products viewed by the customer in the last X days.
   - Time period options include **Daily**, **Monthly**, **Quarterly**, **Weekly**, and **Fortnightly** for the lookback period.
 
-### Business Rules (Optional):
+## Business Rules (Optional):
 
 - Business rules are additional merchandising rules that are used to filter the recommendation output.
 - Business rules consist of **Filtering conditions** and **Apply To** options.
@@ -61,14 +77,22 @@ After all the configurations are made, click on the **Create** button at the top
 - **Segment & Boosting Content Attributes**: Segments content based on a particular trait/content attribute. E.g. when the 'contentType' attribute is selected, content that is matching the content attribute of the source content will only be recommended.
 - **Attribute Deduplication**: Select the content attribute(s) to ensure results are unique without duplication among content.
 - **Boost Content Attributes**: Indicate the importance of each content attribute to be boosted in the recommendation result.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/strategy3b.png 'a title')
+
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/strategy3b.png" alt="Basic Setup" title="Basic Setup" />
+</div>
+
 #### Personalization:
 
 - **1:1 Personalization**: When enabled, recommendations will be based on each individual user's affinities.
 - **Additional Customization**: Provides additional context to specific categories/segments and its content attributes so that the model takes them into consideration while recommending personalized content.
 - **Content Attributes**: Configure which content attribute should be considered by the model while recommending personalized content.
 - **User Event**: Configure which user event(s) should be considered by the model while recommending content. Indicate its priority score.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/strategy4b.png 'a title')
+
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/strategy4b.png" alt="Personalization" title="Personalization" />
+</div>
+
 ### Advanced Setup:
 
 #### Configuration
@@ -79,4 +103,7 @@ After all the configurations are made, click on the **Create** button at the top
 - **Attribute Affinity**: The recommendation model will boost content based on the selected content attribute affinity. The weight given to the field decides how much of the suggested results will be influenced by it.
 - **Discovery (Trending)**: The recommendation model will boost content based on their trends. Weightage given to the field denotes the percentage of results to be returned by the trending algorithm.
 - **Discovery (Rarity Use Case)**: The recommendation model will boost content based on their rarity. Weight given to the field decides the percentage of results to be returned by the rarity algorithm.
-![Alt text](https://d1r1e7xjkfj7nz.cloudfront.net/strategy5b.png 'a title')
+
+<div className="image-container">
+  <img src="https://d1r1e7xjkfj7nz.cloudfront.net/strategy5b.png" alt="Advanced Setup" title="Advanced Setup" />
+</div>

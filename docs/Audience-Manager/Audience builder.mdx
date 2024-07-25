@@ -3,6 +3,8 @@ title: Audience Builder
 sidebar_position: 4
 ---
 
+import './howToRegisterDocumentType.css';
+
 **Audience Builder** lets you segment your visitors into different audiences by defining custom audiences based on your business goals. An audience consists of a group of visitors who share similar characteristics. You can measure the health of the business, publish recommendations, and conduct experiments using Audiences.
 
 ## Getting to Audience Builder
@@ -36,73 +38,68 @@ A sequence group consists of one or more rules (Events) defined with time interv
 Once you define the criteria, click on ‘Create’ CTA to create the audience.
 Expect a creation time of approximately 20-30 minutes for the audience, after which you will be able to access its metrics. An audience once created will be made available to use in Experience creation.
 
-Note: You can save your audience config anytime by clicking on "Continue Later " CTA & clicking on " Save & Exit". The audience is displayed on the listing screen in a draft state. (Partially filled details are not saved).
+**Note:** You can save your audience config anytime by clicking on "Continue Later " CTA & clicking on "Save & Exit". The audience is displayed on the listing screen in a draft state. (Partially filled details are not saved).
 
 When using the Audience Builder to define audiences, it is valuable to have Audience Metrics available for analysis. These metrics provide a broad understanding of the audience size and performance compared to the remaining site-wide audience. By comparing the number of visitors in the defined audience with the total visitors across the website, users can assess the reach and impact of their targeted segment.
 
 Let us build some audiences to understand it better.
 
+**Example 1: Simple Audience - Male iPhone Users**
 
-1) Let’s build a simple audience where the users are Male iPhone users.
+1. Click on ‘Add Group’ and select ‘Condition’.
+2. In Rule 1 of Group 1, define the parameter Group as ‘Demographics’, parameter Name as ‘Gender’, Operator as ‘==’, and the value as ‘Male’.
+3. Click on the ‘Add Rule’ button to add a new rule.
+4. In Rule 2 of Group 1, define the parameter Group as ‘Electronic device based parameters’, parameter Name as ‘iPhone User’, Operator as ‘==’, and the value as ‘Yes’.
+5. The logical operator between the Rules is ‘AND’. The default option for it is ‘ALL’ on Rule level.
+6. On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
 
-Click on ‘Add Group’ and select ‘Condition’
-In Rule 1 of Group 1, define the parameter Group as ‘Demographics’, parameter Name as ‘Gender’, Operator as ‘==’, and the value as ‘Male’
-Click on the ‘Add Rule’ button to add a new rule.
-In Rule 2 of Group 1, define the parameter Group as ‘Electronic device based parameters’, parameter Name as ‘iPhone User’, Operator as ‘==’, and the value as ‘Yes’.
-The logical operator between the Rules is ‘AND’. The default option for it is ‘ALL’ on Rule level.
-On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
+**Note:** A rule can be deleted by clicking on the ‘Delete Rule’ button. A condition can be deleted using the delete icon.
 
-Note: 
-    A rule can be deleted by clicking on the ‘Delete Rule’ button. A condition can be deleted using the delete icon.
+**Example 2: Audience with Sequence - Users who added shoes to cart and bought them within 1 day**
 
-Creating an audience with sequence:
+1. Click on ‘Add Group’ and select ‘Sequence’.
+2. In Rule 1 of Group 1, by default, ‘INCLUDE’ will be selected to include the criteria defined.
+3. In Rule 1 of Group 1, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Add to Cart’.
+4. In Rule 1 of Group 1, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Shoes’.
+5. Click on the ‘Add Rule’ button to add a new rule.
+6. ‘Followed by’ represents the time interval between ‘Add to Cart’ event and ‘Buy’ event. It can be selected based on business needs.
+7. If the ‘Buy’ event should happen within ‘1 day’ from ‘Add to Cart’, select ‘Within’ from the dropdown ('Within' rule) and select ‘1’ from the number dropdown, ‘Day’ from duration dropdown.
+8. In Rule 2 of Group 1, by default, ‘INCLUDE’ will be selected to include the criteria defined.
+9. In Rule 2 of Group 1, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Buy’.
+10. In Rule 2 of Group 1, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Shoes’.
+11. There will be no logical operators between rules in a sequence group.
+12. ‘Clear All’ button enables you to clear the conditions defined.
+13. On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
 
-1) Let’s build an audience where Users who added shoes to cart on Tatacliq and bought them within 1 day.
+**Example 3: Combined Condition and Sequence Group - Male iPhone users who bought Perfume in 'Fashion and Lifestyle' category on Tatacliq**
 
-Click on ‘Add Group’ and select ‘Sequence’
-In Rule 1 of Group 1, by default, ‘INCLUDE’ will be selected to include the criteria defined. 
-In Rule 1 of Group 1, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Add to Cart’.
-In Rule 1 of Group 1, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Shoes’.
-Click on the ‘Add Rule’ button to add a new rule. 
-‘Followed by’ represents the time interval between ‘Add to Cart’ event and ‘Buy’ event. It can be selected based on business needs.
-If the ‘Buy’ event should happen within ‘1 day’ from ‘Add to Cart’, select ‘Within’ from the dropdown ('Within' rule) and select ‘1’ from the number dropdown, ‘Day’ from duration dropdown.
-In Rule 2 of Group 1, by default, ‘INCLUDE’ will be selected to include the criteria defined. 
-In Rule 2 of Group 1, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Buy’.
-In Rule 2 of Group 1, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Shoes’.
-There will be no logical operators between rules in a sequence group.
-‘Clear All’ button enables you to clear the conditions defined.
-On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
-
-Example for Both a Condition group and a sequence group.
-Let’s build an audience - Male iPhone users who bought Perfume in 'Fashion and Lifestyle' category on Tatacliq
-
-Click on ‘Add Group’ and select ‘Condition’
-In Rule 1 of Group 1, define the parameter Group as ‘Demographics’, parameter Name as ‘Gender’, Operator as ‘==’, and the value as ‘Male’
-Click on the ‘Add Rule’ button to add a new rule.
-In Rule 2 of Group 1, define the parameter Group as ‘Electronic device based parameters’, parameter Name as ‘iPhone User’, Operator as ‘==’, and the value as ‘Yes’.
-The logical operator between the Rules is ‘AND’. The default option for it is ‘ALL’ on Rule level.
-Click on ‘Add Group’ and select ‘Sequence’
-In Rule 1 of Group 2, by default, ‘INCLUDE’ will be selected to include the criteria defined. 
-In Rule 1 of Group 2, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Buy’.
-In Rule 1 of Group 2, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Category of products for Tatacliq’, Operator as ‘==’, and the value as ‘Fashion and Lifestyle’.
-In Rule 1 of Group 2, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Perfume’.
-‘Clear All’ button enables you to clear the conditions defined.
-On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
+1. Click on ‘Add Group’ and select ‘Condition’.
+2. In Rule 1 of Group 1, define the parameter Group as ‘Demographics’, parameter Name as ‘Gender’, Operator as ‘==’, and the value as ‘Male’.
+3. Click on the ‘Add Rule’ button to add a new rule.
+4. In Rule 2 of Group 1, define the parameter Group as ‘Electronic device based parameters’, parameter Name as ‘iPhone User’, Operator as ‘==’, and the value as ‘Yes’.
+5. The logical operator between the Rules is ‘AND’. The default option for it is ‘ALL’ on Rule level.
+6. Click on ‘Add Group’ and select ‘Sequence’.
+7. In Rule 1 of Group 2, by default, ‘INCLUDE’ will be selected to include the criteria defined.
+8. In Rule 1 of Group 2, define the parameter Group as ‘Tatacliq’, parameter Name as ‘Events for Tatacliq’, Operator as ‘==’, and the value as ‘Buy’.
+9. In Rule 1 of Group 2, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Category of products for Tatacliq’, Operator as ‘==’, and the value as ‘Fashion and Lifestyle’.
+10. In Rule 1 of Group 2, define another parameter Group as ‘Tatacliq’, parameter Name as ‘Products for Tatacliq’, Operator as ‘==’, and the value as ‘Perfume’.
+11. ‘Clear All’ button enables you to clear the conditions defined.
+12. On clicking the ‘Create’ button from the audience definition section, the audience defined will be created and will be available on the listing page.
 
 ## Audience Creation via CSV Upload
 You can also upload an audience via CSV. Click on the down arrow on ‘Create Audience’ CTA on the audience listing Page. Click on the ‘Upload via CSV’ option.
-Provide Name and Description for the audience
+Provide Name and Description for the audience.
 Download the template for uploading the audience in the desired format.
 Either drag & drop a CSV file with audience data or click on ‘browse’ and upload the file from the local location.
-Click on ‘Upload’ CTA
-Note: 
-The maximum file size is 50 MB
-User IDs must be anonymous and consistent with the User ID configured during events setup
-Do not upload personally identifiable information (email address, phone number)
+Click on ‘Upload’ CTA.
+**Note:** 
+The maximum file size is 50 MB.
+User IDs must be anonymous and consistent with the User ID configured during events setup.
+Do not upload personally identifiable information (email address, phone number).
 
 ## Audience Information
 
-In the audience listing table, click on the audience Name or ‘Info’ icon to view the details about the audience, metrics and visitor overlap details with other audiences.
+In the audience listing table, click on the audience Name or ‘Info’ icon to view the details about the audience, metrics, and visitor overlap details with other audiences.
 
 In addition to the Audience Metrics, a detailed report can offer a comprehensive view of key performance indicators. This includes metrics such as the number of sessions, revenue generated from the audience, number of purchases, average order value, average order size, and average revenue per user. These metrics provide deeper insights into the audience's engagement, conversion rates, and financial contribution to the business.
 

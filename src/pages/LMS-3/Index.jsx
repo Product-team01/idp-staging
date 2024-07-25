@@ -14,7 +14,7 @@ import QandAComponent from './QandAComponent';
 import './UniqueVideoPlayerComponent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faGlobe, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-
+import DataAndMetadataComponent from './DatasetGroups';
 // Import local icons
 import bookIcon from './icons/book.png';
 import questionIcon from './icons/message-question.png';

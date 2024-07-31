@@ -27,7 +27,7 @@ const Homepage = () => {
       organization: 'Stanford University',
       level: 'Intermediate',
       type: 'Course',
-      href: '/another-path'
+      href: '/LMS-3'
     },
     {
       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png ',
@@ -35,7 +35,7 @@ const Homepage = () => {
       organization: 'MIT',
       level: 'Advanced',
       type: 'Course',
-      href: '/another-path'
+      href: '/LMS-4'
     },
    
     // Add more courses as needed

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import TextComponent from './TextComponent';
+import ConnectionManagerDestinationInstructions from './ConnectionManagerDestinationInstructions';
 import WhatAreDatasetsComponent from './WhatAreDatasetsComponent';
 import WhyDatasetGroupsComponent from './WhyDatasetGroups';
+import ConnectionManagerInstructions from './ConnectionManagerInstructions';
 import NewGroupComponent from './newgroupdataset';
+import ModuleOverview from './ModuleOverview';
+import ConnectionManagerOverview from './ConnectionManagerOverview';
+import CreateConnectionInstructions from './CreateConnectionInstructions';
 // Import the new components with the names provided in your image import ModuleOverviewComponent from './WhatareDataset';
 import DatasetGroupsComponent from './DatasetGroups';
 import CardinalityComponent from './Cardinality';
@@ -85,40 +90,40 @@ const VideoPlayerComponent = () => {
   const courseContents = [
     {
       type: 'component',
-      title: 'Module Overview',
+      title: 'Module Overview: Connections',
       icon: bookIcon,
-      component: < DatasetGroupsComponent/>
+      component: < ModuleOverview/>
     },
     {
       type: 'component',
-      title: 'What are datasets',
+      title: 'Introduction to Connection Manager',
       icon: bookIcon,
-      component: <WhatAreDatasetsComponent />
+      component: <ConnectionManagerOverview />
     },
-    {
-      type: 'component',
-      title: 'Why dataset groups',
-      icon: bookIcon,
-      component: <WhyDatasetGroupsComponent />
-    },
-    {
-      type: 'component',
-      title: 'ER diagram',
-      icon: bookIcon,
-      component: <TheDatasetLandingPageComponent/>
-    },
-    {
-      type: 'component',
-      title: 'Cardinality in data modeling',
-      icon: bookIcon,
-      component: <CardinalityComponent/>
-    },
-    {
-      type: 'component',
-      title: 'Creating a new data group',
-      icon: bookIcon,
-      component: <NewGroupComponent/>
-    },
+    // {
+    //   type: 'component',
+    //   title: 'Why dataset groups',
+    //   icon: bookIcon,
+    //   component: <WhyDatasetGroupsComponent />
+    // },
+    // {
+    //   type: 'component',
+    //   title: 'ER diagram',
+    //   icon: bookIcon,
+    //   component: <TheDatasetLandingPageComponent/>
+    // },
+    // {
+    //   type: 'component',
+    //   title: 'Cardinality in data modeling',
+    //   icon: bookIcon,
+    //   component: <CardinalityComponent/>
+    // },
+    // {
+    //   type: 'component',
+    //   title: 'Creating a new data group',
+    //   icon: bookIcon,
+    //   component: <NewGroupComponent/>
+    // },
     // {
     //   type: 'component',
     //   title: 'Exploring the Taxonomy',
@@ -137,38 +142,64 @@ const VideoPlayerComponent = () => {
     //   icon: bookIcon,
     //   component: <PrimerOnDataTypesComponent />
     // },
-    {
-      type: 'component',
-      title: 'Q & A ',
-      icon: questionIcon,
-      component: <QandAComponent />
-    },
     // {
     //   type: 'component',
-    //   title: 'All About Tables',
-    //   icon: bookIcon,
-    //   component: null,
-    //   subsections: [
-    //     {
-    //       type: 'component',
-    //       title: 'Annotating Tables',
-    //       icon: bookIcon,
-    //       component: <AnnotatingTables />
-    //     },
-    //     {
-    //       type: 'component',
-    //       title: 'Multi-page Tables',
-    //       icon: bookIcon,
-    //       component: <MultiPageTables />
-    //     },
-    //     {
-    //       type: 'component',
-    //       title: 'A Guide to Multi-page Table Operations',
-    //       icon: bookIcon,
-    //       component: <GuideToMultiPageTableOperations />
-    //     }
-    //   ]
+    //   title: 'Q & A ',
+    //   icon: questionIcon,
+    //   component: <QandAComponent />
     // },
+    {
+      type: 'component',
+      title: 'Sources',
+      icon: bookIcon,
+      component: null,
+      subsections: [
+        {
+          type: 'component',
+          title: 'How to create a Source?',
+          icon: bookIcon,
+          component: <ConnectionManagerInstructions />
+        },
+        // {
+        //   type: 'component',
+        //   title: 'Multi-page Tables',
+        //   icon: bookIcon,
+        //   component: <MultiPageTables />
+        // },
+        // {
+        //   type: 'component',
+        //   title: 'A Guide to Multi-page Table Operations',
+        //   icon: bookIcon,
+        //   component: <GuideToMultiPageTableOperations />
+        // }
+      ]
+    },
+    {
+      type: 'component',
+      title: 'Destination',
+      icon: bookIcon,
+      component: null,
+      subsections: [
+        {
+          type: 'component',
+          title: 'How to create a Destination?',
+          icon: bookIcon,
+          component: <ConnectionManagerDestinationInstructions  />
+        },
+        // {
+        //   type: 'component',
+        //   title: 'Multi-page Tables',
+        //   icon: bookIcon,
+        //   component: <MultiPageTables />
+        // },
+        // {
+        //   type: 'component',
+        //   title: 'A Guide to Multi-page Table Operations',
+        //   icon: bookIcon,
+        //   component: <GuideToMultiPageTableOperations />
+        // }
+      ]
+    },
     // {
     //   type: 'component',
     //   title: 'How to Register a Document Type',
@@ -196,12 +227,12 @@ const VideoPlayerComponent = () => {
     // //   icon: questionIcon,
     // //   component: <QuestionAnswerComponent questions={finalQuestions} /> 
     // // },
-    // {
-    //   type: 'component',
-    //   title: 'Q & A - III',
-    //   icon: questionIcon,
-    //   component: <QuestionAnswer4Component />
-    // },
+    {
+      type: 'component',
+      title: 'Connections',
+      icon: questionIcon,
+      component: <CreateConnectionInstructions />
+    },
   ];
 
   useEffect(() => {

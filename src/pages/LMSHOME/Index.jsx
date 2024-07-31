@@ -23,16 +23,16 @@ const Homepage = () => {
     },
     {
       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-      title: 'Machine Learning',
-      organization: 'Stanford University',
+      title: 'Dataset Groups',
+      organization: 'Document',
       level: 'Intermediate',
       type: 'Course',
       href: '/LMS-3'
     },
     {
       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png ',
-      title: 'Introduction to Algorithms',
-      organization: 'MIT',
+      title: 'Connections',
+      organization: 'Document',
       level: 'Advanced',
       type: 'Course',
       href: '/LMS-4'

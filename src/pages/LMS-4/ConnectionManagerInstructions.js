@@ -1,45 +1,57 @@
 import React from 'react';
 import './howToRegisterDocumentType.css';
 
-const ConnectionManagerInstructions = () => {
+const NewGroupComponent = () => {
   const imageBaseUrl = 'https://d1r1e7xjkfj7nz.cloudfront.net/';
 
   return (
-    <div className="module-overview">
-      
+    <div className="dataset-landing-page">
       <h3>Navigation</h3>
-      <p>In the home screen of the Vue.ai Platform, navigate to Data Hub → Connection Manager → Sources.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}image-20240711-063851.png`} alt="Navigate to Sources" title="Navigate to Sources" />
+      <p>At Data Hub dropdown, hover over Document manager and select Dataset Groups</p>
+      <p>
+        You can view the created/existing dataset groups on this page.
+        <br />
+      </p>
+      <div>
+        <img className="image-container" src={`${imageBaseUrl}HWNwgMWV31vd0XB8b7BYj9nvCz2YR3sbQWebmkJEqtDYVCcpj3inauJwJlX9vT8Lyy_qjcR1q8iCCVxHuAKEwC2Wq0HwATvT-afsLyalP_RhdLrr1rcBv1VE1v5YRRlwApRuvczi2JWUdmARYLgUb-g`} alt="Existing Dataset Groups" title="Existing Dataset Groups" />
       </div>
-
-      <h3>Create a New Source</h3>
-      <p>In the Sources Listing page, click on Create New.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}newsource.png`} alt="Create New Source" title="Create New Source" />
+      <p>Select New Dataset Group to create a New dataset group.</p>
+      <p>
+        Provide the details for creating the dataset group.
+        <br />
+      </p>
+      <div>
+        <img className="image-container" src={`${imageBaseUrl}czJYftvV56AK6TJqfcp6NVPWoXyatnQSTZumPiFp0RjgvuUDgoQB8kQNkAq7h_pAn7MhXsuTMCrZuHFvR2JHCt4INIgxLmpFmUzKNZgsDKeIQu6dgvXa2mgoE3LTWqyEH9E4dkFKASkyJPB7xKXkcrc`} alt="Create Dataset Group" title="Create Dataset Group" />
       </div>
-
-      <p>In the ensuing form, provide a name that you will use to identify this source.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}sourcename.png`} alt="Source Name" title="Source Name" />
+      <p>Under the Datasets, select all the datasets required for the dataset group.</p>
+      <p>
+        Navigate to the newly created dataset group and click on “ER Diagram.”
+        <br />
+      </p>
+      <div>
+        <img className="image-container" src={`${imageBaseUrl}rXJHgbczpRu9eqy2Km0jDJMwUOZf1Ov8ppd_UQe6T3pfS15XKN1pVIYrHOygTipAiIXHTRZayozkO3Yi0PVpD_XB_6PhtuiznszgZpYKgFWljJc3tB0t_HwrUuTUKk9PGiNadVRPPEKp5r3jqCJxZBg`} alt="ER Diagram" title="ER Diagram" />
       </div>
-
-      <p>Next, choose a Source type from the list available. In this example, we have chosen Posgres.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}sourceselect.png`} alt="Select Source Type" title="Select Source Type" />
+      <p>All selected datasets will be displayed. Hover over the column you want to map, and click the "+" symbol to map columns between datasets. Various mappings that can be done:</p>
+      <ul>
+        <li>One to One Mapping: Connects one column from one dataset to one column in another dataset.</li>
+        <li>One to Many Mapping: Connects one column from one dataset to multiple columns in different datasets.</li>
+        <li>Many to Many Mapping: Connects multiple columns in one dataset to multiple columns in another, allowing for complex relationships.</li>
+      </ul>
+      <div>
+        <img className="image-container" src={`${imageBaseUrl}Screenshot2024-05-23at11.39.01AM.png`} alt="Mapping Example" title="Mapping Example" />
       </div>
-
-      <p>On selecting a source type, some details will be auto-populated. Fill in the rest of the details.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}image-20240711-073247.png`} alt="Fill in Details" title="Fill in Details" />
-      </div>
-
-      <p>Next, Test the Connection and once successful, hit Create to register the Source.</p>
-      <div className="image-container">
-        <img src={`${imageBaseUrl}testconn.png`} alt="Test Connection" title="Test Connection" />
+      <h3>The Add Dataset Feature</h3>
+      <p>The Add Dataset feature allows you to add/create datasets:</p>
+      <ul>
+        <li>Select Existing Dataset: Can choose from datasets already uploaded to the tool.</li>
+        <li>Upload Dataset: Can upload a new dataset from your local device, automatically adding it to your dataset group and registering to the tool.</li>
+        <li>Create Dataset: Can generate an empty dataset tailored to your needs.</li>
+      </ul>
+      <div>
+        <img className="image-container" src={`${imageBaseUrl}Screenshot2024-05-23.png`} alt="Add Dataset" title="Add Dataset" />
       </div>
     </div>
   );
 };
 
-export default ConnectionManagerInstructions;
+export default NewGroupComponent;

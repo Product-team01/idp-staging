@@ -10,7 +10,7 @@ export default function FooterLayout({ style, links, logo, copyright }) {
       })}
     >
       <div className="container-fluid container">
-      <script data-jsd-embedded data-key="2bdf156b-05e4-4505-b0b5-fed52583c53c" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+      {/* <script data-jsd-embedded data-key="2bdf156b-05e4-4505-b0b5-fed52583c53c" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script> */}
 
         {logo && <div className="margin-bottom--sm">{logo}</div>}
         <p className="footer__description mb-8"></p>

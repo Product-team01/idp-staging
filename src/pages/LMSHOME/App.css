@@ -20,12 +20,17 @@
     --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.6);
   }
   
+  body {
+    
+    color: var(--text-color);
+  }
+  
   .unique-card {
     width: 280px;
     display: block;
     margin: 60px auto;
     transition: 0.25s;
-    background-color: var(--card-background);
+    background-color: var(--card-background) !important;
     color: var(--card-text-color);
     box-shadow: var(--box-shadow);
   }
@@ -55,7 +60,7 @@
   
   .unique-card-body {
     padding: 15px;
-    background-color: var(--card-background);
+    background-color: var(--card-background) !important;
     width: 100%;
     color: var(--card-text-color);
   }
@@ -174,6 +179,9 @@
   
   .unique-app-card-list .unique-card .unique-card-body {
     white-space: normal;
+    color: var(--text-color);
+    
+
   }
   
   .unique-designer-link {

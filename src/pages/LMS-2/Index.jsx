@@ -4,10 +4,13 @@ import TextComponent from './TextComponent';
 // Import the new components with the names provided in your image
 import ModuleOverviewComponent from './ModuleOverviewComponent';
 import WhatAreDatasetsComponent from './WhatAreDatasetsComponent';
-
+import DatasetDetailsComponent from './DatasetDetailsComponent'
+import DatasetReportsComponent from './DatasetReportsComponent'
 import DataAndMetadataComponent from './DataAndMetadataComponent';
+import DatasetSamplingComponent from './DatasetSamplingComponent'
 import UploadingANewDatasetComponent from './UploadingANewDatasetComponent';
 import TheDatasetLandingPageComponent from './TheDatasetLandingPageComponent';
+import DatasetSchemaComponent from './DatasetSchemaComponent'
 import QandAComponent from './QandAComponent';
 import './UniqueVideoPlayerComponent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -104,30 +107,51 @@ const VideoPlayerComponent = () => {
       icon: bookIcon,
       component: <UploadingANewDatasetComponent/>
     },
+    // {
+    //   type: 'component',
+    //   title: 'The Dataset Landing Page',
+    //   icon: bookIcon,
+    //   component: <TheDatasetLandingPageComponent />
+    // },
     {
       type: 'component',
       title: 'The Dataset Landing Page',
       icon: bookIcon,
       component: <TheDatasetLandingPageComponent />
     },
-    // {
-    //   type: 'component',
-    //   title: 'Exploring the Taxonomy',
-    //   icon: bookIcon,
-    //   component: <ExploringTheTaxonomyComponent />
-    // },
-    // {
-    //   type: 'component',
-    //   title: 'Adding a New Attribute',
-    //   icon: bookIcon,
-    //   component: <AddingNewAttributeComponent />
-    // },
-    // {
-    //   type: 'component',
-    //   title: 'Primer on Data Types',
-    //   icon: bookIcon,
-    //   component: <PrimerOnDataTypesComponent />
-    // },
+      {
+      type: 'component',
+      title: 'All About Tables',
+      icon: bookIcon,
+      component: <TheDatasetLandingPageComponent/>,
+      subsections: [
+        {
+          type: 'component',
+          title: 'Adding a New Attribute',
+          icon: bookIcon,
+          component: <DatasetDetailsComponent/>
+        },
+        {
+          type: 'component',
+          title: 'Primer on Data Types',
+          icon: bookIcon,
+          component: <DatasetReportsComponent/>
+        },
+        {
+          type: 'component',
+          title: 'A Guide to Multi-page Table Operations',
+          icon: bookIcon,
+          component: <DatasetSamplingComponent />
+        },
+        {
+          type: 'component',
+          title: 'A Guide to Multi-page Table Operations',
+          icon: bookIcon,
+          component: <DatasetSchemaComponent />
+        }
+      ]
+    },
+    
     {
       type: 'component',
       title: 'Q & A ',

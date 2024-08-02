@@ -113,17 +113,17 @@ const VideoPlayerComponent = () => {
     //   icon: bookIcon,
     //   component: <TheDatasetLandingPageComponent />
     // },
-    {
+    // {
+    //   type: 'component',
+    //   title: 'The Dataset Landing Page',
+    //   icon: bookIcon,
+    //   component: <TheDatasetLandingPageComponent />
+    // },
+      {
       type: 'component',
       title: 'The Dataset Landing Page',
       icon: bookIcon,
-      component: <TheDatasetLandingPageComponent />
-    },
-      {
-      type: 'component',
-      title: 'All About Tables',
-      icon: bookIcon,
-      component: <TheDatasetLandingPageComponent/>,
+      component: <TheDatasetLandingPageComponent />,
       subsections: [
         {
           type: 'component',

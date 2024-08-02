@@ -9,7 +9,7 @@ const DatasetSchemaComponent = () => {
       <h3>Schema</h3>
       <p>Schema is a basic structure or blueprint of a dataset. It enlists the columns that are part of a dataset, their datatypes and descriptions.</p>
       <div>
-        <img className="image-container" src={`${imageBaseUrl}Screenshot2024-07-31at10.46.15PM.png`} alt="Schema Screenshot" title="Schema Screenshot" />
+        <img className="image-container" src={`${imageBaseUrl}411.png`} alt="Schema Screenshot" title="Schema Screenshot" />
       </div>
 
       <h3>The Schema consists of the following:</h3>

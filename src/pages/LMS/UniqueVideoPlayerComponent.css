@@ -13,10 +13,10 @@
 }
 
 [data-theme='dark'] {
-  --background: #303846;
-  --text-color: #ffffff;
+  --background: #1d1d1e;
+  --text-color: #ffffff !important;
   --border-color: #555555;
-  --hover-bg: #404a57;
+  --hover-bg: #91a9c8;
   --hover-border-left: #1e90ff;
   --hover-icon-color: #1e90ff;
   --completed-color: lightgreen;
@@ -45,7 +45,7 @@
 .unique-video-title {
   font-size: 25px;
   margin-bottom: 20px;
-  color: var(--text-color);
+  color: var(--text-color) !important;
   font-weight: bold;
   margin-left: 10px;
 }

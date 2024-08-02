@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
+:root {
+  --background: #ffffff;
+  --text-color: #212529;
+  --border-color: #dddddd;
+  --hover-bg: #f7f7f7;
+  --hover-border-left: #0056b3;
+  --hover-icon-color: #0056b3;
+  --completed-color: green;
+}
+
+[data-theme='dark'] {
+  --background: #4c4d4e;
+  --text-color: #ffffff;
+  --border-color: #555555;
+  --hover-bg: #404a57;
+  --hover-border-left: #1e90ff;
+  --hover-icon-color: #1e90ff;
+  --completed-color: lightgreen;
+}
+
+
 
 .unique-text-container {
     margin: 20px;

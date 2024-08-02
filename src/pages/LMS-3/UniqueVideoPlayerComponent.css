@@ -13,7 +13,7 @@
 }
 
 [data-theme='dark'] {
-  --background: #303846;
+  --background: #000000;
   --text-color: #ffffff;
   --border-color: #555555;
   --hover-bg: #404a57;

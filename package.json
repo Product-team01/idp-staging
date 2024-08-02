@@ -33,6 +33,7 @@
     "@dytesdk/react-ui-kit": "^1.52.1",
     "@dytesdk/react-web-core": "file:./modules/dytesdk-react-web-core-1.5.1-stripped.1.tgz",
     "@dytesdk/web-core": "file:./modules/dytesdk-web-core-0.28.2-stripped.5.tgz",
+    "@firecms/neat": "^0.2.2",
     "@fluentui/react-icons": "^2.0.204",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -56,6 +57,7 @@
     "react-feather": "^2.0.10",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^6.25.1",
+    "three.js": "^0.77.1",
     "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {

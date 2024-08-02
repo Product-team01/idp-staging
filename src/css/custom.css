@@ -12,6 +12,9 @@
   --newsfeed-text: #ffffff; /* text color for dark mode */
   --newsfeed-border: #555555; /* border color for dark mode */
   text-decoration:none !important;
+  --text-color: #ffffff !important;
+
+
 
 }
 

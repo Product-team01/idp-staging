@@ -9,9 +9,9 @@ class Title extends Component {
         <main className="container">
       
           <section className="animation">
-            <div className="first"><div> Welcome to VueLearn</div></div>
-            <div className="second"><div>Let's Learn</div></div>
-            <div className="third"><div></div>Welcome to VueLearn</div>
+            <div className="first"><div> Welcome to </div></div>
+            <div className="second"><div>VueLearn</div></div>
+            <div className="third"><div></div>Welcome to </div>
           </section>
         </main>
         <section className="unique-app-title">

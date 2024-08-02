@@ -1,41 +1,23 @@
-/* .lmshome {
-  padding: 20px;
-  
-  width: 100vw;
-  height: 200vh;
-  padding: 1rem;
-  font-family: Avenir, sans-serif;
-  font-size: 112.5%;
-  color: #124;
-  background-image: radial-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 40vw), radial-gradient(rgba(0, 128, 0, 0.3), rgba(0, 128, 0, 0) 40vw), radial-gradient(rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 40vw), radial-gradient(rgba(255, 255, 0, 0.3), rgba(255, 255, 0, 0) 40vw), radial-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 40vw);
-  background-position: -40vw 14rem, 50% 10rem, 60vw 14rem, -10vw calc(14rem + 20vw), 30vw calc(14rem + 20vw);
-  background-size: 80vw 80vw;
-  background-repeat: no-repeat;
-}
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px;
-   padding-left: 20px;
-} */
-
 :root {
   --background: #ffffff;
-  --text-color: #fbfbfb;
+  --text-color: #212529;
+  --card-background: #ffffff;
+  --card-text-color: #212529;
   --border-color: #dddddd;
   --hover-bg: #f7f7f7;
   --hover-border-left: #0056b3;
   --hover-icon-color: #0056b3;
   --completed-color: green;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme='dark'] {
-  --text-color: #000000;
+  --text-color: #ffffff;
+  --card-background: #333333;
+  --card-text-color: #ffffff;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 .unique-card {
@@ -43,10 +25,14 @@ h1 {
   display: block;
   margin: 60px auto;
   transition: 0.25s;
+  background-color: var(--card-background);
+  color: var(--card-text-color);
+  box-shadow: var(--box-shadow);
 }
 
 .unique-card:hover {
   cursor: pointer;
+  box-shadow: var(--box-shadow-hover);
 }
 
 .unique-card:hover .unique-button-primary {
@@ -64,24 +50,26 @@ h1 {
 .unique-card-header--title {
   text-transform: uppercase;
   margin: 0;
+  color: #d6d8d9;
 }
 
 .unique-card-body {
   padding: 15px;
-  background-color: #fff;
+  background-color: var(--card-background);
   width: 100%;
+  color: var(--card-text-color);
 }
 
 .unique-date {
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--card-text-color);
 }
 
 .unique-body-content {
   font-size: 13px;
   line-height: 1.8;
-  color: var(--text-color);
+  color: var(--card-text-color);
 }
 
 .unique-button-primary {
@@ -91,7 +79,7 @@ h1 {
   background-color: transparent;
   font-size: 15px;
   transition: 0.25s;
-  color: var(--text-color);
+  color: var(--card-text-color);
 }
 
 .unique-button-primary i {
@@ -99,7 +87,7 @@ h1 {
 }
 
 .unique-designer-link {
-  color: var(--text-color);
+  color: var(--card-text-color);
   text-align: center;
   font-size: 12px;
   text-decoration: none;

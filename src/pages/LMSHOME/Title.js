@@ -6,7 +6,7 @@ class Title extends Component {
   render() {
     return (
       <div>
-        <main className="container">
+        <main className="containerreveal">
       
           <section className="animation">
             <div className="first"><div> Welcome to </div></div>

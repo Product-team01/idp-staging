@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getCookie } from './utils'; // Adjust the path as needed
+import { getCookie } from '../utils/utils'; // Import the getCookie function
 
 const SupportSite = () => {
   useEffect(() => {
@@ -10,7 +10,6 @@ const SupportSite = () => {
       }
       console.log('Message received from parent:', event.data);
 
-      // Optionally, send a message back to the parent
       event.source.postMessage('Hello from iframe', event.origin);
     };
 
@@ -30,7 +29,6 @@ const SupportSite = () => {
     console.log('Account-Id-IDP in iframe:', accountId);
     console.log('User-Id-IDP in iframe:', userId);
 
-    // Make an API request with the retrieved cookies
     const makeApiRequest = async () => {
       try {
         const response = await fetch('https://app-backend.use1.vue.ai/api/v1/rbac_user_permissions/ef3e8081-c16d-49e4-8725-25e1aa3442d4/', {
@@ -59,7 +57,7 @@ const SupportSite = () => {
 
   return (
     <div>
-      
+      <h1>Support Site</h1>
     </div>
   );
 };

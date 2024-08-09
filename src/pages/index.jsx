@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import HubCards from '../components/homepage/HubCards';
-
+import SupportSite from './child'
 
 // Import your custom components
 import HeroSection from '../components/homepage/HeroSection';
@@ -36,6 +36,7 @@ export default function Homepage() {
       {/* <NewsfeedLauncher /> */}
       <HeroSection />
       <GuidesAndSamples />
+      < SupportSite/>
    
       <SDKs />
       <APIReferenceSection />

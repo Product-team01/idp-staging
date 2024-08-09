@@ -3,10 +3,16 @@ import React from 'react';
 const OverviewComponent = () => {
   return (
     <div>
-      <h2>Introduction to the course</h2>
+      <h2>Document Types Overview</h2>
       <p>
-        Hello and welcome to the world of Intelligent Document Processing (IDP). Let's kick things off with Module 1 which is all about registering Document Types. To begin, here is a short video on what IDP is all about.
+        Document Types are the bedrock of what Intelligent Document Processing (IDP) is built on. They are the cornerstone to creating extraction models for different documents. This learning module provides a comprehensive overview of Document Types, covering their purpose, key functionalities, and the steps involved in registering a new Document Type.
       </p>
+      <h3>What You’ll Learn by the End of This Module</h3>
+      <ul>
+        <li>Understand what Document Types are on Vue.ai Platform.</li>
+        <li>How to create a new Document Type</li>
+        <li>Some best practices around working with Document Types</li>
+      </ul>
       <div className="video-container">
         <iframe
           width="100%"

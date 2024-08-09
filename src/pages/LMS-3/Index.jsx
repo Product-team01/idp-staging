@@ -115,7 +115,7 @@ const VideoPlayerComponent = () => {
     },
     {
       type: 'component',
-      title: 'Creating a new data group',
+      title: 'Creating a new Dataset Group',
       icon: bookIcon,
       component: <NewGroupComponent/>
     },
@@ -137,12 +137,12 @@ const VideoPlayerComponent = () => {
     //   icon: bookIcon,
     //   component: <PrimerOnDataTypesComponent />
     // },
-    {
-      type: 'component',
-      title: 'Q & A ',
-      icon: questionIcon,
-      component: <QandAComponent />
-    },
+    // {
+    //   type: 'component',
+    //   title: 'Q & A ',
+    //   icon: questionIcon,
+    //   component: <QandAComponent />
+    // },
     // {
     //   type: 'component',
     //   title: 'All About Tables',
@@ -392,10 +392,10 @@ const VideoPlayerComponent = () => {
               </div>
             ))}
             <div className="unique-section">
-              <div className="unique-section-header" onClick={() => toggleSection('resources')}>
+              {/* <div className="unique-section-header" onClick={() => toggleSection('resources')}>
                 <img src={resourcesIcon} alt="" className="content-icon" /> Resources
                 <FontAwesomeIcon icon={expandedSections.includes('resources') ? faCaretDown : faCaretRight} className="expand-icon" />
-              </div>
+              </div> */}
               {expandedSections.includes('resources') && (
                 <div className="unique-section-content">
                   <ul style={{ marginLeft: '20px' }}>
@@ -409,14 +409,7 @@ const VideoPlayerComponent = () => {
                     <ul style={{ marginLeft: '20px' }}>
                       <li><a href="https://drive.google.com/uc?export=download&id=1kgQ7QfVUCFCdIoY0mxpj6iP7h8Q8JXqi" target="_blank">Sample documents</a></li>
                     </ul>
-                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Session Recording</li>
-                    <ul style={{ marginLeft: '20px' }}>
-                      <li><a href="#">Link to recording</a></li>
-                    </ul> */}
-                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Feedback</li>
-                    <ul style={{ marginLeft: '20px' }}>
-                      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfXsrO2ntD0nvX-F1GsYSQdaU5ayzMGmc7TdJlqv7iDhTNfgg/viewform" target="_blank">Feedback</a></li>
-                    </ul> */}
+                  
                   </ul>
                 </div>
               )}

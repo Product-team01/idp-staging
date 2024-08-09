@@ -26,7 +26,7 @@ import bookIcon from './icons/book.png';
 import questionIcon from './icons/message-question.png';
 import videoIcon from './icons/video-square.png';
 import resourcesIcon from './icons/resources.png'; // Add your resources icon here
-
+import CreatingConnectionComponent from "./CreatingConnectionComponent"
 // Import the new Overview component
 import OverviewComponent from './OverviewComponent';
 
@@ -90,7 +90,7 @@ const VideoPlayerComponent = () => {
   const courseContents = [
     {
       type: 'component',
-      title: 'Module Overview: Connections',
+      title: 'Module Overview',
       icon: bookIcon,
       component: < ModuleOverview/>
     },
@@ -230,8 +230,14 @@ const VideoPlayerComponent = () => {
     {
       type: 'component',
       title: 'Connections',
-      icon: questionIcon,
+      icon: bookIcon,
       component: <CreateConnectionInstructions />
+    },
+    {
+      type: 'component',
+      title: 'How to create Connections',
+      icon: bookIcon,
+      component: <CreatingConnectionComponent />
     },
   ];
 
@@ -430,11 +436,11 @@ const VideoPlayerComponent = () => {
               {expandedSections.includes('resources') && (
                 <div className="unique-section-content">
                   <ul style={{ marginLeft: '20px' }}>
-                    <li style={{ fontWeight: 'bold', color: 'grey' }}>Reference</li>
+                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Reference</li> */}
                     <ul style={{ marginLeft: '20px' }}>
-                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
+                      {/* <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
                       <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Creating a document type</a></li>
-                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li>
+                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li> */}
                     </ul>
                     <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
                     <ul style={{ marginLeft: '20px' }}>

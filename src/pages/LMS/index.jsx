@@ -95,7 +95,7 @@ const VideoPlayerComponent = () => {
   const courseContents = [
     {
       type: 'component',
-      title: 'Overview of Intelligent Document Processing',
+      title: 'Module Overview',
       icon: bookIcon,
       component: <OverviewComponent />
     },
@@ -403,11 +403,11 @@ const VideoPlayerComponent = () => {
               {expandedSections.includes('resources') && (
                 <div className="unique-section-content">
                   <ul style={{ marginLeft: '20px' }}>
-                    <li style={{ fontWeight: 'bold', color: 'grey' }}>Reference</li>
+                    {/* <li style={{ fontWeight: 'bold', color: 'grey' }}>Reference</li> */}
                     <ul style={{ marginLeft: '20px' }}>
-                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
+                      {/* <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Listing" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Listing</a></li>
                       <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Experience%20Creation" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> Creating a document type</a></li>
-                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li>
+                      <li><a href="https://idp-support.vue.ai/Document-Manager/Document%20type/Annotateguide" target="_blank"><FontAwesomeIcon icon={faGlobe} className="icon" /> A guide to annotation</a></li> */}
                     </ul>
                     <li style={{ fontWeight: 'bold', color: 'grey' }}>Samples</li>
                     <ul style={{ marginLeft: '20px' }}>

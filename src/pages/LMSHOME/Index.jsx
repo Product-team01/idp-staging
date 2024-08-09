@@ -231,7 +231,7 @@ import Title from './Title';
 const CoursesData = [
   {
     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
-    title: 'Document Type',
+    title: 'Document Types',
     organization: 'MSD',
     level: 'Beginner',
     type: 'Course',

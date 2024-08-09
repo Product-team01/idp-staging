@@ -68,13 +68,38 @@ const PrimerOnDataTypesComponent = () => {
           <tr>
             <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Date</td>
             <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Typical data types for identifying dates from documents</td>
-            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when the data is a date that needs to be extracted, and transformed if necessary)</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Used when the data is a date that needs to be extracted, and transformed if necessary</td>
             <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>
               <ul style={{ margin: 0, paddingLeft: '20px' }}>
                 <li>dd-mm-yyyy</li>
                 <li>dd/mm/yyyy</li>
                 <li>mmm dd, yyyy</li>
                 <li>yyyy-mm-dd</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>Checkbox</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>A list of options with one or more options checked</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>When the form (typically) contains a single/multi select checkbox or a radio button</td>
+            <td style={{ border: '1px solid black', padding: '8px', textAlign: 'left', verticalAlign: 'top' }}>
+              <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                <li>Orientation:</li>
+                <ul>
+                  <li>Horizontal</li>
+                  <li>Vertical</li>
+                  <li>Grid</li>
+                </ul>
+                <li>Check status:</li>
+                <ul>
+                  <li>Single Select</li>
+                  <li>Multi Select</li>
+                </ul>
+                <li>Extraction:</li>
+                <ul>
+                  <li>All values with check status</li>
+                  <li>Only checked value</li>
+                </ul>
               </ul>
             </td>
           </tr>

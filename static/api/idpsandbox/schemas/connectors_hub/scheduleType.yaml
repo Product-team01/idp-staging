@@ -1,7 +1,0 @@
-description: An enumeration.
-enum:
-- manual
-- basic
-- cron
-title: scheduleType
-type: string

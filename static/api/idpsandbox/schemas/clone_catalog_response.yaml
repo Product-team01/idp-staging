@@ -1,8 +1,0 @@
-title: clone_catalog_response
-type: object
-properties:
-  clone_catalog_id:
-    title: clone_catalog_id
-    type: string
-    description: catalog_id of the cloned catalog
-

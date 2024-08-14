@@ -1,6 +1,0 @@
-name: api_key
-in: query
-description: API Key
-required: true
-schema:
-  type: string

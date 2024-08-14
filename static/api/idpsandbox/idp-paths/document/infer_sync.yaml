@@ -16,11 +16,10 @@ post:
 
     | Field             | Type   | Description                                                                 |
     |-------------------|--------|-----------------------------------------------------------------------------|
-    | `input`           | dict   | Contains details about the input document for processing.                   |
     | `name`            | string | Name of the input document.                                                 |
     | `input_type`      | string | Type of input, such as URL or base64.                                        |
     | `file_extension`  | string | The file extension of the input document.                                    |
-    | `files`           | array  | List of files to be processed (URLs or base64 strings).                      |
+    | `input`           | array  | List of files to be processed (URLs or base64 strings).                      |
     | `doc_type_id`     | string | Type identifier for the document.                                            |
     | `metadata`        | dict   | Additional information.                                                      |
 
@@ -68,11 +67,10 @@ post:
         schema:
           type: object
           example:
-            input:
-              name: pan_1
-              input_type: url/base64
-              file_extension: jpg
-              files: []
+            document_name: pan_1
+            input_type: url/base64
+            file_extension: jpg
+            input: []
             doc_type_id: a87cbf2e-71e0-4c41-8499-9f7d9b492061
             metadata:
               name: John
@@ -81,12 +79,22 @@ post:
       in: header
       schema:
         type: string
-      example: '{{api-key}}'
+      example: "{{api-key}}"
+    - name: x-client-id
+      in: header
+      schema:
+        type: string
+      example: "{{client_id}}"
     - name: accounts-id
       in: header
       schema:
         type: string
-      example: '{{account_id}}'
+      example: "{{account_id}}"
+    - name: x-client-name
+      in: header
+      schema:
+        type: string
+      example: "{{client_name}}"
     - name: x-correlation-id
       in: header
       schema:

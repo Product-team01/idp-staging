@@ -46,11 +46,21 @@ get:
       schema:
         type: string
       example: "{{api-key}}"
+    - name: x-client-id
+      in: header
+      schema:
+        type: string
+      example: "{{client_id}}"
     - name: accounts-id
       in: header
       schema:
         type: string
       example: "{{account_id}}"
+    - name: x-client-name
+      in: header
+      schema:
+        type: string
+      example: "{{client_name}}"
     - name: x-correlation-id
       in: header
       schema:

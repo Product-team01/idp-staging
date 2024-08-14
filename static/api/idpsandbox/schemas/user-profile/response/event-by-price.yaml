@@ -1,7 +1,0 @@
-title: Success
-type: object
-properties:
-  event_name: 
-    type: number
-
-  

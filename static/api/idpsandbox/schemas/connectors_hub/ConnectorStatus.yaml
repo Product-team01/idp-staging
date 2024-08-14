@@ -1,7 +1,0 @@
-description: An enumeration.
-enum:
-- active
-- inactive
-- deprecated
-title: ConnectorStatus
-type: string

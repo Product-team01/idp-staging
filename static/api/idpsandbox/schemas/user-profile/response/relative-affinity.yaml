@@ -1,4 +1,0 @@
-title: Success
-type: object
-additionalProperties:
-  type: string

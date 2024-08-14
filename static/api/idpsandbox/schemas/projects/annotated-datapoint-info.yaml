@@ -1,8 +1,0 @@
-type: object
-properties:
-  total_count:
-    type: integer
-  datapoints:
-    type: array
-    items:
-      $ref: '../../schemas/projects/annotated-datapoint.yaml'

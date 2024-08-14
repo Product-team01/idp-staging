@@ -1,6 +1,0 @@
-description: An enumeration.
-enum:
-- full_refresh
-- incremental
-title: syncModes
-type: string

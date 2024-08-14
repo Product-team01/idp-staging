@@ -1,9 +1,0 @@
-properties:
-  message:
-    description: This field shows a short message about the output of the API.
-    title: Message
-    type: string
-required:
-- message
-title: WorkflowValidationEntity
-type: object

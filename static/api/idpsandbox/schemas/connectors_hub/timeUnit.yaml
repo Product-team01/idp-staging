@@ -1,9 +1,0 @@
-description: An enumeration.
-enum:
-- minutes
-- hours
-- days
-- weeks
-- months
-title: timeUnit
-type: string

@@ -1,0 +1,105 @@
+get:
+  tags:
+  - st-mappings
+  summary: get all st-mappings
+  description: get all st-mappings
+  operationId: getStMappings
+  parameters:
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - name: Accept-Encoding
+    in: header
+    description: indicates the content encoding that the client can understand
+    schema:
+      type: string
+      default: gzip
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                description: status of the request
+                type: string
+                enum:
+                - SUCCESS
+                - FAILURE
+              request_id:
+                description: id to backtrack the request in internal services
+                type: string
+              correlation_id:
+                description: id sent by the caller to backtrack the request
+                type: string
+              data:
+                type: object
+                properties:
+                  st_mappings:
+                    type: array
+                    items:
+                      $ref: '../../schemas/st-mappings/st-mappings.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/errors/failure-response.yaml'
+post:
+  tags:
+  - st-mappings
+  summary: Add a new st-mapping
+  description: Add a new st-mapping
+  operationId: st-mappings
+  parameters:
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - name: Accept-Encoding
+    in: header
+    description: indicates the content encoding that the client can understand
+    schema:
+      type: string
+      default: gzip
+  requestBody:
+    description: st-mappings object that needs to be added
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/st-mappings/add-st-mapping.yaml'
+    required: true
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                description: status of the request
+                type: string
+                enum:
+                - SUCCESS
+                - FAILURE
+              request_id:
+                description: id to backtrack the request in internal services
+                type: string
+              correlation_id:
+                description: id sent by the caller to backtrack the request
+                type: string
+              data:
+                $ref: '../../schemas/st-mappings/st-mappings.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/errors/failure-response.yaml'
+  x-codegen-request-body-name: body

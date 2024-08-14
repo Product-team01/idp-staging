@@ -1,0 +1,108 @@
+delete:
+  operationId: delete_node_type_api_v1_nodes_types__type_id__delete
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - description: This field describes the ID of the node type used to query the node_type
+      registry.
+    in: path
+    name: type_id
+    required: true
+    schema:
+      description: This field describes the ID of the node type used to query the
+        node_type registry.
+      title: Type Id
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/NodeTypeDeleteResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Delete Node Type
+  tags:
+  - Nodes
+get:
+  operationId: retrieve_node_type_api_v1_nodes_types__type_id__get
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - description: This field describes the ID of the node type used to query the node_type
+      registry.
+    in: path
+    name: type_id
+    required: true
+    schema:
+      description: This field describes the ID of the node type used to query the
+        node_type registry.
+      title: Type Id
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/NodeTypeReadResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Retrieve Node Type
+  tags:
+  - Nodes
+put:
+  operationId: update_node_type_api_v1_nodes_types__type_id__put
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - description: This field describes the ID of the node type used to query the node_type
+      registry.
+    in: path
+    name: type_id
+    required: true
+    schema:
+      description: This field describes the ID of the node type used to query the
+        node_type registry.
+      title: Type Id
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/workflows/NodeType.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/NodeTypeUpdateResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Update Node Type
+  tags:
+  - Nodes

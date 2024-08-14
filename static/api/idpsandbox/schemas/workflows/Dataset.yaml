@@ -1,0 +1,77 @@
+properties:
+  data_lineage:
+    additionalProperties:
+      type: string
+    default: {}
+    description: This field captures the data lineage of the dataset.
+    title: Data Lineage
+    type: object
+  dataset_description:
+    description: This field provides a description about the dataset.
+    title: Dataset Description
+    type: string
+  dataset_name:
+    description: This field describes the name of the dataset.
+    title: Dataset Name
+    type: string
+  dataset_schema:
+    description: This field describes the dataset schema. It defines the rules and
+      formats of the various columns in the dataset.
+    items:
+      $ref: ../workflows/DatasetColumnRequest.yaml
+    title: Dataset Schema
+    type: array
+  dataset_summary:
+    allOf:
+    - $ref: ../workflows/DatasetSummary.yaml
+    description: This field provides a summary about the dataset. The summary
+      includes metadata about the dataset, a sample set of records that we can find
+      in the data, and univariate summary of all fields in the dataset.
+    title: Dataset Summary
+  foreign_key:
+    default: []
+    description: This field describes the foreign key(s) for the dataset if it exists.
+    items:
+      type: string
+    title: Foreign Key
+    type: array
+  internal:
+    default: false
+    description: This field is a boolean that is used to describe if a dataset is
+      an internal dataset or not.
+    title: Internal
+    type: boolean
+  path_to_data:
+    description: This field references the path to the raw data for this dataset.
+    title: Path To Data
+    type: string
+  path_to_sample_data:
+    description: This field references the path to the sample data for this dataset.
+    title: Path To Sample Data
+    type: string
+  preset:
+    default: false
+    description: This field is a boolean that is used to describe if a dataset is
+      a preset dataset or not.
+    title: Preset
+    type: boolean
+  primary_key:
+    default: []
+    description: This field describes the primary key(s) of the dataset if it exists.
+    items:
+      type: string
+    title: Primary Key
+    type: array
+  tags:
+    default: []
+    description: This field describes any set of tags that can be associated to the
+      dataset.
+    items:
+      type: string
+    title: Tags
+    type: array
+required:
+- dataset_name
+- dataset_schema
+title: Dataset
+type: object

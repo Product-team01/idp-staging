@@ -1,0 +1,40 @@
+post:
+  description: 'This API is the trigger to execute the workflow pertaining to the
+    computation of this audience in asynchronous mode.
+
+
+    The input to the API is a audience identifier which is a unique reference to this
+    audience in the audience registry.'
+  operationId: run_audience_api_v1_audiences_async_run_post
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - description: This field describes the ID of the audience used to query the audience
+      registry.
+    in: query
+    name: audience_id
+    required: true
+    schema:
+      description: This field describes the ID of the audience used to query the audience
+        registry.
+      title: Audience Id
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/AudienceRunResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Run Audience
+  tags:
+  - Audiences

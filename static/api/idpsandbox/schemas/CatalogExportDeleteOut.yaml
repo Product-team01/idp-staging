@@ -1,0 +1,21 @@
+type: object
+properties:
+  status:
+    type: string
+  request_id:
+    type: string
+  correlation_id:
+    type: string
+  data:
+    type: object
+    properties:
+      message:
+        type: string
+
+example:
+  request_id: f852d4c7-68bc-44b8-840d-1a7d88bd4633
+  correlation_id: ''
+  resolution_id: ''
+  status: SUCCESS
+  data:
+    message: Deleted export job

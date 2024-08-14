@@ -1,0 +1,6 @@
+description: An enumeration.
+enum:
+- condition
+- sequence
+title: FeatureType
+type: string

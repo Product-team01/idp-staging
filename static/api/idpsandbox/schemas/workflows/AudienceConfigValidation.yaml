@@ -1,0 +1,92 @@
+properties:
+  audience_description:
+    description: This field provides a description about the audience.
+    title: Audience Description
+    type: string
+  audience_form:
+    allOf:
+    - $ref: ../workflows/AudienceForm.yaml
+    description: This field describes the form that comes as input from UI for creating
+      this audience.
+    title: Audience Form
+  audience_id:
+    description: This field describes a unique identifier of the audience.
+    title: Audience Id
+    type: string
+  audience_name:
+    description: This field describes the name of the audience.
+    title: Audience Name
+    type: string
+  audience_workflow_config:
+    description: This field desribes the workflow configuration for forming the audience.
+    items:
+      anyOf:
+      - $ref: ../workflows/DatasetNode.yaml
+      - $ref: ../workflows/QueryForm.yaml
+    title: Audience Workflow Config
+    type: array
+  audience_workflow_id:
+    description: This field describes a unique identifier to the workflow that will
+      be generating this audience.
+    title: Audience Workflow Id
+    type: string
+  created_ts:
+    description: This field describes the initial date of creation of the audience.
+    title: Created Ts
+    type: string
+  export_csv_url:
+    description: This field describes the url of the audience that can be used to
+      export the file as csv.
+    title: Export Csv Url
+    type: string
+  file_type:
+    allOf:
+    - $ref: ../workflows/FileType.yaml
+    description: This field describes the filetype of the audience uploaded.
+  is_uploaded:
+    default: false
+    description: This field is a boolean that is used to describe if a audience is
+      an uploaded audience or not.
+    title: Is Uploaded
+    type: boolean
+  lookback_period:
+    description: This field is a string that is used to describe the period to lookback
+      to create the audience.
+    title: Lookback Period
+    type: string
+  path:
+    description: This field describes the path of the audience uploaded.
+    title: Path
+    type: string
+  preset:
+    default: false
+    description: This field is a boolean that is used to describe if a audience is
+      a preset audience or not.
+    title: Preset
+    type: boolean
+  refresh_frequency:
+    allOf:
+    - $ref: ../workflows/ScheduleInterval.yaml
+    description: This field is a string that is used to describe the frequency in
+      which audience have to be refreshed.
+  tags:
+    default: []
+    description: This field describes any set of tags that can be associated to the
+      audience.
+    items:
+      type: string
+    title: Tags
+    type: array
+  updated_ts:
+    description: This field describes the latest date of updation of the audience.
+    title: Updated Ts
+    type: string
+required:
+- created_ts
+- updated_ts
+- audience_name
+- audience_description
+- audience_workflow_config
+- audience_workflow_id
+title: AudienceConfigValidation
+type: object

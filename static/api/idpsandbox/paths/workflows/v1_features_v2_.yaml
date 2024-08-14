@@ -1,0 +1,202 @@
+get:
+  description: 'This API lists the total number of features that have been registered
+    in the feature registry, with its corresponding name and identifiers.
+
+    The goal of this API is to provide the registered features in a convenient format
+    that allows the user to browse and discover all entries in the registry.
+
+
+    There is no input required to invoke this API.
+
+    The output of this API is a count of the total number of features registered and
+    a list of all these features in the form of a dictionary - the key of the dictionary
+    being the feature identifier and the value being the name of the feature.'
+  operationId: list_features_api_v1_features_v2__get
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - description: This query parameter describes whether we need to list either internal
+      features, external features or all features.
+    in: query
+    name: internal
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list either internal
+        features, external features or all features.
+      title: Internal
+      type: boolean
+  - description: This query parameter describes whether we need to list either preset
+      features, custom features or all features.
+    in: query
+    name: preset
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list either preset
+        features, custom features or all features.
+      title: Preset
+      type: boolean
+  - description: This query parameter enables the user to search for features in the
+      feature registry based on tags.
+    in: query
+    name: tags
+    required: false
+    schema:
+      description: This query parameter enables the user to search for features in
+        the feature registry based on tags.
+      title: Tags
+      type: string
+  - description: This query parameter enables the user to search for features in the
+      feature registry.
+    in: query
+    name: search
+    required: false
+    schema:
+      description: This query parameter enables the user to search for features in
+        the feature registry.
+      title: Search
+      type: string
+  - description: This query parameter allows you to sort the listing query based on
+      a particular field.
+    in: query
+    name: sort_field
+    required: false
+    schema:
+      description: This query parameter allows you to sort the listing query based
+        on a particular field.
+      title: Sort Field
+      type: string
+  - description: This query parameter allows you to sort the listing query based on
+      ascending or descending order.
+    in: query
+    name: sort_order
+    required: false
+    schema:
+      description: This query parameter allows you to sort the listing query based
+        on ascending or descending order.
+      title: Sort Order
+      type: string
+  - description: This query parameter describes whether we need to list either features
+      that belong to a feature group or all features.
+    in: query
+    name: feature_group
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list either features
+        that belong to a feature group or all features.
+      title: Feature Group
+      type: string
+  - description: This query parameter describes whether we need to list either features
+      that belong to a particular level of grouping or all features.
+    in: query
+    name: feature_level
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list either features
+        that belong to a particular level of grouping or all features.
+      title: Feature Level
+      type: string
+  - description: This query parameter describes whether we need to list either conditional
+      features, sequence based features or all features.
+    in: query
+    name: feature_type
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list either conditional
+        features, sequence based features or all features.
+      title: Feature Type
+      type: string
+  - description: This query parameter describes whether we need to list all features
+      that belong to a particular lookback period.
+    in: query
+    name: lookback_period
+    required: false
+    schema:
+      description: This query parameter describes whether we need to list all features
+        that belong to a particular lookback period.
+      title: Lookback Period
+      type: string
+  - description: This query parameter allows you to define the number of records that
+      must be skipped before selection for the listing query.
+    in: query
+    name: page_offset
+    required: false
+    schema:
+      description: This query parameter allows you to define the number of records
+        that must be skipped before selection for the listing query.
+      title: Page Offset
+      type: integer
+  - description: This query parameter allows you to limit the number of records returned
+      from the listing query.
+    in: query
+    name: page_limit
+    required: false
+    schema:
+      description: This query parameter allows you to limit the number of records
+        returned from the listing query.
+      title: Page Limit
+      type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/FeatureListingResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: List Features
+  tags:
+  - Features
+post:
+  description: 'This API is used to register any feature along with metadata configurations
+    pertaining to it in the feature registry.
+
+    The metadata for this feature holds information about the feature and configurations
+    about how to orchestrate and compute the feature.
+
+    The feature registry also helps in isolating and composing features as entities
+    that can be used as backbones in building audiences.
+
+
+    The input to this API is a dictionary containing all the metadata about the feature
+    - name, description, and any other configurations that drives its functionality.
+
+    The output is a feature identifier which is a unique reference to this feature
+    in the feature registry, and a config which is the same as the input along with
+    the generated identifier.'
+  operationId: create_feature_api_v1_features_v2__post
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/workflows/app__schemas__features_v2__Feature.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/FeatureCreateResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Create Feature
+  tags:
+  - Features

@@ -1,0 +1,130 @@
+post:
+  tags:
+  - catalogs
+  summary: API to list all the async export catalog jobs.
+  description: List all the async export jobs details
+  operationId: list_export_jobs
+  parameters:
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - required: true
+    schema:
+      title: Catalog Id
+      type: string
+    name: catalog_id
+    in: path
+  requestBody:
+    description: document that need to be added
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            page_num:
+              type: integer
+              example: 1
+            page_size:
+              type: integer
+              example: 10
+            exclude:
+              type: string
+            search:
+              type: string
+            filters:
+              type: array
+              items:
+                type: string
+    required: true
+
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+             - $ref: '../../schemas/CatalogListExportJobsOut.yaml'
+
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'
+
+
+delete:
+  tags:
+  - catalogs
+  summary: API to delete the async export catalog job.
+  description: Deletes export s3 file and job configs
+  operationId: delete_export_job_status
+  parameters:
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - required: true
+    schema:
+      title: Catalog Id
+      type: string
+    name: catalog_id
+    in: path
+  - required: true
+    schema:
+      title: Job Id
+      type: string
+      example: c5f19e52-0d33-494e-b353-c803b30036b8
+    name: job_id
+    in: query
+  - required: true
+    schema:
+      title: File name
+      type: string
+      example: Export File 1
+    name: filename
+    in: query
+
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+             - $ref: '../../schemas/CatalogExportDeleteOut.yaml'
+
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/HTTPValidationError.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PostFailureResponse.yaml'

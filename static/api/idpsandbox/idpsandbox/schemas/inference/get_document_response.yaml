@@ -1,0 +1,147 @@
+required:
+- request_id
+- correlation_id
+- document_id
+- document_name
+- created_ts
+- doc_type_id
+type: object
+properties:
+  request_id:
+    type: string
+    description: request_id of the API
+    example: dfhn321-cb36-1bcb-9999-77e695fabdbe
+  correlation_id:
+    type: string
+    description: correlation id
+    example: b2dos12-45aq-2b8q-bc2f-123dvas729
+  document_id:
+    type: string
+    description: unique identifier of the document
+    example: rf2323q-12sq-1df2-1234-123456
+  document_name:
+    type: string
+    description: unique name of the document
+    example: document_123
+  doc_type_id:
+    type: string
+    description: unique id of the document type
+    example: g6asd5efds-1fc2-5d99-nh12-12aab3j14r
+  created_ts:
+    type: string
+    description: timestamp of the document creation
+    example: 2024-05-02T12:00:00Z
+  updated_ts:
+    type: string
+    description: timestamp of the document updation
+    example: 2024-05-02T12:00:00Z
+  job_status:
+    type: string
+    description: status of the job
+    example: DONE
+  matching_results:
+    type: array
+    items:
+      type: object
+      properties:
+        label:
+          type: string
+          example: cwb
+        value:
+          type: string
+          example: 9876
+        input_value:
+          type: string
+          example: 9876
+        status:
+          type: string
+          example: success
+        error_code:
+          type: string
+          example: null
+  validation_results:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          example: document_quality
+        meta_info:
+          type: object
+          properties:
+            pages_quality_info:
+              type: array
+              items:
+                type: object
+        error_code:
+          type: string
+          example: null
+        status:
+          type: string
+          example: success
+
+  extraction_results:
+    type: array
+    items:
+      type: object
+      properties:
+        page_id:
+          type: integer
+          example: 1
+        data:
+          type: object
+          properties:
+            type:
+              type: string
+              example: FREE FORM TEXT
+            label:
+              type: string
+              example: cwb
+            value:
+              type: string
+              example: 20120483884
+            confidence:
+              type: string
+              example: 1
+            coordinates:
+              type: array
+              items:
+                type: object
+                properties:
+                  x1:
+                    type: integer
+                    example: 100
+                  x2:
+                    type: integer
+                    example: 100
+                  y1:
+                    type: integer
+                    example: 100
+                  y2:
+                    type: integer
+                    example: 100
+  pages_info:
+    type: object
+    properties:
+      id:
+        type: object
+        properties:
+          height:
+            type: string
+            example: 1169
+          width:
+            type: string
+            example: 850
+          raw_image_url:
+            type: string
+          low_res_image_url:
+            type: string
+  metadata:
+    type: object
+    properties:
+      cwb:
+        type: string
+        description: name of the document_idk
+        example: 12345678
+      

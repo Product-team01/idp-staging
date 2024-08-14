@@ -1,0 +1,104 @@
+delete:
+  description: Deletes the specified model.
+  operationId: delete_model_api_v1_models__model_id__delete
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - in: path
+    name: model_id
+    required: true
+    schema:
+      title: Model Id
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Delete Model
+  tags:
+  - Models
+get:
+  description: Returns config of a specific model.
+  operationId: get_model_api_v1_models__model_id__get
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - in: path
+    name: model_id
+    required: true
+    schema:
+      title: Model Id
+      type: string
+  - in: query
+    name: version
+    required: false
+    schema:
+      default: 0
+      title: Version
+      type: integer
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Get Model
+  tags:
+  - Models
+put:
+  description: Updates config by changing version count and replacing config for a
+    specific model.
+  operationId: update_model_api_v1_models__model_id__put
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - in: path
+    name: model_id
+    required: true
+    schema:
+      title: Model Id
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/workflows/Model.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Update Model
+  tags:
+  - Models

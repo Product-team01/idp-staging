@@ -1,0 +1,17 @@
+properties:
+  count:
+    description: This field describes the total number of feature groups that have
+      been registered.
+    title: Count
+    type: integer
+  results:
+    description: This field describes the list of feature groups that have been registered.
+      The key is a identifier for a feature group, and the value is the feature group
+      name.
+    title: Results
+    type: object
+required:
+- count
+- results
+title: FeatureGroupListingResponseValidation
+type: object

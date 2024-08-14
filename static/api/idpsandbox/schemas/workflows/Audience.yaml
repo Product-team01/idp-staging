@@ -1,0 +1,51 @@
+properties:
+  audience_description:
+    description: This field provides a description about the audience.
+    title: Audience Description
+    type: string
+  audience_form:
+    allOf:
+    - $ref: ../workflows/AudienceForm.yaml
+    description: This field describes the form that comes as input from UI for creating
+      this audience.
+    title: Audience Form
+  audience_name:
+    description: This field describes the name of the audience.
+    title: Audience Name
+    type: string
+  is_uploaded:
+    default: false
+    description: This field is a boolean that is used to describe if a audience is
+      an uploaded audience or not.
+    title: Is Uploaded
+    type: boolean
+  lookback_period:
+    allOf:
+    - $ref: ../workflows/app__schemas__audiences_v2__LookbackPeriod.yaml
+    default: Last 180 days
+    description: This field is a string that is used to describe the period to lookback
+      to create the audience.
+  preset:
+    default: false
+    description: This field is a boolean that is used to describe if a audience is
+      a preset audience or not.
+    title: Preset
+    type: boolean
+  refresh_frequency:
+    allOf:
+    - $ref: ../workflows/ScheduleInterval.yaml
+    description: This field is a string that is used to describe the frequency in
+      which audience have to be refreshed.
+  tags:
+    default: []
+    description: This field describes any set of tags that can be associated to the
+      feature.
+    items:
+      type: string
+    title: Tags
+    type: array
+required:
+- audience_name
+- audience_form
+title: Audience
+type: object

@@ -1,0 +1,38 @@
+post:
+  description: Enable the specific ulevel se case.
+  operationId: enable_level_creation_api_v1_features_enable_post
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  - in: query
+    name: level
+    required: false
+    schema:
+      default: user_id
+      title: Level
+      type: string
+  - in: query
+    name: use_case
+    required: false
+    schema:
+      default: create_workflow
+      title: Use Case
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Enable Level Creation
+  tags:
+  - Features (old)

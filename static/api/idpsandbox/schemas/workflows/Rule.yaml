@@ -1,0 +1,25 @@
+properties:
+  group_type:
+    oneOf:
+    - $ref: ../workflows/FeatureType.yaml
+    description: This field describes the type of rule that is being registered. For
+      example, it could be a conditional rule or a sequential rule.
+  rule_operations:
+    description: This field describes the operations inside the rule.
+    items:
+      anyOf:
+      - $ref: ../workflows/Condition.yaml
+      - type: object
+    title: Rule Operations
+    type: array
+  rule_operator:
+    description: This field describes the operator with which the conditions inside
+      the rule have to be combined.
+    title: Rule Operator
+    type: string
+required:
+- group_type
+- rule_operator
+- rule_operations
+title: Rule
+type: object

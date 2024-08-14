@@ -1,0 +1,45 @@
+get:
+  tags:
+  - 2dotx
+  summary: get document by id
+  description: get document by id
+  operationId: getDocument
+  parameters:
+  - name: x-api-key
+    in: header
+    description: api key of the user
+    schema:
+      type: string
+  - name: x-correlation-id
+    in: header
+    description: correlation id to track requests
+    schema:
+      type: string
+  - name: accounts-id
+    in: header  
+    description: account id of the account
+    schema:
+      type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                description: status of the request
+                type: string
+                enum:
+                - SUCCESS
+                - FAILURE
+              data:
+                $ref: '../../idp-schemas/inference/get_document_response.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../schemas/errors/failure-response.yaml'
+            

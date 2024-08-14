@@ -1,0 +1,29 @@
+properties:
+  connection_id:
+    title: Connection Id
+    type: string
+  end_time:
+    title: End Time
+    type: string
+  run_id:
+    title: Run Id
+    type: string
+  run_metrics:
+    items:
+      $ref: ../connectors_hub/RunMetrics.yaml
+    title: Run Metrics
+    type: array
+  start_time:
+    title: Start Time
+    type: string
+  status:
+    $ref: ../connectors_hub/ConnectorRunStatus.yaml
+  time_taken:
+    title: Time Taken
+    type: string
+required:
+- run_id
+- connection_id
+- status
+title: ConnectorRunDetail
+type: object

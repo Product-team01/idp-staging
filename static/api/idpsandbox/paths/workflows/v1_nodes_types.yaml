@@ -1,0 +1,69 @@
+get:
+  description: 'This API is to simplify management of different node types in the
+    SDK.
+
+    The functionality of this API is to provide a list of all available node types
+    that can be used and integrate in building workflows.
+
+    In the context of the tool environment, this API facilitates management of node
+    metadata and configuration that should be user inputs. That information is critical
+    in workflow execution and deployment.
+
+    This API helps provide all the details for different types of nodes in terms of
+    its functionality.
+
+    It also has different configuration formats for input nodes and any intermediate
+    or final output nodes in the workflow.
+
+
+    There is no input required to invoke this API.
+
+    The output of this API is a response containing all the different types of nodes
+    along with metadata fields with its corresponding formats on the tool.'
+  operationId: list_nodes_api_v1_nodes_types_get
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/NodeTypeListingResponse.yaml
+      description: Successful Response
+  summary: List Nodes
+  tags:
+  - Nodes
+post:
+  operationId: create_node_type_api_v1_nodes_types_post
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/workflows/NodeType.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/NodeTypeCreateResponse.yaml
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Create Node Type
+  tags:
+  - Nodes

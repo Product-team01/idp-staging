@@ -1,0 +1,20 @@
+properties:
+  connectionConfiguration:
+    title: Connectionconfiguration
+    type: object
+  internal:
+    default: false
+    title: Internal
+    type: boolean
+  name:
+    title: Name
+    type: string
+  sourceDefinitionId:
+    title: Sourcedefinitionid
+    type: string
+required:
+- sourceDefinitionId
+- connectionConfiguration
+- name
+title: CreateSource
+type: object

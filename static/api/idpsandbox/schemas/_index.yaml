@@ -1,0 +1,855 @@
+GetSuccessResponse:
+  $ref: GetSuccessResponse.yaml
+PostSuccessResponse:
+  $ref: PostSuccessResponse.yaml
+TrackPostSuccessResponse:
+  $ref: TrackPostSuccessResponse.yaml
+EventsJobResponse:
+  $ref: EventsJobResponse.yaml
+ProcessPostSuccessResponse:
+  $ref: ProcessPostSuccessResponse.yaml
+PostFailureResponse:
+  $ref: PostFailureResponse.yaml
+AddDatasources:
+  $ref: AddDatasources.yaml
+AutoScaleConfig:
+  $ref: AutoScaleConfig.yaml
+Catalog:
+  $ref: Catalog.yaml
+AccountIn:
+  $ref: AccountIn.yaml
+AccountOut:
+  $ref: AccountOut.yaml
+AccountAllowedHostIn:
+  $ref: AccountAllowedHostIn.yaml
+AccountAllowedHostOut:
+  $ref: AccountAllowedHostOut.yaml
+AccountAllowedHostPatch:
+  $ref: AccountAllowedHostPatch.yaml
+AccountApiKeyIn:
+  $ref: AccountApiKeyIn.yaml
+AccountApiKeyOut:
+  $ref: AccountApiKeyOut.yaml
+AccountApiKeyPatch:
+  $ref: AccountApiKeyPatch.yaml
+AccountMetaIn:
+  $ref: AccountMetaIn.yaml
+AccountMetaOut:
+  $ref: AccountMetaOut.yaml
+AudienceIn:
+  $ref: AudienceIn.yaml
+AudienceStatusOut:
+  $ref: AudienceStatusOut.yaml
+AudienceOut:
+  $ref: AudienceOut.yaml
+AnalyticsMetricsOut:
+  $ref: AnalyticsMetricsOut.yaml
+AnalyticsReportOut:
+  $ref: AnalyticsReportOut.yaml
+AnalyticsDimensionOut:
+  $ref: AnalyticsDimensionOut.yaml
+EventsDefinition:
+  $ref: EventsDefinition.yaml
+EventsSchema:
+  $ref: EventsSchema.yaml
+EventsTemplate:
+  $ref: EventsTemplate.yaml
+ClusterConfig:
+  $ref: ClusterConfig.yaml
+MetricsConfig:
+  $ref: MetricsConfig.yaml
+MetricsConfigLite:
+  $ref: MetricsConfigLite.yaml
+MetricsOutWorkflowSchema:
+  $ref: MetricsOutWorkflowSchema.yaml
+MetricsInWorkflowSchema:
+  $ref: MetricsInWorkflowSchema.yaml
+MetricsInDefinitionSchema:
+  $ref: MetricsInDefinitionSchema.yaml
+AttributionTable:
+  $ref: AttributionTable.yaml
+EventTable:
+  $ref: EventTable.yaml
+MetricsDefinitionConfig:
+  $ref: MetricsDefinitionConfig.yaml
+MetricsDefinitionConfigLite:
+  $ref: MetricsDefinitionConfigLite.yaml
+Body_duplicate_config_api_v1_metrics_configs_duplicate_put:
+  $ref: Body_duplicate_config_api_v1_metrics_configs_duplicate_put.yaml
+Body_put_config_api_v1_metrics_configs_put:
+  $ref: Body_put_config_api_v1_metrics_configs_put.yaml
+Connection:
+  $ref: Connection.yaml
+ConnectorOld:
+  $ref: ConnectorOld.yaml
+CatalogRequest:
+  $ref: CatalogRequest.yaml
+CatalogPatchRequest:
+  $ref: CatalogPatchRequest.yaml
+CatalogResponse:
+  $ref: CatalogResponse.yaml
+SchemaObject:
+  $ref: SchemaObject.yaml
+SchemaConfig:
+  $ref: SchemaConfig.yaml
+SchemaFieldsOut:
+  $ref: SchemaFieldsOut.yaml
+CatalogSampleIn:
+  $ref: CatalogSampleIn.yaml
+CatalogSampleOut:
+  $ref: CatalogSampleOut.yaml
+CatalogSummaryOut:
+  $ref: CatalogSummaryOut.yaml
+ExtractionConfig:
+  $ref: ExtractionConfig.yaml
+DataSourceRequest:
+  $ref: DataSourceRequest.yaml
+DataSourceResponse:
+  $ref: DataSourceResponse.yaml
+DatasourcesS3Config:
+  $ref: DatasourcesS3Config.yaml
+DataSourceOut:
+  $ref: DataSourceOut.yaml
+DataTypeOut:
+  $ref: DataTypeOut.yaml
+DatabricksConfig:
+  $ref: DatabricksConfig.yaml
+DatapointCatalogOutput:
+  $ref: DatapointCatalogOutput.yaml
+
+EventIn:
+  $ref: EventIn.yaml
+TrackEventIn:
+  $ref: TrackEventIn.yaml
+FileTypeOut:
+  $ref: FileTypeOut.yaml
+GetStatisticsResponse:
+  $ref: GetStatisticsResponse.yaml
+GetMetricsResponse:
+  $ref: GetMetricsResponse.yaml
+JobConfig:
+  $ref: JobConfig.yaml
+JobIn:
+  $ref: JobIn.yaml
+JobOut:
+  $ref: JobOut.yaml
+LiveExperienceIn:
+  $ref: LiveExperienceIn.yaml
+LiveExperienceResponse:
+  $ref: LiveExperienceResponse.yaml
+MetadataPagesOut:
+  $ref: MetadataPagesOut.yaml
+ModifySchema:
+  $ref: ModifySchema.yaml
+PageIn:
+  $ref: PageIn.yaml
+PageOut:
+  $ref: PageOut.yaml
+PipelineIn:
+  $ref: PipelineIn.yaml
+SlotConfig:
+  $ref: SlotConfig.yaml
+TemplateIn:
+  $ref: TemplateIn.yaml
+TemplateOut:
+  $ref: TemplateOut.yaml
+TestConnection:
+  $ref: TestConnection.yaml
+Transformer:
+  $ref: Transformer.yaml
+UpdateCatalog:
+  $ref: UpdateCatalog.yaml
+UpdateConnection:
+  $ref: UpdateConnection.yaml
+
+ConfigIn:
+  $ref: ConfigIn.yaml
+ConfigOut:
+  $ref: ConfigOut.yaml
+
+SuccessOut:
+  $ref: SuccessOut.yaml
+DeleteOut:
+  $ref: DeleteOut.yaml
+WorkflowIn:
+  $ref: WorkflowIn.yaml
+WorkflowOut:
+  $ref: WorkflowOut.yaml
+WorkflowListOut:
+  $ref: WorkflowListOut.yaml
+WorkflowOutRef:
+  $ref: WorkflowOutRef.yaml
+DAGref:
+  $ref: DAGref.yaml
+UserIn:
+  $ref: UserIn.yaml
+UserOut:
+  $ref: UserOut.yaml
+
+InferSchemaSuccessResponse:
+  $ref: InferSchemaSuccessResponse.yaml
+ResponseTemplateSuccessNoData:
+  $ref: ResponseTemplateSuccessNoData.yaml
+
+ErrorV2:
+  $ref: ErrorV2.yaml
+TagFeedbackData:
+  $ref: TagFeedbackData.yaml
+TagFeedbackDataMsdInternal:
+  $ref: TagFeedbackDataMsdInternal.yaml
+RecommendataionFeedbackData:
+  $ref: RecommendataionFeedbackData.yaml
+JobResponse:
+  $ref: JobResponse.yaml
+
+Project:
+  $ref: "./projects/project.yaml"
+AddProject:
+  $ref: "./projects/add-project.yaml"
+ProjectSample:
+  $ref: "./projects/project-sample.yaml"
+SessionDatapointInfo:
+  $ref: "./projects/session-datapoint-info.yaml"
+Datapoint:
+  $ref: "./projects/datapoint.yaml"
+DatapointMetadata:
+  $ref: "./projects/datapoint-metadata.yaml"
+DatapointAttributes:
+  $ref: "./projects/datapoint-attributes.yaml"
+HullCoordinates:
+  $ref: "./projects/hull-coordinates.yaml"
+LabelDatapoint:
+  $ref: "./projects/label-datapoint.yaml"
+LabelDatapointResponse:
+  $ref: "./projects/label-datapoint-response.yaml"
+TrainStatus:
+  $ref: "./projects/train-status.yaml"
+DeployRequest:
+  $ref: "./projects/deploy-request.yaml"
+DeploymentStatus:
+  $ref: "./projects/deployment-status.yaml"
+ProjectSummaryObject:
+  $ref: "./projects/project-summary-object.yaml"
+
+InferRequest:
+  $ref: "./inference/InferRequest.yaml"
+InferPostResponse:
+  $ref: "./inference/InferPostResponse.yaml"
+InferFeedback:
+  $ref: "./inference/InferFeedback.yaml"
+
+FeedResponse:
+  $ref: FeedResponse.yaml
+
+GetFailureResponse:
+  $ref: "./errors/failure-response.yaml"
+
+AddExtractionConfig:
+  $ref: "./extraction-configs/add-extraction-config.yaml"
+
+ExtractionConfigObject:
+  $ref: "./extraction-configs/extraction-config-object.yaml"
+
+ExtractionConfigResponse:
+  $ref: "./extraction-configs/extraction-config-response.yaml"
+
+UpdateExtractionConfig:
+  $ref: "./extraction-configs/update-extraction-config.yaml"
+
+EmbeddingConfigResponse:
+  $ref: "./embedding-configs/embedding-config-response.yaml"
+
+EmbeddingConfig:
+  $ref: "./embedding-configs/embedding-config.yaml"
+
+AddEmbeddingConfig:
+  $ref: "./embedding-configs/add-embedding-config.yaml"
+
+ModelLayers:
+  $ref: "./embedding-configs/model-layers.yaml"
+
+ModelConfig:
+  $ref: "./embedding-configs/model-config.yaml"
+
+DefaultTrainConfig:
+  $ref: "./embedding-configs/default-train-config.yaml"
+
+ModelParams:
+  $ref: "./embedding-configs/model-params.yaml"
+
+Optimizer:
+  $ref: "./embedding-configs/optimizer.yaml"
+
+OptimizerParams:
+  $ref: "./embedding-configs/optimizer-params.yaml"
+
+TrainingDataDict:
+  $ref: "./embedding-configs/training-data-dict.yaml"
+
+Reprojection:
+  $ref: "./embedding-configs/reprojection.yaml"
+
+TaxonomyAttributesResponseObjectWithParentId:
+  $ref: "./taxonomies/taxonomy-attribute-parent-id.yaml"
+TaxonomyAttributesObjectWithoutChildren:
+  $ref: "./taxonomies/taxonomy-attributes-without-children.yaml"
+TaxonomyAttributesObjectWithId:
+  $ref: "./taxonomies/taxonomy-attribute-with-id.yaml"
+TaxonomyAttributesObject:
+  $ref: "./taxonomies/taxonomy-attribute.yaml"
+TaxonomyResponse:
+  $ref: "./taxonomies/taxonomy-with-id.yaml"
+AddTaxonomy:
+  $ref: "./taxonomies/add-taxonomy.yaml"
+TaxonomyPostResponse:
+  $ref: "./taxonomies/taxonomy-post-response.yaml"
+Taxonomy:
+  $ref: "./taxonomies/taxonomy.yaml"
+
+# Common Response Templates
+ResponseTemplateSuccess:
+  $ref: ResponseTemplateSuccess.yaml
+ResponseTemplateFailure:
+  $ref: ResponseTemplateFailure.yaml
+
+# Response Format for errors like 400, 404
+Error:
+  $ref: Error.yaml
+ErrorList:
+  $ref: ErrorList.yaml
+ErrorResponse:
+  $ref: error_response.yaml
+
+# Response validation error like 422
+# TBD: Should this and the above errors differ in structure ?
+ValidationError:
+  $ref: ValidationError.yaml
+HTTPValidationError:
+  $ref: HTTPValidationError.yaml
+ValidationErrorResponse:
+  $ref: validation_error_response.yaml
+
+# Search Config Schema
+Strategy:
+  $ref: search/strategy.yaml
+Experience:
+  $ref: search/experience.yaml
+Module:
+  $ref: search/module.yaml
+Curation:
+  $ref: search/curation.yaml
+
+# Search Schemas
+SearchRequestCommon:
+  $ref: search/search_request_common.yaml
+SearchRequestCommonNonText:
+  $ref: search/search_request_common_non_text.yaml
+PageNameSearchRequest:
+  $ref: search/search_request_page_name.yaml
+StrategyNameSearchRequest:
+  $ref: search/search_request_strategy_name.yaml
+ModuleNameSearchRequest:
+  $ref: search/search_request_module_name.yaml
+SearchRequest:
+  $ref: search/search_request.yaml
+TextSearchRequest:
+  $ref: search/search_request_text.yaml
+CatalogSearchRequest:
+  $ref: search/catalog_search.yaml
+SearchRequestFilter:
+  $ref: search/search_filter.yaml
+SearchResponseSimple:
+  $ref: search/search_response_simple.yaml
+SearchResponseBundled:
+  $ref: search/search_response_bundled.yaml
+SearchResponseText:
+  $ref: search/search_response_simple_text.yaml
+
+
+# Starfire Schemas
+AffinityDiscover:
+  $ref: starfire/affinity_discover.yaml
+AffinityGetConfigResponse:
+  $ref: starfire/affinity_get_config_response.yaml
+AffinityListConfigResponse:
+  $ref: starfire/affinity_list_config_response.yaml
+AffinityLite:
+  $ref: starfire/affinity_lite.yaml
+AffinityPostConfigRequest:
+  $ref: starfire/affinity_post_config_request.yaml
+RarityDiscover:
+  $ref: starfire/rarity_discover.yaml
+RarityGetConfigResponse:
+  $ref: starfire/rarity_get_config_response.yaml
+RarityListConfigResponse:
+  $ref: starfire/rarity_list_config_response.yaml
+RarityLite:
+  $ref: starfire/rarity_lite.yaml
+RarityPostConfigRequest:
+  $ref: starfire/rarity_post_config_request.yaml
+SeasonalityDiscover:
+  $ref: starfire/seasonality_discover.yaml
+SeasonalityGetConfigResponse:
+  $ref: starfire/seasonality_get_config_response.yaml
+SeasonalityListConfigResponse:
+  $ref: starfire/seasonality_list_config_response.yaml
+SeasonalityLite:
+  $ref: starfire/seasonality_lite.yaml
+SeasonalityPostConfigRequest:
+  $ref: starfire/seasonality_post_config_request.yaml
+starfire_success_response:
+  $ref: starfire_success_response.yaml
+
+# User profile Schema
+UserProfileRequestAbsoluteAffinity:
+  $ref: user-profile/request/absolute-affinity.yaml
+UserProfileRequestRelativeAffinity:
+  $ref: user-profile/request/relative-affinity.yaml
+UserProfileRequestSessionEvents:
+  $ref: user-profile/request/session-events.yaml
+UserProfileRequestPerSessionEvents:
+  $ref: user-profile/request/per-session-events.yaml
+UserProfileRequestTimeDelta:
+  $ref: user-profile/request/time-delta.yaml
+UserProfileRequestEventByPrice:
+  $ref: user-profile/request/event-by-price.yaml
+
+UserProfileResponseAbsoluteAffinity:
+  $ref: user-profile/response/absolute-affinity.yaml
+UserProfileResponseRelativeAffinity:
+  $ref: user-profile/response/relative-affinity.yaml
+UserProfileResponseSessionEvents:
+  $ref: user-profile/response/session-events.yaml
+UserProfileResponsePerSessionEvents:
+  $ref: user-profile/response/per-session-events.yaml
+UserProfileResponseTimeDelta:
+  $ref: user-profile/response/time-delta.yaml
+UserProfileResponseEventByPrice:
+  $ref: user-profile/response/event-by-price.yaml
+
+
+#This seems duplicate of exisitng error response
+ErrorResponse_V2:
+  $ref: ErrorResponse.yaml
+EmptyResponse:
+  $ref: EmptyResponse.yaml
+EmptyDataResponse:
+  $ref: EmptyDataResponse.yaml
+DagStatus:
+  $ref: DagStatus.yaml
+StatusResponse:
+  $ref: StatusResponse.yaml
+
+EventsDataSourceRequest:
+  $ref: EventsDataSourceRequest.yaml
+EventsDataSourceResponse:
+  $ref: EventsDataSourceResponse.yaml
+catalog_search:
+  $ref: search/catalog_search.yaml
+CatalogAsyncSampleOut:
+  $ref: CatalogAsyncSampleOut.yaml
+TrendingConfigLiteResponse:
+  $ref: TrendingConfigLiteResponse.yaml
+event_frequency_config:
+  $ref: starfire/event_frequency_config.yaml
+affinity_get_config_response:
+  $ref: starfire/affinity_get_config_response.yaml
+CFCPConfigLite:
+  $ref: CFCPConfigLite.yaml
+EventsRunJobResponse:
+  $ref: EventsRunJobResponse.yaml
+DXMMetricsFilters:
+  $ref: DXMMetricsFilters.yaml
+MetricsQueryConfig:
+  $ref: MetricsQueryConfig.yaml
+MetricsQueryConfigIn:
+  $ref: MetricsQueryConfigIn.yaml
+MetricsQueryConfigOut:
+  $ref: MetricsQueryConfigOut.yaml
+bundle_index_simple_response:
+  $ref: search/bundle_index_simple_response.yaml
+bundle_error_response:
+  $ref: search/bundle_error_response.yaml
+bundle_recommend_bundles_request:
+  $ref: search/bundle_recommend_bundles_request.yaml
+bundle_common_response:
+  $ref: search/bundle_common_response.yaml
+bundle_curation_apis_error_response:
+  $ref: search/bundle_curation_apis_error_response.yaml
+ConfigDelete:
+  $ref: ConfigDelete.yaml
+experiment:
+  $ref: search/experiment.yaml
+ProjectsExportStatus.yaml:
+  $ref: projects/export-status.yaml
+ProjectsLearningStatus.yaml:
+  $ref: projects/learning-status.yaml
+Segments:
+  $ref: segments/segment.yaml
+WorkflowSpeedrunFromID:
+  $ref: 'workflows/WorkflowSpeedrunFromID.yaml'
+WorkflowReadResponse:
+  $ref: 'workflows/WorkflowReadResponse.yaml'
+FeatureFromDatasetValidation:
+  $ref: 'workflows/FeatureFromDatasetValidation.yaml'
+NodeListingResponse:
+  $ref: 'workflows/NodeListingResponse.yaml'
+AudienceListingResponse:
+  $ref: 'workflows/AudienceListingResponse.yaml'
+AudienceHTTPValidationError:
+  $ref: 'workflows/HTTPValidationError.yaml'
+SourceNode:
+  $ref: 'workflows/SourceNode.yaml'
+FeatureDeleteResponse:
+  $ref: 'workflows/FeatureDeleteResponse.yaml'
+appSchemasFeaturesFeature:
+  $ref: 'workflows/app__schemas__features__Feature.yaml'
+WorkflowDeployResponse:
+  $ref: 'workflows/WorkflowDeployResponse.yaml'
+NodeTypeDeleteResponse:
+  $ref: 'workflows/NodeTypeDeleteResponse.yaml'
+AudienceReadResponse:
+  $ref: 'workflows/AudienceReadResponse.yaml'
+FeatureValuesListingResponse:
+  $ref: 'workflows/FeatureValuesListingResponse.yaml'
+AudienceConfigValidation:
+  $ref: 'workflows/AudienceConfigValidation.yaml'
+WorkflowCreationConfig:
+  $ref: 'workflows/WorkflowCreationConfig.yaml'
+FeatureGroupListingResponse:
+  $ref: 'workflows/FeatureGroupListingResponse.yaml'
+ColumnDataType:
+  $ref: 'workflows/ColumnDataType.yaml'
+Workflow:
+  $ref: 'workflows/Workflow.yaml'
+NodeTypeListingResponse:
+  $ref: 'workflows/NodeTypeListingResponse.yaml'
+Model:
+  $ref: 'workflows/Model.yaml'
+Rule:
+  $ref: 'workflows/Rule.yaml'
+BodyProcessPacketWorkflowApiV1WorkflowProcessPacketPost:
+  $ref: 'workflows/Body_process_packet_workflow_api_v1_workflow_process_packet_post.yaml'
+GenericModelTrainConfig:
+  $ref: 'workflows/GenericModelTrainConfig.yaml'
+DatasetReadResponse:
+  $ref: 'workflows/DatasetReadResponse.yaml'
+Audience:
+  $ref: 'workflows/Audience.yaml'
+NodeTypeGroup:
+  $ref: 'workflows/NodeTypeGroup.yaml'
+NodeType:
+  $ref: 'workflows/NodeType.yaml'
+WorkflowConfigValidation:
+  $ref: 'workflows/WorkflowConfigValidation.yaml'
+TrainDataConfig:
+  $ref: 'workflows/TrainDataConfig.yaml'
+ModelTrainNode:
+  $ref: 'workflows/ModelTrainNode.yaml'
+WorkflowCreationConfigValidation:
+  $ref: 'workflows/WorkflowCreationConfigValidation.yaml'
+appSchemasFeaturesV2Feature:
+  $ref: 'workflows/app__schemas__features_v2__Feature.yaml'
+FeatureListingResponse:
+  $ref: 'workflows/FeatureListingResponse.yaml'
+DatasetSummary:
+  $ref: 'workflows/DatasetSummary.yaml'
+WorkflowListingResponse:
+  $ref: 'workflows/WorkflowListingResponse.yaml'
+WorkflowValidationResponse:
+  $ref: 'workflows/WorkflowValidationResponse.yaml'
+WorkflowStatusResponse:
+  $ref: 'workflows/WorkflowStatusResponse.yaml'
+DatasetCreateResponse:
+  $ref: 'workflows/DatasetCreateResponse.yaml'
+NodeDiscoveryResponse:
+  $ref: 'workflows/NodeDiscoveryResponse.yaml'
+ScheduleInterval:
+  $ref: 'workflows/ScheduleInterval.yaml'
+WorkflowListingEntity:
+  $ref: 'workflows/WorkflowListingEntity.yaml'
+ModelRegistryConfig:
+  $ref: 'workflows/ModelRegistryConfig.yaml'
+DatasetNode:
+  $ref: 'workflows/DatasetNode.yaml'
+DatasetListingResponse:
+  $ref: 'workflows/DatasetListingResponse.yaml'
+NodeTypeListingResponseValidation:
+  $ref: 'workflows/NodeTypeListingResponseValidation.yaml'
+DestinationNode:
+  $ref: 'workflows/DestinationNode.yaml'
+WorkflowCreateResponse:
+  $ref: 'workflows/WorkflowCreateResponse.yaml'
+NodeReadResponse:
+  $ref: 'workflows/NodeReadResponse.yaml'
+TrainModelConfig:
+  $ref: 'workflows/TrainModelConfig.yaml'
+AudienceDeleteResponse:
+  $ref: 'workflows/AudienceDeleteResponse.yaml'
+Task:
+  $ref: 'workflows/Task.yaml'
+UploadAudience:
+  $ref: 'workflows/UploadAudience.yaml'
+Condition:
+  $ref: 'workflows/Condition.yaml'
+DatasetUpdateResponse:
+  $ref: 'workflows/DatasetUpdateResponse.yaml'
+DatasetUnivariateSummary:
+  $ref: 'workflows/DatasetUnivariateSummary.yaml'
+AudienceForm:
+  $ref: 'workflows/AudienceForm.yaml'
+FieldMapping:
+  $ref: 'workflows/FieldMapping.yaml'
+NodeDeleteResponse:
+  $ref: 'workflows/NodeDeleteResponse.yaml'
+NodeListingEntity:
+  $ref: 'workflows/NodeListingEntity.yaml'
+DatasetConfigValidation:
+  $ref: 'workflows/DatasetConfigValidation.yaml'
+NodeListingResponseValidation:
+  $ref: 'workflows/NodeListingResponseValidation.yaml'
+FeatureFromPresetWorkflowValidation:
+  $ref: 'workflows/FeatureFromPresetWorkflowValidation.yaml'
+FeatureConfigValidation:
+  $ref: 'workflows/FeatureConfigValidation.yaml'
+appSchemasAudiencesV2Listingresponsevalidation:
+  $ref: 'workflows/app__schemas__audiences_v2__ListingResponseValidation.yaml'
+WorkflowUpdateResponse:
+  $ref: 'workflows/WorkflowUpdateResponse.yaml'
+DatasetColumnRequest:
+  $ref: 'workflows/DatasetColumnRequest.yaml'
+appSchemasAudiencesV2Lookbackperiod:
+  $ref: 'workflows/app__schemas__audiences_v2__LookbackPeriod.yaml'
+ConnectionType:
+  $ref: 'workflows/ConnectionType.yaml'
+BodyUpdateNodeApiV1NodesNodeIdPut:
+  $ref: 'workflows/Body_update_node_api_v1_nodes__node_id__put.yaml'
+FeatureFromDataset:
+  $ref: 'workflows/FeatureFromDataset.yaml'
+NodeTypeCreateResponse:
+  $ref: 'workflows/NodeTypeCreateResponse.yaml'
+FeatureListingEntity:
+  $ref: 'workflows/FeatureListingEntity.yaml'
+appSchemasFeaturesV2Lookbackperiod:
+  $ref: 'workflows/app__schemas__features_v2__LookbackPeriod.yaml'
+FeatureConfig:
+  $ref: 'workflows/FeatureConfig.yaml'
+WorkflowSpeedrunFromSubgraph:
+  $ref: 'workflows/WorkflowSpeedrunFromSubgraph.yaml'
+ModelArtifactConfig:
+  $ref: 'workflows/ModelArtifactConfig.yaml'
+WorkflowSpeedrunResponse:
+  $ref: 'workflows/WorkflowSpeedrunResponse.yaml'
+FeatureReadResponse:
+  $ref: 'workflows/FeatureReadResponse.yaml'
+WorkflowRunResponse:
+  $ref: 'workflows/WorkflowRunResponse.yaml'
+DatasetColumnResponse:
+  $ref: 'workflows/DatasetColumnResponse.yaml'
+FeatureCreateResponse:
+  $ref: 'workflows/FeatureCreateResponse.yaml'
+NodeTypeReadResponse:
+  $ref: 'workflows/NodeTypeReadResponse.yaml'
+FeatureGroupListingResponseValidation:
+  $ref: 'workflows/FeatureGroupListingResponseValidation.yaml'
+NodeCreateEntity:
+  $ref: 'workflows/NodeCreateEntity.yaml'
+AudienceDeployResponse:
+  $ref: 'workflows/AudienceDeployResponse.yaml'
+NodeTypeUpdateResponse:
+  $ref: 'workflows/NodeTypeUpdateResponse.yaml'
+ConnectionNode:
+  $ref: 'workflows/ConnectionNode.yaml'
+FeatureType:
+  $ref: 'workflows/FeatureType.yaml'
+FileType:
+  $ref: 'workflows/FileType.yaml'
+AudienceListingEntity:
+  $ref: 'workflows/AudienceListingEntity.yaml'
+FeatureUpdateResponse:
+  $ref: 'workflows/FeatureUpdateResponse.yaml'
+WorkflowValidationEntity:
+  $ref: 'workflows/WorkflowValidationEntity.yaml'
+NodeConfigValidation:
+  $ref: 'workflows/NodeConfigValidation.yaml'
+DatasetValueCount:
+  $ref: 'workflows/DatasetValueCount.yaml'
+WorkflowUndeployResponse:
+  $ref: 'workflows/WorkflowUndeployResponse.yaml'
+NodeDiscoveryResponseValidation:
+  $ref: 'workflows/NodeDiscoveryResponseValidation.yaml'
+WorkflowDeleteResponse:
+  $ref: 'workflows/WorkflowDeleteResponse.yaml'
+BodyCreateNodeApiV1NodesPost:
+  $ref: 'workflows/Body_create_node_api_v1_nodes__post.yaml'
+NodeUpdateResponse:
+  $ref: 'workflows/NodeUpdateResponse.yaml'
+AudienceDeployEntity:
+  $ref: 'workflows/AudienceDeployEntity.yaml'
+Node:
+  $ref: 'workflows/Node.yaml'
+QueryForm:
+  $ref: 'workflows/QueryForm.yaml'
+QueryNode:
+  $ref: 'workflows/QueryNode.yaml'
+Dataset:
+  $ref: 'workflows/Dataset.yaml'
+FileInfo:
+  $ref: 'workflows/FileInfo.yaml'
+WorkflowDeployEntity:
+  $ref: 'workflows/WorkflowDeployEntity.yaml'
+AudienceUpdateResponse:
+  $ref: 'workflows/AudienceUpdateResponse.yaml'
+DatasetDeleteResponse:
+  $ref: 'workflows/DatasetDeleteResponse.yaml'
+appSchemasFeaturesV2Listingresponsevalidation:
+  $ref: 'workflows/app__schemas__features_v2__ListingResponseValidation.yaml'
+WorkflowListingResponseValidation:
+  $ref: 'workflows/WorkflowListingResponseValidation.yaml'
+AudienceStatusResponse:
+  $ref: 'workflows/AudienceStatusResponse.yaml'
+JobConfigWorkflow:
+  $ref: 'workflows/JobConfigWorkflow.yaml'
+DatasetListingResponseValidation:
+  $ref: 'workflows/DatasetListingResponseValidation.yaml'
+NodeCreateResponse:
+  $ref: 'workflows/NodeCreateResponse.yaml'
+AudienceRunResponse:
+  $ref: 'workflows/AudienceRunResponse.yaml'
+ModelArtifactNode:
+  $ref: 'workflows/ModelArtifactNode.yaml'
+DatasetListingEntity:
+  $ref: 'workflows/DatasetListingEntity.yaml'
+AudienceCreateResponse:
+  $ref: 'workflows/AudienceCreateResponse.yaml'
+FeatureFromPresetWorkflow:
+  $ref: 'workflows/FeatureFromPresetWorkflow.yaml'
+NodeTypeConfigValidation:
+  $ref: 'workflows/NodeTypeConfigValidation.yaml'
+Connector:
+  $ref: 'connectors_hub/Connector.yaml'
+ConnectorsHTTPValidationError:
+  $ref: 'connectors_hub/HTTPValidationError.yaml'
+CreateEgressResponse:
+  $ref: 'connectors_hub/CreateEgressResponse.yaml'
+GetEgressRunStatusResponse:
+  $ref: 'connectors_hub/GetEgressRunStatusResponse.yaml'
+ListIngressRunResponse:
+  $ref: 'connectors_hub/ListIngressRunResponse.yaml'
+UpdateDestination:
+  $ref: 'connectors_hub/UpdateDestination.yaml'
+ConnectorRun:
+  $ref: 'connectors_hub/ConnectorRun.yaml'
+CreateIngress:
+  $ref: 'connectors_hub/CreateIngress.yaml'
+GetIngressRunStatusResponse:
+  $ref: 'connectors_hub/GetIngressRunStatusResponse.yaml'
+ResourceRequirements:
+  $ref: 'connectors_hub/ResourceRequirements.yaml'
+UpdateSource:
+  $ref: 'connectors_hub/UpdateSource.yaml'
+ConnectorRunDetail:
+  $ref: 'connectors_hub/ConnectorRunDetail.yaml'
+CreateIngressResponse:
+  $ref: 'connectors_hub/CreateIngressResponse.yaml'
+RunConnectorResponse:
+  $ref: 'connectors_hub/RunConnectorResponse.yaml'
+ConnectorRunStatus:
+  $ref: 'connectors_hub/ConnectorRunStatus.yaml'
+CreateSource:
+  $ref: 'connectors_hub/CreateSource.yaml'
+Ingress:
+  $ref: 'connectors_hub/Ingress.yaml'
+RunEgressResponse:
+  $ref: 'connectors_hub/RunEgressResponse.yaml'
+destinationSyncModes:
+  $ref: 'connectors_hub/destinationSyncModes.yaml'
+ConnectorStatus:
+  $ref: 'connectors_hub/ConnectorStatus.yaml'
+CreateSourceDefinition:
+  $ref: 'connectors_hub/CreateSourceDefinition.yaml'
+IngressRun:
+  $ref: 'connectors_hub/IngressRun.yaml'
+RunIngressResponse:
+  $ref: 'connectors_hub/RunIngressResponse.yaml'
+scheduleType:
+  $ref: 'connectors_hub/scheduleType.yaml'
+CreateConnector:
+  $ref: 'connectors_hub/CreateConnector.yaml'
+CronSchedule:
+  $ref: 'connectors_hub/CronSchedule.yaml'
+ListConnectorRunsResponse:
+  $ref: 'connectors_hub/ListConnectorRunsResponse.yaml'
+RunMetrics:
+  $ref: 'connectors_hub/RunMetrics.yaml'
+streamConfig:
+  $ref: 'connectors_hub/streamConfig.yaml'
+CreateConnectorResponse:
+  $ref: 'connectors_hub/CreateConnectorResponse.yaml'
+DestinationDefinition:
+  $ref: 'connectors_hub/DestinationDefinition.yaml'
+ListConnectorsResponse:
+  $ref: 'connectors_hub/ListConnectorsResponse.yaml'
+Schedule:
+  $ref: 'connectors_hub/Schedule.yaml'
+syncModes:
+  $ref: 'connectors_hub/syncModes.yaml'
+CreateDestination:
+  $ref: 'connectors_hub/CreateDestination.yaml'
+Egress:
+  $ref: 'connectors_hub/Egress.yaml'
+ListEgressResponse:
+  $ref: 'connectors_hub/ListEgressResponse.yaml'
+ScheduleData:
+  $ref: 'connectors_hub/ScheduleData.yaml'
+timeUnit:
+  $ref: 'connectors_hub/timeUnit.yaml'
+CreateDestinationDefinition:
+  $ref: 'connectors_hub/CreateDestinationDefinition.yaml'
+EgressRun:
+  $ref: 'connectors_hub/EgressRun.yaml'
+ListEgressRunsResponse:
+  $ref: 'connectors_hub/ListEgressRunsResponse.yaml'
+SourceDefinition:
+  $ref: 'connectors_hub/SourceDefinition.yaml'
+CreateEgress:
+  $ref: 'connectors_hub/CreateEgress.yaml'
+GetConnectorRunStatusResponse:
+  $ref: 'connectors_hub/GetConnectorRunStatusResponse.yaml'
+ListIngressResponse:
+  $ref: 'connectors_hub/ListIngressResponse.yaml'
+UpdateConnector:
+  $ref: 'connectors_hub/UpdateConnector.yaml'
+ShopTheLookSearch:
+  $ref: 'shop-the-look/search.yaml'
+ShopTheLookSearchResponse:
+  $ref: 'shop-the-look/search_response.yaml'
+ShopTheLookRefreshRequest:
+  $ref: 'shop-the-look/refresh_request.yaml'
+ShopTheLookThemeOutfitRequest:
+  $ref: 'shop-the-look/fetch_theme_outfit_request.yaml'
+ShopTheLookThemeOutfitResponse:
+  $ref: 'shop-the-look/fetch_theme_search_request.yaml'
+ShopTheLookThemeSearchResponse:
+  $ref: 'shop-the-look/fetch_theme_search_response.yaml'
+ShopTheLookSaveOutfitResponse:
+  $ref: 'shop-the-look/save_outfit_response.yaml'
+ShopTheLookSaveOutfitRequest:
+  $ref: 'shop-the-look/save_outfit_request.yaml'
+ShopTheLookAllOutfitRequest:
+  $ref: 'shop-the-look/save_all_outfit_request.yaml'
+UserHistoryIn:
+  $ref: 'UserHistoryIn.yaml'
+UserHistoryOut:
+  $ref: 'UserHistoryOut.yaml'
+Upload:
+  $ref: 'Upload.yaml'
+UploadRequest:
+  $ref: 'UploadRequest.yaml'
+
+ShazamGetResponse:
+  $ref: 'graph_execution_configs/shazam_get_response.yaml'
+GraphExecutionConfigsResponse:
+  $ref: 'graph_execution_configs/graph_execution_configs_response.yaml'
+StMappingGetResponse:
+  $ref: 'graph_execution_configs/st_mapping_get_response.yaml'

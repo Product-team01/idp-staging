@@ -1,0 +1,48 @@
+get:
+  description: Returns a list of all defined workflows.
+  operationId: get_feature_definitions_api_v1_features__get
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+  summary: Get Feature Definitions
+  tags:
+  - Features (old)
+post:
+  description: Lets one register a new feature.
+  operationId: create_feature_definition_api_v1_features__post
+  parameters:
+  - description: correlation id to track requests
+    in: header
+    name: x-correlation-id
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/workflows/app__schemas__features__Feature.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          schema: {}
+      description: Successful Response
+    '422':
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/workflows/HTTPValidationError.yaml
+      description: Validation Error
+  summary: Create Feature Definition
+  tags:
+  - Features (old)

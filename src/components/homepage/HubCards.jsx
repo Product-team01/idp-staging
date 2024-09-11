@@ -62,7 +62,7 @@ export default function HubCards() {
         description="User Guides and API documentation"
         link="https://vuesandbox.vercel.app/hackathon-userguidess"
         buttonLabel="User Guides"
-        additionalButtonLabel="Hackathon"
+        additionalButtonLabel="Integration"
         additionalButtonLink="https://vuesandbox.vercel.app/api-hackathon"
         iconSrc="https://d1r1e7xjkfj7nz.cloudfront.net/Users2x.png"
       />

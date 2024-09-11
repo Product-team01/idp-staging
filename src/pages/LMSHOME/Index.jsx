@@ -1,150 +1,18 @@
-// import React, { useEffect, useRef } from 'react';
+// import React, { useState } from 'react';
 // import Layout from '@theme/Layout';
+// import Title from './Title';
+// import FilterBar from './FilterBar';
 // import CourseCard from './CourseCard';
-// import './Homepage.css';
-// import MyComponent from './gradient'
-// import { NeatConfig, NeatGradient } from "@firecms/neat";
-
-
-// const Homepage = () => {
-//   const courses = [
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
-//       title: 'Document Type',
-//       organization: 'MSD',
-//       level: 'Beginner',
-//       type: 'Course',
-//       href: '/LMS'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-//       title: 'Datasets',
-//       organization: 'Document',
-//       level: 'Beginner',
-//       type: 'Specialization',
-//       href: '/LMS-2'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-//       title: 'Dataset Groups',
-//       organization: 'Document',
-//       level: 'Intermediate',
-//       type: 'Course',
-//       href: '/LMS-3'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png ',
-//       title: 'Connections',
-//       organization: 'Document',
-//       level: 'Advanced',
-//       type: 'Course',
-//       href: '/LMS-4'
-//     },
-   
-//     // Add more courses as needed
-//   ];
-  
-//   return (
-//     <Layout>
-      
-//       <MyComponent/>
-//         <h1>Welcome to VueLearn!</h1>
-//         <div className="course-grid">
-        
-//           {courses.map((course, index) => (
-//             <CourseCard
-//               key={index}
-//               {...course}
-//             />
-//           ))}
-//         </div>
-      
-//     </Layout>
-//   );
-// };
-
-// export default Homepage;
-
-// Homepage.js
-// import React from 'react';
-// import Layout from '@theme/Layout';
-// import CourseCard from './CourseCard';
-// import './Homepage.css';
-// import MyComponent from './gradient';
-
-// const Homepage = () => {
-//   const courses = [
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
-//       title: 'Document Type',
-//       organization: 'MSD',
-//       level: 'Beginner',
-//       type: 'Course',
-//       href: '/LMS'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-//       title: 'Datasets',
-//       organization: 'Document',
-//       level: 'Beginner',
-//       type: 'Specialization',
-//       href: '/LMS-2'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
-//       title: 'Dataset Groups',
-//       organization: 'Document',
-//       level: 'Intermediate',
-//       type: 'Course',
-//       href: '/LMS-3'
-//     },
-//     {
-//       image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png ',
-//       title: 'Connections',
-//       organization: 'Document',
-//       level: 'Advanced',
-//       type: 'Course',
-//       href: '/LMS-4'
-//     },
-//     // Add more courses as needed
-//   ];
-
-//   return (
-//     <Layout>
-//       <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
-//         <MyComponent />
-//         <div style={{ position: 'relative', zIndex: 1 }}>
-//           <h1>Welcome to VueLearn!</h1>
-//           <div className="course-grid">
-//             {courses.map((course, index) => (
-//               <CourseCard
-//                 key={index}
-//                 {...course}
-//               />
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </Layout>
-//   );
-// };
-
-// export default Homepage;
-
-// import React, { Component } from 'react';
-// import './App.css';
-// import Layout from '@theme/Layout';
-// import CourseCard from './CourseCard';
-// import './reveal.css'
 
 // const CoursesData = [
 //   {
 //     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
-//     title: 'Document Type',
+//     title: 'Document Types',
 //     organization: 'MSD',
 //     level: 'Beginner',
 //     type: 'Course',
-//     href: '/LMS'
+//     href: '/LMS',
+//     category: 'Document'
 //   },
 //   {
 //     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
@@ -152,7 +20,8 @@
 //     organization: 'Document',
 //     level: 'Beginner',
 //     type: 'Specialization',
-//     href: '/LMS-2'
+//     href: '/LMS-2',
+//     category: 'Document'
 //   },
 //   {
 //     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
@@ -160,7 +29,8 @@
 //     organization: 'Document',
 //     level: 'Intermediate',
 //     type: 'Course',
-//     href: '/LMS-3'
+//     href: '/LMS-3',
+//     category: 'Document'
 //   },
 //   {
 //     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png',
@@ -168,129 +38,151 @@
 //     organization: 'Document',
 //     level: 'Advanced',
 //     type: 'Course',
-//     href: '/LMS-4'
+//     href: '/LMS-4',
+//     category: 'Document'
+//   },
+//   {
+//     image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png',
+//     title: 'Model Gen',
+//     organization: 'Document',
+//     level: 'Advanced',
+//     type: 'Course',
+//     href: '/LMS-7',
+//     category: 'Model Gen'
 //   }
 // ];
 
-// class Main extends Component {
-//   constructor() {
-//     super();
-//     this.state = { courses: CoursesData };
-//   }
+// const Main = () => {
+//   const [selectedCategory, setSelectedCategory] = useState('All');
+  
+//   const categories = ['All', 'Document','Model Gen'];
+  
+//   const handleCategoryChange = (category) => {
+//     setSelectedCategory(category);
+//   };
 
-//   render() {
-//     return (
-//       <div>
-//         <header className="unique-app-header" />
-//         <Title />
-//         <div className="unique-app-card-list" id="unique-app-card-list">
-//           {this.state.courses.map((course, index) => (
-//             <CourseCard key={index} {...course} />
-//           ))}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+//   const filteredCourses = selectedCategory === 'All'
+//     ? CoursesData
+//     : CoursesData.filter(course => course.category === selectedCategory);
 
-// class Title extends Component {
-//   render() {
-//     return (
-//       <div class="reveal-text">
-//       Welcome to VueLearn
-   
-      
-//       <section className="unique-app-title">
-     
-//         <div className="unique-app-title-content">
-//           <h1>Latest Courses</h1>
-//           <p>Discover our latest offerings</p>
-//         </div>
-//       </section>
-//       </div>
-//     );
-//   }
-// }
-
-// function App() {
 //   return (
 //     <Layout>
-//       <Main />
+//       <header className="unique-app-header" />
+//       <Title />  {/* Title Component */}
+//       <FilterBar 
+//         categories={categories} 
+//         selectedCategory={selectedCategory} 
+//         onCategoryChange={handleCategoryChange}  
+//       />
+//       <div className="course-grid">
+//         {filteredCourses.map((course, index) => (
+//           <CourseCard key={index} {...course} />
+//         ))}
+//       </div>
 //     </Layout>
 //   );
-// }
+// };
 
-// export default App;
+// export default Main;
 
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import CourseCard from './CourseCard';
 import Title from './Title';
+import FilterBar from './FilterBar';
+import CourseCard from './CourseCard';
 
 const CoursesData = [
   {
-    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/type2.png',
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
     title: 'Document Types',
-    organization: 'MSD',
+    
     level: 'Beginner',
-    type: 'Course',
-    href: '/LMS'
+    type: 'Module',
+    href: '/Document-Types',
+    category: 'Document',
+    description: 'Introduction to Document Types, what they are, and how to create new document types'
   },
   {
-    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
     title: 'Datasets',
-    organization: 'Document',
+  
     level: 'Beginner',
-    type: 'Specialization',
-    href: '/LMS-2'
+    type: 'Module',
+    href: '/Datasets',
+    category: 'Document',
+    description: 'Introduction to Datasets, what they are, operations that are possible and how to use them'
   },
   {
-    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/newuser1.png',
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
     title: 'Dataset Groups',
-    organization: 'Document',
+  
     level: 'Intermediate',
-    type: 'Course',
-    href: '/LMS-3'
+    type: 'Module',
+    href: '/Dataset-Groups',
+    category: 'Document',
+    description: 'Introduction to Dataset Groups, what they can be used for and how to use them'
   },
   {
-    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/connect5b.png',
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
     title: 'Connections',
-    organization: 'Document',
+  
+    level: 'Intermediate',
+    type: 'Module',
+    href: '/Connections',
+    category: 'Document',
+    description: 'Introduction to Connections, what they are, and how to create new Sources, Destinations and Connections'
+  },
+  {
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
+    title: 'Model Gen Manager',
+  
+    level: 'Intermediate',
+    type: 'Module',
+    href: '/Model-Gen-Manager',
+    category: 'Model Gen',
+    description: 'Introduction to Vue’s Model Gen Manager, what it is capable of and how to use it'
+  },
+  {
+    image: 'https://d1r1e7xjkfj7nz.cloudfront.net/imagebgl.png',
+    title: 'Workflows ',
+   
     level: 'Advanced',
-    type: 'Course',
-    href: '/LMS-4'
+    type: 'Module',
+    href: '/Workflows',
+    category: 'Workflow',
+    description: 'Introduction to Workflows, what the basics are and how to create them'
   }
 ];
 
-class Main extends Component {
-  constructor() {
-    super();
-    this.state = { courses: CoursesData };
-  }
+const Main = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  
+  const categories = ['All', 'Document','Model Gen', 'Workflow'];
+  
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
-  render() {
-    return (
-      <div>
-        <header className="unique-app-header" />
-        <Title />
-        <div className="unique-app-card-list" id="unique-app-card-list">
-          {this.state.courses.map((course, index) => (
-            <CourseCard key={index} {...course} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
+  const filteredCourses = selectedCategory === 'All'
+    ? CoursesData
+    : CoursesData.filter(course => course.category === selectedCategory);
 
-function App() {
   return (
     <Layout>
-      <Main />
+      <header className="unique-app-header" />
+      <Title />  {/* Title Component */}
+      <FilterBar 
+        categories={categories} 
+        selectedCategory={selectedCategory} 
+        onCategoryChange={handleCategoryChange}  
+      />
+      <div className="course-grid">
+        {filteredCourses.map((course, index) => (
+          <CourseCard key={index} {...course} />
+        ))}
+      </div>
     </Layout>
   );
-}
+};
 
-export default App;
-
+export default Main;

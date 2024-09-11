@@ -57,15 +57,15 @@ export default function HubCards() {
         additionalButtonLink="https://vuesandbox.vercel.app/Document-Manager/"
         iconSrc="https://d1r1e7xjkfj7nz.cloudfront.net/DataHub2x.png"
       />
-      {/* <HubCard
-        title="Customer Hub"
-        description="Build custom segment, configure recommendation, manage campaigns."
+      <HubCard
+        title="Hackathon"
+        description="User Guides and API documentation"
         link="https://vuesandbox.vercel.app//Digital-Experience-Manager/Experience/Experience%20Listing"
-        buttonLabel="Experience"
-        additionalButtonLabel="Metrics"
+        buttonLabel="User Guides"
+        additionalButtonLabel="Hackathon"
         additionalButtonLink="https://vuesandbox.vercel.app//Digital-Experience-Manager/Metrics"
         iconSrc="https://d1r1e7xjkfj7nz.cloudfront.net/Users2x.png"
-      /> */}
+      />
       <HubCard1
         title="Automation Hub"
         description="One shot learning, build custom workflows, no-code automation."

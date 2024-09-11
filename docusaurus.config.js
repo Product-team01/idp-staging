@@ -217,6 +217,26 @@ const docs = [
     },
   },
   {
+    id: 'hackathon-userguides',
+    path: 'docs/hackathon-userguides',
+    routeBasePath: '/hackathon-userguides',
+    versions: {
+      current: {
+        label: '0.5.x',
+      },
+    },
+  },
+  {
+    id: 'API-hackathon',
+    path: 'docs/API-hackathon',
+    routeBasePath: '/API-hackathon',
+    versions: {
+      current: {
+        label: '0.5.x',
+      },
+    },
+  },
+  {
     id: 'Automation',
     path: 'docs/Automation',
     routeBasePath: '/Automation',

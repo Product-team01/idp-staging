@@ -227,9 +227,9 @@ const docs = [
     },
   },
   {
-    id: 'API-hackathon',
-    path: 'docs/API-hackathon',
-    routeBasePath: '/API-hackathon',
+    id: 'api-hackathon',
+    path: 'docs/api-hackathon',
+    routeBasePath: '/api-hackathon',
     versions: {
       current: {
         label: '0.5.x',

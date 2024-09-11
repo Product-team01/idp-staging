@@ -60,10 +60,10 @@ export default function HubCards() {
       <HubCard
         title="Hackathon"
         description="User Guides and API documentation"
-        link="https://vuesandbox.vercel.app//Digital-Experience-Manager/Experience/Experience%20Listing"
+        link="https://vuesandbox.vercel.app/hackathon-userguidess"
         buttonLabel="User Guides"
         additionalButtonLabel="Hackathon"
-        additionalButtonLink="https://vuesandbox.vercel.app//Digital-Experience-Manager/Metrics"
+        additionalButtonLink="https://vuesandbox.vercel.app/api-hackathon"
         iconSrc="https://d1r1e7xjkfj7nz.cloudfront.net/Users2x.png"
       />
       <HubCard1
